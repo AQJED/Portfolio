@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Adeeb Alqahtani – Modern CV with a responsive welcome page that adapts between bright and dark themes.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="header.title">ADEEB ALQAHTANI - CV</title>
+  <!-- Favicon & Manifest -->
+  <link rel="icon" href="favicon.ico">
+  <link rel="manifest" href="manifest.json">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="ADEEB ALQAHTANI - CV">
+  <meta property="og:description" content="Modern CV with a responsive welcome page that adapts between bright and dark themes.">
+  <meta property="og:type" content="website">
+</head>
+<body>
+  <!-- Hero Section -->
+  <header id="hero" class="reveal">
+    <canvas id="particle-canvas"></canvas>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 data-i18n="header.title">ADEEB ALQAHTANI</h1>
+      <p data-i18n="header.contact">📍 Riyadh | 📧 Adeeb.alqahtani@gmail.com | 📞 966583161518</p>
+      <div class="hero-buttons">
+        <a href="#about" class="btn hero-cta" data-i18n="hero.cta">Discover More</a>
+        <a href="AdeebResume.pdf" class="btn download-cv" download="AdeebAlqahtani--CV.pdf" data-i18n="hero.downloadCV">Download CV</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav id="navbar" class="reveal" role="navigation" aria-label="Main Navigation">
+    <ul>
+      <li><a href="#hero" data-i18n="nav.home">Home</a></li>
+      <li><a href="#about" data-i18n="nav.about">About Me</a></li>
+      <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+      <li><a href="#courses" data-i18n="nav.courses">Training & Courses</a></li>
+      <li><a href="#github" data-i18n="nav.github">GitHub Projects</a></li>
+      <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+    </ul>
+    <div class="toggle-controls">
+      <!-- Single theme-toggle button will switch between bright and dark themes -->
+      <button id="theme-toggle-btn" aria-label="Toggle Theme"></button>
+      <button id="toggle-lang">العربية</button>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <!-- About Me Section -->
+    <section id="about" class="reveal">
+      <div class="section-inner glass">
+        <h2 data-i18n="about.title">About Me</h2>
+        <div class="about-content">
+          <div class="about-section">
+            <h3 data-i18n="about.summaryTitle">Summary</h3>
+            <p data-i18n="about.summary">
+              Over a decade of experience in software integration, system architecture, and lifecycle management. Skilled in integrating hardware, software, and network components for military and defense systems. Expertise in troubleshooting, optimizing performance, and ensuring regulatory compliance. Passionate about leveraging technology for national projects.
+            </p>
+          </div>
+          <div class="about-section">
+            <h3 data-i18n="about.educationTitle">Education & Academic Achievements</h3>
+            <p data-i18n="about.educationText"><strong>Degrees:</strong></p>
+            <ul id="education-list"></ul>
+          </div>
+          <div class="about-section">
+            <h3 data-i18n="about.skillsTitle">Skills</h3>
+            <p data-i18n="about.skillsText"></p>
+          </div>
+          <div class="about-section">
+            <h3 data-i18n="about.interestsTitle">Key Achievements & Awards</h3>
+            <p data-i18n="about.interestsText"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="reveal">
+      <div class="section-inner glass">
+        <h2 data-i18n="projects.title">Projects</h2>
+        <div class="project-filters">
+          <button class="filter-btn" data-filter="all" data-i18n="projects.filters.all">All</button>
+          <button class="filter-btn" data-filter="personal" data-i18n="projects.filters.personal">Personal Projects</button>
+          <button class="filter-btn" data-filter="university" data-i18n="projects.filters.university">Academic Projects</button>
+          <button class="filter-btn" data-filter="military" data-i18n="projects.filters.military">Professional Projects</button>
+        </div>
+        <div id="projects-grid" class="projects-wrapper"></div>
+        <button id="toggle-projects" class="toggle-projects-btn" data-i18n="projects.showMore">Show More</button>
+      </div>
+    </section>
+
+    <!-- Courses & Events Section -->
+    <section id="courses" class="reveal">
+      <div class="section-inner glass">
+        <h2 data-i18n="courses.title">Training & Courses</h2>
+        <ul id="courses-list"></ul>
+      </div>
+    </section>
+
+    <!-- GitHub Projects Section -->
+    <section id="github" class="reveal">
+      <div class="section-inner glass">
+        <h2 data-i18n="github.title">GitHub Projects</h2>
+        <p data-i18n="github.description">Explore my work on GitHub:</p>
+        <a href="https://github.com/AQJED" target="_blank" rel="noopener noreferrer" data-i18n="github.linkText">Visit my GitHub Profile</a>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="reveal">
+      <div class="section-inner glass">
+        <h2 data-i18n="experience.title">Experience</h2>
+        <div class="experience-card">
+          <h3 data-i18n="experience.details"></h3>
+          <p data-i18n="experience.period"></p>
+          <p data-i18n="experience.description"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="reveal">
+    <div class="section-inner glass">
+      <p data-i18n="footer.text">&copy; 2025 Adeeb Alqahtani. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/adalqahtani/" target="_blank" rel="noopener noreferrer" data-i18n="footer.linkedin">LinkedIn</a>
+        <a href="https://github.com/AQJED" target="_blank" rel="noopener noreferrer" data-i18n="footer.github">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

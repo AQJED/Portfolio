@@ -1,0 +1,482 @@
+/* style.css */
+
+/* Reset & Global Styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+}
+
+/* CSS Variables for Bright (Light) Theme */
+:root {
+  --bg-color: #f7f7f7;
+  --text-color: #222;
+  --primary-color: #03dac6;
+  --secondary-color: #cf6679;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --nav-bg: rgba(3,218,198,0.3);
+  --cta-text: #222;
+  /* Fixed, stable gradient for the bright hero */
+  --hero-bg: linear-gradient(45deg, #03dac6, #cf6679);
+  --animation-duration: 1s;
+  --animation-ease: ease-out;
+  --glass-blur: 10px;
+}
+
+/* Dark Theme Overrides */
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --card-bg: rgba(30, 30, 30, 0.9);
+  --nav-bg: rgba(31, 31, 31, 0.9);
+  --cta-text: #fff;
+  /* Dark gradient for the hero */
+  --hero-bg: linear-gradient(45deg, #181818, #282828);
+}
+
+/* Focus Styles */
+a:focus,
+button:focus {
+  outline: 3px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+/* Glassmorphism Utility Class */
+.glass {
+  background: var(--card-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin: 20px 0;
+}
+
+/* HERO SECTION */
+#hero {
+  position: relative;
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--hero-bg);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  /* For light theme, a subtle overlay; in dark mode a slightly darker overlay */
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  z-index: 1;
+}
+
+[data-theme="dark"] .hero-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode override for hero button text color */
+[data-theme="dark"] .hero-buttons a {
+  color: #000;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Hero text colors change with theme */
+[data-theme="light"] .hero-content h1 {
+  font-size: 4rem;
+  color: #fff;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+  margin-bottom: 20px;
+}
+
+[data-theme="dark"] .hero-content h1 {
+  font-size: 4rem;
+  color: #e0e0e0;
+  margin-bottom: 20px;
+}
+
+[data-theme="light"] .hero-content p {
+  font-size: 1.5rem;
+  color: #f0f0f0;
+  margin-bottom: 30px;
+}
+
+[data-theme="dark"] .hero-content p {
+  font-size: 1.5rem;
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+.hero-buttons a {
+  display: inline-block;
+  padding: 14px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin: 0 10px;
+  background: var(--primary-color);
+  color: #fff; /* Set text color to white in light mode */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hero-buttons a:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+/* Particle Canvas (behind hero content) */
+#particle-canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: transparent;
+}
+
+/* Navigation */
+#navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--nav-bg);
+  padding: 10px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+#navbar ul li a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+#navbar ul li a:hover {
+  color: var(--primary-color);
+}
+
+.toggle-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#theme-toggle-btn {
+  width: 40px;
+  height: 20px;
+  background: var(--secondary-color);
+  border: none;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#theme-toggle-btn::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: var(--bg-color);
+  border-radius: 50%;
+  top: 1px;
+  left: 1px;
+  transition: transform 0.3s;
+}
+
+[data-theme="dark"] #theme-toggle-btn {
+  background: var(--primary-color);
+}
+
+[data-theme="dark"] #theme-toggle-btn::after {
+  transform: translateX(20px);
+}
+
+#toggle-lang {
+  padding: 12px 16px;
+  background: var(--primary-color);
+  color: var(--cta-text);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#toggle-lang:hover {
+  background: var(--secondary-color);
+}
+
+/* Main Content */
+main {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Section Styles */
+section {
+  margin-bottom: 80px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s, transform 0.6s;
+}
+
+section.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-inner {
+  padding: 40px 30px;
+  border-radius: 16px;
+}
+
+/* About & Other Sections */
+.about-content {
+  display: grid;
+  gap: 30px;
+}
+
+.about-section h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.about-section p,
+#education-list {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+#education-list {
+  list-style: disc;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+/* Projects Section */
+.project-filters {
+  margin-bottom: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.filter-btn {
+  padding: 12px 16px;
+  border: none;
+  background: var(--primary-color);
+  color: #000; /* text always black */
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-size: 1.2rem; /* slightly larger font */
+  
+  /* Animation properties */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInSlide var(--animation-duration) ease-out forwards;
+  animation-delay: 0.3s; /* Adjust delay as needed */
+}
+
+.filter-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Projects Grid */
+.projects-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.project-card.hidden {
+  display: none;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.toggle-projects-btn {
+  display: block;
+  margin: 30px auto 0;
+  padding: 12px 20px;
+  background: var(--primary-color);
+  color: var(--cta-text);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.toggle-projects-btn:hover {
+  background: var(--secondary-color);
+  transform: scale(1.05);
+}
+
+/* Courses Section */
+#courses-list {
+  list-style: circle;
+  margin-left: 20px;
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+/* Experience Section */
+.experience-card {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--nav-bg);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  margin-top: 60px;
+}
+
+.footer-links a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: var(--secondary-color);
+}
+
+/* Keyframe Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  #navbar {
+    flex-direction: column;
+  }
+  #toggle-lang {
+    margin-top: 10px;
+  }
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+}
+
+/* Animate hero content elements on load */
+.hero-content h1,
+.hero-content p,
+.hero-buttons a {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInSlide var(--animation-duration) ease-out forwards;
+}
+
+.hero-content h1 {
+  animation-delay: 0.5s;
+}
+
+.hero-content p {
+  animation-delay: 0.7s;
+}
+
+.hero-buttons a {
+  animation-delay: 0.9s;
+}
+
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Increase font sizes for Arabic (RTL) texts for better readability */
+body[dir="rtl"] {
+  /* Increase the base font-size slightly */
+  font-size: 1.1rem;
+}
+
+/* Adjust hero content */
+body[dir="rtl"] .hero-content h1 {
+  font-size: 4.5rem;  /* Increase hero heading */
+}
+
+body[dir="rtl"] .hero-content p {
+  font-size: 1.7rem;  /* Increase hero paragraph text */
+}
+
+/* Adjust general headings */
+body[dir="rtl"] h2 {
+  font-size: 2.5rem;
+}
+
+body[dir="rtl"] h3 {
+  font-size: 2rem;
+}
+
+/* Adjust paragraphs, links, and list items */
+body[dir="rtl"] p,
+body[dir="rtl"] li,
+body[dir="rtl"] a {
+  font-size: 1.2rem;
+}
