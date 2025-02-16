@@ -1,3 +1,4 @@
+
 /* script.js */
 (() => {
   'use strict';
@@ -25,6 +26,7 @@
       about: {
         title: "About Me",
         biographyTitle: "Biography",
+        // New biography text
         summary:
           "Dynamic Software Integration Engineer with expertise in real-time simulation and middleware development. Currently leading middleware solutions at Rheinmetall Arabia, enabling seamless host-to-visual system communication in high-fidelity flight simulators. With over a decade of experience, I have engineered mission-critical systems, conducted site surveys, and optimized simulator performance to meet defense and aviation standards. Holding a B.S. in Computer Engineering, I specialize in integrating complex hardware and software systems to enhance training realism and operational efficiency.",
         educationTitle: "Education & Academic Achievements",
@@ -40,6 +42,9 @@
            Yanbu Industrial College (2004 – 2008)<br>
            <em>Specialized in instrumentation and control systems.</em>`
         ],
+        // We no longer render skills here
+        skillsTitle: "Skills",
+        skillsText: "",
         keyAchievementsTitle: "Key Achievements",
         keyAchievementsList: [
           "Cost Savings of $95K<br>Designed software modifications for a 6-DOF motion system, reducing downtime and enhancing readiness.",
@@ -309,7 +314,6 @@
 
   // Render Skills Section
   const renderSkills = lang => {
-    // Leadership & Management
     const containerLeadership = document.getElementById('leadership-list');
     containerLeadership.innerHTML = "";
     translations[lang].skills.leadership.items.forEach(item => {
@@ -318,7 +322,6 @@
       containerLeadership.appendChild(li);
     });
 
-    // Hardware & Embedded Systems
     const containerHardware = document.getElementById('hardware-list');
     containerHardware.innerHTML = "";
     translations[lang].skills.hardware.items.forEach(item => {
@@ -327,7 +330,6 @@
       containerHardware.appendChild(li);
     });
 
-    // Software & Programming
     const containerSoftware = document.getElementById('software-list');
     containerSoftware.innerHTML = "";
     translations[lang].skills.software.items.forEach(item => {
@@ -337,15 +339,14 @@
     });
   };
 
-  // Render Projects Grid with bubble styling (reverted)
+  // Render Projects Grid with "Tech Stack" label and separator
   const renderProjects = lang => {
     const grid = document.getElementById('projects-grid');
     grid.innerHTML = "";
     const projects = translations[lang].projects.projectCards;
     projects.forEach((project, index) => {
-      // Revert to bubble style by adding the "bubble" class along with "project-card"
       const card = document.createElement('div');
-      card.className = 'bubble project-card';
+      card.className = 'project-card';
       card.setAttribute('data-category', project.category);
       card.innerHTML = `
         <h3>${project.title}</h3>
@@ -387,23 +388,17 @@
     expContainer.innerHTML = translations[lang].experience.details;
   };
 
-  // Initialize Scroll Reveal using Intersection Observer with fallback
+  // Initialize Scroll Reveal using Intersection Observer
   const initScrollReveal = () => {
     const revealElements = document.querySelectorAll('.reveal');
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in-view');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.2 });
-      revealElements.forEach(el => observer.observe(el));
-    } else {
-      // Fallback: if IntersectionObserver is not supported, show all content
-      revealElements.forEach(el => el.classList.add('in-view'));
-    }
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+        }
+      });
+    }, { threshold: 0.2 });
+    revealElements.forEach(el => observer.observe(el));
   };
 
   // Theme Toggle Function
@@ -494,6 +489,36 @@
     renderExperience(currentLang);
     renderKeyAchievements(currentLang);
     renderWorkAwards(currentLang);
+  };
+
+  // Render Skills Section
+  const renderSkills = lang => {
+    // Leadership & Management
+    const containerLeadership = document.getElementById('leadership-list');
+    containerLeadership.innerHTML = "";
+    translations[lang].skills.leadership.items.forEach(item => {
+      const li = document.createElement('li');
+      li.innerHTML = item;
+      containerLeadership.appendChild(li);
+    });
+
+    // Hardware & Embedded Systems
+    const containerHardware = document.getElementById('hardware-list');
+    containerHardware.innerHTML = "";
+    translations[lang].skills.hardware.items.forEach(item => {
+      const li = document.createElement('li');
+      li.innerHTML = item;
+      containerHardware.appendChild(li);
+    });
+
+    // Software & Programming
+    const containerSoftware = document.getElementById('software-list');
+    containerSoftware.innerHTML = "";
+    translations[lang].skills.software.items.forEach(item => {
+      const li = document.createElement('li');
+      li.innerHTML = item;
+      containerSoftware.appendChild(li);
+    });
   };
 
   document.addEventListener("DOMContentLoaded", () => {
