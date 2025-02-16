@@ -30,7 +30,6 @@ body {
   --card-bg: rgba(255, 255, 255, 0.85);
   --nav-bg: rgba(3,218,198,0.3);
   --cta-text: #222;
-  /* Fixed, stable gradient for the bright hero */
   --hero-bg: url('microcontroller.jpg') no-repeat center center;
   --animation-duration: 1s;
   --animation-ease: ease-out;
@@ -44,7 +43,6 @@ body {
   --card-bg: rgba(30, 30, 30, 0.9);
   --nav-bg: rgba(31, 31, 31, 0.9);
   --cta-text: #fff;
-  /* Dark gradient for the hero */
   --hero-bg: linear-gradient(45deg, #181818, #282828);
 }
 
@@ -75,7 +73,7 @@ button:focus {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: url('microcontroller.jpg') no-repeat center center;
+  background: var(--hero-bg);
   background-size: cover;
 }
 
@@ -102,7 +100,7 @@ button:focus {
 [data-theme="light"] .hero-content h1 {
   font-size: 4rem;
   color: #fff;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
   margin-bottom: 10px;
 }
 
@@ -140,13 +138,13 @@ button:focus {
   margin: 0 10px;
   background: var(--primary-color);
   color: #fff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .hero-buttons a:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
 }
 
 /* Particle Canvas (behind hero content) */
@@ -287,11 +285,12 @@ section.in-view {
   margin-top: 10px;
 }
 
-/* Timeline Section (Left-Right Layout) */
+/* Left-Right Timeline with vertical offset */
 .timeline-section {
   position: relative;
 }
 
+/* The container has a vertical line in the center */
 .timeline-container {
   position: relative;
   width: 100%;
@@ -309,15 +308,16 @@ section.in-view {
   z-index: 0;
 }
 
-/* Each timeline item occupies half the width and alternates left/right */
+/* Each timeline item: 50% width, float left or right, plus vertical offset */
 .timeline-item {
   position: relative;
   width: 50%;
   padding: 20px;
   box-sizing: border-box;
+  margin-bottom: 80px; /* vertical spacing between items */
 }
 
-/* Place items on the left or right of the vertical line */
+/* Left items are on the left half, right items on the right half */
 .timeline-item.left {
   float: left;
   text-align: right;
@@ -326,9 +326,10 @@ section.in-view {
 .timeline-item.right {
   float: right;
   text-align: left;
+  margin-top: 60px; /* offset to avoid parallel alignment with left item */
 }
 
-/* The circle icon with year or date range */
+/* The circle icon near the center line */
 .timeline-icon {
   position: absolute;
   top: 20px;
@@ -345,7 +346,7 @@ section.in-view {
   z-index: 1;
 }
 
-/* For left items, icon is near the center line on the right side; for right items, icon is near center line on the left side */
+/* For left items, icon is on the right side near center line. For right items, on the left side. */
 .timeline-item.left .timeline-icon {
   right: -20px;
 }
@@ -354,7 +355,7 @@ section.in-view {
   left: 50%;
 }
 
-/* The content block */
+/* The content block with smaller font */
 .timeline-content {
   position: relative;
   display: inline-block;
@@ -365,8 +366,7 @@ section.in-view {
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
   padding: 20px;
   margin-top: 20px;
-  /* smaller font for job positions and education */
-  font-size: 0.95rem;
+  font-size: 0.95rem; /* smaller text overall */
 }
 
 /* Adjust spacing so content doesn't overlap the line */
@@ -378,15 +378,14 @@ section.in-view {
   margin-left: 40px;
 }
 
-/* Timeline Title smaller than default headings */
+/* Title and date are even smaller */
 .timeline-content h3 {
   margin-top: 0;
   margin-bottom: 5px;
   color: var(--primary-color);
-  font-size: 1.1rem; /* smaller than normal */
+  font-size: 1.1rem; /* smaller heading */
 }
 
-/* Date is even smaller */
 .timeline-date {
   display: block;
   font-size: 0.85rem;
@@ -394,7 +393,7 @@ section.in-view {
   margin-bottom: 5px;
 }
 
-/* Clear floats for next row */
+/* Clear floats at the end */
 .timeline-container::after {
   content: "";
   display: table;
@@ -408,10 +407,13 @@ section.in-view {
   }
   .timeline-item {
     width: 100%;
-    padding-left: 60px;
-    padding-right: 20px;
     float: none;
     text-align: left;
+    margin-bottom: 40px;
+    padding-left: 60px;
+  }
+  .timeline-item.right {
+    margin-top: 0; /* remove extra offset on mobile */
   }
   .timeline-item.left .timeline-icon,
   .timeline-item.right .timeline-icon {
@@ -534,7 +536,6 @@ section.in-view {
   padding-bottom: 10px;
 }
 
-/* Job titles in the Experience section will now match the color from About Me */
 .experience-header h3 {
   font-size: 1.5rem;
   color: var(--primary-color);
