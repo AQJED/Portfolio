@@ -75,8 +75,9 @@ button:focus {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: var(--hero-bg);
+  background: url('microcontroller.jpg') no-repeat center center/cover;
 }
+
 
 .hero-overlay {
   position: absolute;
