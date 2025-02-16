@@ -337,14 +337,15 @@
     });
   };
 
-  // Render Projects Grid with "Tech Stack" label and separator
+  // Render Projects Grid with bubble styling (reverted)
   const renderProjects = lang => {
     const grid = document.getElementById('projects-grid');
     grid.innerHTML = "";
     const projects = translations[lang].projects.projectCards;
     projects.forEach((project, index) => {
+      // Revert to bubble style by adding the "bubble" class along with "project-card"
       const card = document.createElement('div');
-      card.className = 'project-card';
+      card.className = 'bubble project-card';
       card.setAttribute('data-category', project.category);
       card.innerHTML = `
         <h3>${project.title}</h3>
@@ -386,17 +387,23 @@
     expContainer.innerHTML = translations[lang].experience.details;
   };
 
-  // Initialize Scroll Reveal using Intersection Observer
+  // Initialize Scroll Reveal using Intersection Observer with fallback
   const initScrollReveal = () => {
     const revealElements = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-        }
-      });
-    }, { threshold: 0.2 });
-    revealElements.forEach(el => observer.observe(el));
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      revealElements.forEach(el => observer.observe(el));
+    } else {
+      // Fallback: if IntersectionObserver is not supported, show all content
+      revealElements.forEach(el => el.classList.add('in-view'));
+    }
   };
 
   // Theme Toggle Function
