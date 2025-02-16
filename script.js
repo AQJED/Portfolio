@@ -25,67 +25,22 @@
       },
       about: {
         title: "About Me",
-        biographyTitle: "Biography",
-        // New biography text
+        summaryTitle: "Summary",
         summary:
-          "Dynamic Software Integration Engineer with expertise in real-time simulation and middleware development. Currently leading middleware solutions at Rheinmetall Arabia, enabling seamless host-to-visual system communication in high-fidelity flight simulators. With over a decade of experience, I have engineered mission-critical systems, conducted site surveys, and optimized simulator performance to meet defense and aviation standards. Holding a B.S. in Computer Engineering, I specialize in integrating complex hardware and software systems to enhance training realism and operational efficiency.",
+          "Over a decade of experience in software integration, system architecture, and lifecycle management. Skilled in integrating hardware, software, and network components for military and defense systems. Expertise in troubleshooting, optimizing performance, and ensuring regulatory compliance. Passionate about leveraging technology for national projects.",
         educationTitle: "Education & Academic Achievements",
-        educationText: "",
+        educationText: "<strong>Degrees:</strong>",
         educationList: [
-          `<strong>B.S. in Computer Engineering</strong><br>
-           California State University, San Bernardino (2015 – 2018)<br>
-           <em>Focused on high-performance and embedded systems.</em>`,
-          `<strong>Deep Learning (AI) Nanodegree</strong><br>
-           MISK Foundation (2019 – 2020)<br>
-           <em>Hands-on experience in 6 artificial intelligence projects.</em>`,
-          `<strong>Associate Degree in Electrical & Electronics</strong><br>
-           Yanbu Industrial College (2004 – 2008)<br>
-           <em>Specialized in instrumentation and control systems.</em>`
+          "B.S. in Computer Engineering – California State University, San Bernardino (2015 – 2018). Focused on high-performance and embedded systems.",
+          "Deep Learning (AI) Nanodegree – MISK (2019 – 2020). Hands-on experience in 6 artificial intelligence projects.",
+          "Associate Degree in Electrical & Electronics – Yanbu Industrial College (2004 – 2008). Specialized in instrumentation and control systems."
         ],
-        // We no longer render skills here
         skillsTitle: "Skills",
-        skillsText: "",
-        keyAchievementsTitle: "Key Achievements",
-        keyAchievementsList: [
-          "Cost Savings of $95K<br>Designed software modifications for a 6-DOF motion system, reducing downtime and enhancing readiness.",
-          "Middleware Solutions<br>Developed real-time, multithreaded C++ middleware for CIGI protocol conversion, enabling seamless integration of distributed systems."
-        ],
-        workAwardsTitle: "Work Awards",
-        workAwardsList: [
-          "Employee of the Month –<br>Recognized multiple times for performance and dedication.",
-          "Appreciation Letters<br>Handling a 6-DOF electrical motion system failure (2022), Software modification for 6-DOF motion system (2022), Teaching Basic Electronics Course (2021), Teaching Basic C++ Programming Course (2019)."
-        ]
-      },
-      skills: {
-        title: "Skills",
-        leadership: {
-          title: "Leadership & Management",
-          items: [
-            "Strategic Thinking",
-            "Team Leadership",
-            "Problem-Solving",
-            "Time Management"
-          ]
-        },
-        hardware: {
-          title: "Hardware & Embedded Systems",
-          items: [
-            "Circuit Design",
-            "Microcontrollers",
-            "FPGA Programming",
-            "Robotics",
-            "Instrumentation & Control Systems"
-          ]
-        },
-        software: {
-          title: "Software & Programming",
-          items: [
-            "C/C++",
-            "Python",
-            "Matlab",
-            "Verilog"
-          ]
-        }
+        skillsText:
+          "<strong>Leadership & Management:</strong> Strategic Thinking, Team Leadership, Problem-Solving, Time Management<br /><strong>Hardware & Embedded Systems:</strong> Circuit Design, Microcontrollers, FPGA Programming, Robotics, Instrumentation & Control Systems<br /><strong>Software & Programming:</strong> C/C++, Python, Matlab, Verilog",
+        interestsTitle: "Key Achievements & Awards",
+        interestsText:
+          "<strong>Key Achievements:</strong><ul><li>Cost Savings of $95K – Designed software modifications for a 6-DOF motion system, reducing downtime and enhancing readiness.</li><li>Middleware Solutions – Developed real-time, multithreaded C++ middleware for CIGI protocol conversion, enabling seamless integration of distributed systems.</li></ul><strong>Work Awards:</strong><ul><li>Employee of the Month – Recognized multiple times for performance and dedication.</li><li>Appreciation Letters: Handling a 6-DOF electrical motion system failure (2022), Software modification for 6-DOF motion system (2022), Teaching Basic Electronics Course (2021), Teaching Basic C++ Programming Course (2019)</li></ul>"
       },
       projects: {
         title: "Projects",
@@ -205,7 +160,7 @@
       <span class="experience-location">Jeddah</span>
     </div>
     <ul class="experience-details">
-      <li>Led qualification, testing, commissioning, and certification of full flight simulators.</li>
+      <li>Led qualification, testing, commissioning, and certification of Full Flight Simulators.</li>
       <li>Ensured compliance with FAA, EASA & GACA aviation standards.</li>
       <li>Troubleshot complex technical issues, minimizing downtime.</li>
       <li>Optimized system integration and performance for improved reliability.</li>
@@ -264,16 +219,16 @@
     }
   };
 
-  // Force language to English
+  // Since we now only use English, force currentLang to "en"
   const currentLang = "en";
   const initialVisibleCount = 6;
   let projectsExpanded = false;
 
-  // Helper function to retrieve nested translation values
+  // Helper: Retrieve nested translation by key
   const getNestedTranslation = (obj, key) =>
     key.split('.').reduce((o, i) => (o ? o[i] : null), obj);
 
-  // Update page translations and document attributes
+  // Update page translations and document language/direction
   const translatePage = lang => {
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
@@ -284,62 +239,18 @@
     document.body.setAttribute("dir", "ltr");
   };
 
-  // Render Education List in a single bubble (join all education items with breaks)
+  // Render Education List
   const renderEducationList = lang => {
-    const container = document.getElementById('education-list');
-    container.innerHTML = translations[lang].about.educationList.join("<br><br>");
-  };
-
-  // Render Key Achievements List
-  const renderKeyAchievements = lang => {
-    const ul = document.getElementById('key-achievements-list');
+    const ul = document.getElementById('education-list');
     ul.innerHTML = "";
-    translations[lang].about.keyAchievementsList.forEach(item => {
+    translations[lang].about.educationList.forEach(item => {
       const li = document.createElement('li');
       li.innerHTML = item;
       ul.appendChild(li);
     });
   };
 
-  // Render Work Awards List
-  const renderWorkAwards = lang => {
-    const ul = document.getElementById('work-awards-list');
-    ul.innerHTML = "";
-    translations[lang].about.workAwardsList.forEach(item => {
-      const li = document.createElement('li');
-      li.innerHTML = item;
-      ul.appendChild(li);
-    });
-  };
-
-  // Render Skills Section
-  const renderSkills = lang => {
-    const containerLeadership = document.getElementById('leadership-list');
-    containerLeadership.innerHTML = "";
-    translations[lang].skills.leadership.items.forEach(item => {
-      const li = document.createElement('li');
-      li.innerHTML = item;
-      containerLeadership.appendChild(li);
-    });
-
-    const containerHardware = document.getElementById('hardware-list');
-    containerHardware.innerHTML = "";
-    translations[lang].skills.hardware.items.forEach(item => {
-      const li = document.createElement('li');
-      li.innerHTML = item;
-      containerHardware.appendChild(li);
-    });
-
-    const containerSoftware = document.getElementById('software-list');
-    containerSoftware.innerHTML = "";
-    translations[lang].skills.software.items.forEach(item => {
-      const li = document.createElement('li');
-      li.innerHTML = item;
-      containerSoftware.appendChild(li);
-    });
-  };
-
-  // Render Projects Grid with "Tech Stack" label and separator
+  // Render Projects Grid with "Tech Stack" label
   const renderProjects = lang => {
     const grid = document.getElementById('projects-grid');
     grid.innerHTML = "";
@@ -352,7 +263,6 @@
         <h3>${project.title}</h3>
         <p><em>${project.subtitle}</em></p>
         <p>${project.description}</p>
-        <hr class="tech-stack-separator">
         <p><strong>Tech Stack:</strong> ${project.technologies}</p>
       `;
       if (!projectsExpanded && index >= initialVisibleCount) {
@@ -388,7 +298,7 @@
     expContainer.innerHTML = translations[lang].experience.details;
   };
 
-  // Initialize Scroll Reveal using Intersection Observer
+  // Initialize Scroll Reveal via Intersection Observer
   const initScrollReveal = () => {
     const revealElements = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver(entries => {
@@ -401,7 +311,7 @@
     revealElements.forEach(el => observer.observe(el));
   };
 
-  // Theme Toggle Function
+  // Theme Toggle Function – switches between light and dark themes
   const toggleTheme = () => {
     const currentTheme = document.documentElement.getAttribute("data-theme");
     const newTheme = currentTheme === "light" ? "dark" : "light";
@@ -414,7 +324,7 @@
     document.documentElement.setAttribute("data-theme", savedTheme);
   };
 
-  // Particle Animation for Hero Section
+  // Initialize Particle Animation for the hero section
   const initParticles = () => {
     const canvas = document.getElementById('particle-canvas');
     if (!canvas) return;
@@ -479,56 +389,26 @@
     animateParticles();
   };
 
-  // Initialize Language & Render All Content
+  // Initialize Language & Render Content
   const initLanguage = () => {
     translatePage(currentLang);
     renderEducationList(currentLang);
-    renderSkills(currentLang);
     renderProjects(currentLang);
     renderCourses(currentLang);
     renderExperience(currentLang);
-    renderKeyAchievements(currentLang);
-    renderWorkAwards(currentLang);
   };
 
-  // Render Skills Section
-  const renderSkills = lang => {
-    // Leadership & Management
-    const containerLeadership = document.getElementById('leadership-list');
-    containerLeadership.innerHTML = "";
-    translations[lang].skills.leadership.items.forEach(item => {
-      const li = document.createElement('li');
-      li.innerHTML = item;
-      containerLeadership.appendChild(li);
-    });
-
-    // Hardware & Embedded Systems
-    const containerHardware = document.getElementById('hardware-list');
-    containerHardware.innerHTML = "";
-    translations[lang].skills.hardware.items.forEach(item => {
-      const li = document.createElement('li');
-      li.innerHTML = item;
-      containerHardware.appendChild(li);
-    });
-
-    // Software & Programming
-    const containerSoftware = document.getElementById('software-list');
-    containerSoftware.innerHTML = "";
-    translations[lang].skills.software.items.forEach(item => {
-      const li = document.createElement('li');
-      li.innerHTML = item;
-      containerSoftware.appendChild(li);
-    });
-  };
-
+  // DOMContentLoaded – Initialize everything
   document.addEventListener("DOMContentLoaded", () => {
     initTheme();
     initLanguage();
     initParticles();
     initScrollReveal();
 
+    // Theme Toggle Button Event Listener
     document.getElementById("theme-toggle-btn").addEventListener("click", toggleTheme);
 
+    // Project Filtering
     document.querySelectorAll('.filter-btn').forEach(button => {
       button.addEventListener('click', () => {
         const filter = button.getAttribute('data-filter');
@@ -538,11 +418,13 @@
       });
     });
 
+    // Toggle Projects Expansion/Collapse
     document.getElementById('toggle-projects').addEventListener('click', () => {
       projectsExpanded = !projectsExpanded;
       renderProjects(currentLang);
     });
 
+    // Smooth Scrolling for Navigation Links
     document.querySelectorAll('nav ul li a').forEach(link => {
       link.addEventListener('click', e => {
         e.preventDefault();
