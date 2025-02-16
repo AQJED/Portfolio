@@ -1,4 +1,3 @@
-
 /* style.css */
 
 /* Reset & Global Styles */
@@ -31,7 +30,6 @@ body {
   --card-bg: rgba(255, 255, 255, 0.85);
   --nav-bg: rgba(3,218,198,0.3);
   --cta-text: #222;
-  /* Fixed, stable gradient for the bright hero */
   --hero-bg: url('microcontroller.jpg') no-repeat center center;
   --animation-duration: 1s;
   --animation-ease: ease-out;
@@ -45,7 +43,6 @@ body {
   --card-bg: rgba(30, 30, 30, 0.9);
   --nav-bg: rgba(31, 31, 31, 0.9);
   --cta-text: #fff;
-  /* Dark gradient for the hero */
   --hero-bg: linear-gradient(45deg, #181818, #282828);
 }
 
@@ -67,6 +64,40 @@ button:focus {
   margin: 20px 0;
 }
 
+/* Bubbles for About Me & Achievements */
+.bubble {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  margin-bottom: 20px;
+}
+
+.edu-bubble {
+  background: var(--card-bg);
+  padding: 15px;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  margin-bottom: 15px;
+}
+
+.achievements-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.achievement-bubble {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  flex: 1;
+  min-width: 300px;
+  margin-bottom: 20px;
+}
+
 /* HERO SECTION */
 #hero {
   position: relative;
@@ -76,14 +107,13 @@ button:focus {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: url('microcontroller.jpg') no-repeat center center;
+  background: var(--hero-bg);
   background-size: cover;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  /* For light theme, a subtle overlay; in dark mode a slightly darker overlay */
   background: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   z-index: 1;
@@ -104,7 +134,7 @@ button:focus {
 [data-theme="light"] .hero-content h1 {
   font-size: 4rem;
   color: #fff;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
   margin-bottom: 10px;
 }
 
@@ -114,7 +144,7 @@ button:focus {
   margin-bottom: 10px;
 }
 
-/* New Hero Subtitle */
+/* Hero Subtitle */
 .hero-subtitle {
   font-size: 1.2rem;
   color: #fff;
@@ -142,13 +172,13 @@ button:focus {
   margin: 0 10px;
   background: var(--primary-color);
   color: #fff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .hero-buttons a:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
 }
 
 /* Particle Canvas (behind hero content) */
@@ -166,7 +196,7 @@ button:focus {
   z-index: 1000;
   background: var(--nav-bg);
   padding: 10px 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -283,12 +313,6 @@ section.in-view {
   line-height: 1.5;
 }
 
-#education-list {
-  list-style: disc;
-  margin-left: 20px;
-  margin-top: 10px;
-}
-
 /* Projects Section */
 .project-filters {
   margin-bottom: 30px;
@@ -307,8 +331,6 @@ section.in-view {
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
   font-size: 1.2rem;
-  
-  /* Animation properties */
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInSlide var(--animation-duration) ease-out forwards;
@@ -317,7 +339,7 @@ section.in-view {
 
 .filter-btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
 /* Projects Grid */
@@ -331,7 +353,7 @@ section.in-view {
   background: var(--card-bg);
   padding: 20px;
   border-radius: 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
   transition: transform 0.3s, opacity 0.3s;
 }
 
@@ -369,10 +391,15 @@ section.in-view {
 
 /* Courses Section */
 #courses-list {
-  list-style: circle;
+  list-style: disc;
   margin-left: 20px;
   margin-top: 10px;
   font-size: 1rem;
+}
+
+/* Solid (dark) bullets for Training & Courses */
+#courses-list li::marker {
+  color: #000;
 }
 
 /* Experience Section Styles */
@@ -387,7 +414,7 @@ section.in-view {
   background: var(--card-bg);
   padding: 20px;
   border-radius: 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
 .experience-header {
@@ -399,7 +426,6 @@ section.in-view {
   padding-bottom: 10px;
 }
 
-/* Job titles in the Experience section will now match the color from About Me */
 .experience-header h3 {
   font-size: 1.5rem;
   color: var(--primary-color);
@@ -432,7 +458,7 @@ footer {
   text-align: center;
   padding: 20px;
   background: var(--nav-bg);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255,255,255,0.1);
   margin-top: 60px;
 }
 
@@ -472,6 +498,9 @@ footer {
   }
   .hero-content p {
     font-size: 1.2rem;
+  }
+  .achievements-container {
+    flex-direction: column;
   }
 }
 
