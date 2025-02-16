@@ -39,6 +39,7 @@
     <ul>
       <li><a href="#hero" data-i18n="nav.home">Home</a></li>
       <li><a href="#about" data-i18n="nav.about">About Me</a></li>
+      <li><a href="#skills">Skills</a></li>
       <li><a href="#achievements">Key Achievements & Work Awards</a></li>
       <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
       <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
@@ -57,24 +58,43 @@
       <div class="section-inner glass">
         <h2 data-i18n="about.title">About Me</h2>
         <div class="about-content">
-          <!-- Summary Bubble -->
-          <div class="bubble" id="summary-bubble">
-            <h3 data-i18n="about.summaryTitle">Summary</h3>
+          <!-- Biography Bubble -->
+          <div class="bubble" id="biography-bubble">
+            <h3 data-i18n="about.biographyTitle">Biography</h3>
             <p data-i18n="about.summary">
-              Over a decade of experience in software integration, system architecture, and lifecycle management. Skilled in integrating hardware, software, and network components for military and defense systems. Expertise in troubleshooting, optimizing performance, and ensuring regulatory compliance. Passionate about leveraging technology for national projects.
+              Dynamic Software Integration Engineer with expertise in real-time simulation and middleware development. Currently leading middleware solutions at Rheinmetall Arabia, enabling seamless host-to-visual system communication in high-fidelity flight simulators. With over a decade of experience, I have engineered mission-critical systems, conducted site surveys, and optimized simulator performance to meet defense and aviation standards. Holding a B.S. in Computer Engineering, I specialize in integrating complex hardware and software systems to enhance training realism and operational efficiency.
             </p>
           </div>
-          <!-- Education Bubble -->
+          <!-- Education & Academic Achievements Bubble -->
           <div class="bubble" id="education-bubble">
             <h3 data-i18n="about.educationTitle">Education & Academic Achievements</h3>
             <div id="education-list">
-              <!-- Education bubbles are rendered here by script.js -->
+              <!-- All education items will be joined and rendered here -->
             </div>
           </div>
-          <!-- Skills Bubble -->
-          <div class="bubble" id="skills-bubble">
-            <h3 data-i18n="about.skillsTitle">Skills</h3>
-            <p data-i18n="about.skillsText"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="reveal">
+      <div class="section-inner glass">
+        <h2 data-i18n="skills.title">Skills</h2>
+        <div class="skills-container">
+          <!-- Leadership & Management Bubble -->
+          <div class="bubble" id="leadership-bubble">
+            <h3 data-i18n="skills.leadership.title">Leadership & Management</h3>
+            <ul id="leadership-list"></ul>
+          </div>
+          <!-- Hardware & Embedded Systems Bubble -->
+          <div class="bubble" id="hardware-bubble">
+            <h3 data-i18n="skills.hardware.title">Hardware & Embedded Systems</h3>
+            <ul id="hardware-list"></ul>
+          </div>
+          <!-- Software & Programming Bubble -->
+          <div class="bubble" id="software-bubble">
+            <h3 data-i18n="skills.software.title">Software & Programming</h3>
+            <ul id="software-list"></ul>
           </div>
         </div>
       </div>
