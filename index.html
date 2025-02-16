@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
@@ -24,11 +23,13 @@
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1 data-i18n="header.title">ADEEB ALQAHTANI</h1>
-      <p class="hero-subtitle">Software Integration Engineer | Flight Simulator Engineer | B.S. Computer Engineering & Embedded Systems | Deep Learning Nanodegree</p>
+      <p class="hero-subtitle">
+        Software Integration Engineer | Flight Simulator Engineer | B.S. Computer Engineering & Embedded Systems | Deep Learning Nanodegree
+      </p>
       <p data-i18n="header.contact">📍 Riyadh | 📧 Adeeb.alqahtani@gmail.com | 📞 966583161518</p>
       <div class="hero-buttons">
         <a href="#about" class="btn hero-cta" data-i18n="hero.cta">Discover More</a>
-        <a href="AdeebResume.pdf" class="btn download-cv" download="AdeebAlqahtani--CV.pdf" data-i18n="hero.downloadCV">Download CV</a>
+        <a href="Adeeb-Alqahtani.pdf" class="btn download-cv" download="AdeebAlqahtani--CV.pdf" data-i18n="hero.downloadCV">Download CV</a>
       </div>
     </div>
   </header>
@@ -38,13 +39,13 @@
     <ul>
       <li><a href="#hero" data-i18n="nav.home">Home</a></li>
       <li><a href="#about" data-i18n="nav.about">About Me</a></li>
+      <li><a href="#achievements">Key Achievements & Work Awards</a></li>
       <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
       <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
       <li><a href="#courses" data-i18n="nav.courses">Training & Courses</a></li>
       <li><a href="#github" data-i18n="nav.github">GitHub Projects</a></li>
     </ul>
     <div class="toggle-controls">
-      <!-- Only the theme toggle button remains -->
       <button id="theme-toggle-btn" aria-label="Toggle Theme"></button>
     </div>
   </nav>
@@ -56,24 +57,41 @@
       <div class="section-inner glass">
         <h2 data-i18n="about.title">About Me</h2>
         <div class="about-content">
-          <div class="about-section">
+          <!-- Summary Bubble -->
+          <div class="bubble" id="summary-bubble">
             <h3 data-i18n="about.summaryTitle">Summary</h3>
             <p data-i18n="about.summary">
               Over a decade of experience in software integration, system architecture, and lifecycle management. Skilled in integrating hardware, software, and network components for military and defense systems. Expertise in troubleshooting, optimizing performance, and ensuring regulatory compliance. Passionate about leveraging technology for national projects.
             </p>
           </div>
-          <div class="about-section">
+          <!-- Education Bubble -->
+          <div class="bubble" id="education-bubble">
             <h3 data-i18n="about.educationTitle">Education & Academic Achievements</h3>
-            <p data-i18n="about.educationText"><strong>Degrees:</strong></p>
-            <ul id="education-list"></ul>
+            <div id="education-list">
+              <!-- Education bubbles are rendered here by script.js -->
+            </div>
           </div>
-          <div class="about-section">
+          <!-- Skills Bubble -->
+          <div class="bubble" id="skills-bubble">
             <h3 data-i18n="about.skillsTitle">Skills</h3>
             <p data-i18n="about.skillsText"></p>
           </div>
-          <div class="about-section">
-            <h3 data-i18n="about.interestsTitle">Key Achievements & Awards</h3>
-            <p data-i18n="about.interestsText"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Achievements & Work Awards Section -->
+    <section id="achievements" class="reveal">
+      <div class="section-inner glass">
+        <h2>Key Achievements & Work Awards</h2>
+        <div class="achievements-container">
+          <div class="achievement-bubble" id="key-achievements">
+            <h3 data-i18n="about.keyAchievementsTitle">Key Achievements</h3>
+            <ul id="key-achievements-list"></ul>
+          </div>
+          <div class="achievement-bubble" id="work-awards">
+            <h3 data-i18n="about.workAwardsTitle">Work Awards</h3>
+            <ul id="work-awards-list"></ul>
           </div>
         </div>
       </div>
