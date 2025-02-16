@@ -23,12 +23,12 @@ body {
 
 /* CSS Variables for Bright (Light) Theme */
 :root {
-  --bg-color: #f7f7f7;
-  --text-color: #222;
-  --primary-color: #03dac6;
-  --secondary-color: #cf6679;
+  --bg-color: #ffffff;
+  --text-color: #111111;
+  --primary-color: #2C446F;
+  --secondary-color: #A2C3C9;
   --card-bg: rgba(255, 255, 255, 0.85);
-  --nav-bg: rgba(3,218,198,0.3);
+  --nav-bg: rgba(162, 195, 201, 0.3);
   --cta-text: #222;
   --hero-bg: url('microcontroller.jpg') no-repeat center center;
   --animation-duration: 1s;
@@ -38,10 +38,10 @@ body {
 
 /* Dark Theme Overrides */
 [data-theme="dark"] {
-  --bg-color: #121212;
-  --text-color: #e0e0e0;
-  --card-bg: rgba(30, 30, 30, 0.9);
-  --nav-bg: rgba(31, 31, 31, 0.9);
+  --bg-color: #2C446F;
+  --text-color: #A2C3C9;
+  --card-bg: rgba(44, 68, 111, 0.9);
+  --nav-bg: rgba(44, 68, 111, 0.7);
   --cta-text: #fff;
   --hero-bg: linear-gradient(45deg, #181818, #282828);
 }
