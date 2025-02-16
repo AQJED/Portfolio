@@ -391,13 +391,13 @@ section.in-view {
 
 /* Courses Section */
 #courses-list {
-  list-style: circle;
+  list-style: disc;
   margin-left: 20px;
   margin-top: 10px;
   font-size: 1rem;
 }
 
-/* Darker bullets for Training & Courses */
+/* Solid (dark) bullets for Training & Courses */
 #courses-list li::marker {
   color: #000;
 }
