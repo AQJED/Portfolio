@@ -28,11 +28,18 @@
         summary:
           "Over a decade of experience in software integration, system architecture, and lifecycle management. Skilled in integrating hardware, software, and network components for military and defense systems. Expertise in troubleshooting, optimizing performance, and ensuring regulatory compliance. Passionate about leveraging technology for national projects.",
         educationTitle: "Education & Academic Achievements",
-        educationText: "<strong>Degrees:</strong>",
+        educationText: "", // Removed "Degrees:" label
+        // Each education item is now an HTML string with the required formatting.
         educationList: [
-          "B.S. in Computer Engineering – California State University, San Bernardino (2015 – 2018). Focused on high-performance and embedded systems.",
-          "Deep Learning (AI) Nanodegree – MISK (2019 – 2020). Hands-on experience in 6 artificial intelligence projects.",
-          "Associate Degree in Electrical & Electronics – Yanbu Industrial College (2004 – 2008). Specialized in instrumentation and control systems."
+          `<strong>B.S. in Computer Engineering</strong><br>
+           California State University, San Bernardino (2015 – 2018)<br>
+           <em>Focused on high-performance and embedded systems.</em>`,
+          `<strong>Deep Learning (AI) Nanodegree</strong><br>
+           MISK Foundation (2019 – 2020)<br>
+           <em>Hands-on experience in 6 artificial intelligence projects.</em>`,
+          `<strong>Associate Degree in Electrical & Electronics</strong><br>
+           Yanbu Industrial College (2004 – 2008)<br>
+           <em>Specialized in instrumentation and control systems.</em>`
         ],
         skillsTitle: "Skills",
         skillsText:
@@ -159,7 +166,7 @@
       <span class="experience-location">Jeddah</span>
     </div>
     <ul class="experience-details">
-      <li>Led qualification, testing, commissioning, and certification of Full Flight Simulators.</li>
+      <li>Led qualification, testing, commissioning, and certification of full flight simulators.</li>
       <li>Ensured compliance with FAA, EASA & GACA aviation standards.</li>
       <li>Troubleshot complex technical issues, minimizing downtime.</li>
       <li>Optimized system integration and performance for improved reliability.</li>
@@ -238,14 +245,15 @@
     document.body.setAttribute("dir", "ltr");
   };
 
-  // Render Education List
+  // Render Education List: Create a div with class "edu-bubble" for each education item
   const renderEducationList = lang => {
-    const ul = document.getElementById('education-list');
-    ul.innerHTML = "";
+    const container = document.getElementById('education-list');
+    container.innerHTML = "";
     translations[lang].about.educationList.forEach(item => {
-      const li = document.createElement('li');
-      li.innerHTML = item;
-      ul.appendChild(li);
+      const div = document.createElement('div');
+      div.className = "edu-bubble";
+      div.innerHTML = item;
+      container.appendChild(div);
     });
   };
 
@@ -398,17 +406,14 @@
     renderExperience(currentLang);
   };
 
-  // DOMContentLoaded – Initialize everything
   document.addEventListener("DOMContentLoaded", () => {
     initTheme();
     initLanguage();
     initParticles();
     initScrollReveal();
 
-    // Theme Toggle Button Event Listener
     document.getElementById("theme-toggle-btn").addEventListener("click", toggleTheme);
 
-    // Project Filtering
     document.querySelectorAll('.filter-btn').forEach(button => {
       button.addEventListener('click', () => {
         const filter = button.getAttribute('data-filter');
@@ -418,13 +423,11 @@
       });
     });
 
-    // Toggle Projects Expansion/Collapse
     document.getElementById('toggle-projects').addEventListener('click', () => {
       projectsExpanded = !projectsExpanded;
       renderProjects(currentLang);
     });
 
-    // Smooth Scrolling for Navigation Links
     document.querySelectorAll('nav ul li a').forEach(link => {
       link.addEventListener('click', e => {
         e.preventDefault();
