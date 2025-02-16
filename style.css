@@ -81,7 +81,6 @@ button:focus {
   margin-bottom: 15px;
 }
 
-/* Achievements Container */
 .achievements-container {
   display: flex;
   gap: 20px;
@@ -396,6 +395,11 @@ section.in-view {
   margin-left: 20px;
   margin-top: 10px;
   font-size: 1rem;
+}
+
+/* Darker bullets for Training & Courses */
+#courses-list li::marker {
+  color: #000;
 }
 
 /* Experience Section Styles */
