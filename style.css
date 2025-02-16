@@ -30,7 +30,6 @@ body {
   --card-bg: rgba(255, 255, 255, 0.85);
   --nav-bg: rgba(3,218,198,0.3);
   --cta-text: #222;
-  /* Fixed, stable gradient for the bright hero */
   --hero-bg: url('microcontroller.jpg') no-repeat center center;
   --animation-duration: 1s;
   --animation-ease: ease-out;
@@ -286,12 +285,11 @@ section.in-view {
   margin-top: 10px;
 }
 
-/* Timeline Section (Left-Right, with vertical offset) */
+/* Timeline Section (Left-Right, with vertical offset and center vertical line) */
 .timeline-section {
   position: relative;
 }
 
-/* Vertical center line */
 .timeline-container {
   position: relative;
   width: 100%;
@@ -309,16 +307,15 @@ section.in-view {
   z-index: 0;
 }
 
-/* Each item: 50% width, float left or right, spaced vertically */
+/* Each timeline item occupies 50% width and alternates left/right */
 .timeline-item {
   position: relative;
   width: 50%;
   padding: 20px;
   box-sizing: border-box;
-  margin-bottom: 80px; /* vertical spacing between items */
+  margin-bottom: 80px;
 }
 
-/* Left items float left, right items float right */
 .timeline-item.left {
   float: left;
   text-align: right;
@@ -327,39 +324,31 @@ section.in-view {
 .timeline-item.right {
   float: right;
   text-align: left;
-  margin-top: 60px; /* offset so it doesn't line up with left item */
+  margin-top: 60px;
 }
 
-/* Overlap Supervisor with FSE using negative margin if desired */
+/* Overlap adjustment if needed */
 .overlap {
-  margin-top: -30px; /* Overlap with previous item */
+  margin-top: -30px;
 }
 
-/* The bubble icon with year text */
+/* Timeline icon: always centered on the vertical line */
 .timeline-icon {
   position: absolute;
   top: 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
   border-radius: 50%;
   text-align: center;
   font-weight: bold;
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   z-index: 1;
-  line-height: 40px; /* default line-height for bubble */
   color: #000;
   background: var(--primary-color);
+  line-height: 40px;
 }
 
-/* For left items, bubble is on the right side near center line; for right items, bubble is on the left side near center line */
-.timeline-item.left .timeline-icon {
-  right: -20px;
-}
-
-.timeline-item.right .timeline-icon {
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-/* Adjust bubble size based on time spent */
+/* Bubble sizes based on duration */
 .timeline-icon.small {
   width: 35px;
   height: 35px;
@@ -381,7 +370,7 @@ section.in-view {
   font-size: 0.9rem;
 }
 
-/* The content block with smaller font overall */
+/* Timeline content block with slightly smaller text */
 .timeline-content {
   position: relative;
   display: inline-block;
@@ -392,10 +381,10 @@ section.in-view {
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
   padding: 20px;
   margin-top: 20px;
-  font-size: 0.95rem; /* smaller text overall */
+  font-size: 0.95rem;
 }
 
-/* Adjust spacing so content doesn't overlap the center line */
+/* Adjust spacing so content doesn't overlap the vertical line */
 .timeline-item.left .timeline-content {
   margin-right: 40px;
 }
@@ -404,12 +393,12 @@ section.in-view {
   margin-left: 40px;
 }
 
-/* Title smaller, date even smaller */
+/* Timeline content headings and dates with smaller fonts */
 .timeline-content h3 {
   margin-top: 0;
   margin-bottom: 5px;
   color: var(--primary-color);
-  font-size: 1.1rem; /* smaller heading */
+  font-size: 1.1rem;
 }
 
 .timeline-date {
@@ -419,7 +408,7 @@ section.in-view {
   margin-bottom: 5px;
 }
 
-/* Clear floats at the end */
+/* Clear floats */
 .timeline-container::after {
   content: "";
   display: table;
@@ -444,7 +433,6 @@ section.in-view {
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
   font-size: 1.2rem;
-  /* Animation properties */
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInSlide var(--animation-duration) ease-out forwards;
@@ -608,7 +596,7 @@ footer {
   .hero-content p {
     font-size: 1.2rem;
   }
-  /* Timeline on mobile stacks all items with no left/right offset */
+  /* Timeline on mobile stacks items vertically */
   .timeline-container::before {
     left: 20px;
   }
@@ -620,13 +608,11 @@ footer {
     padding-left: 60px;
   }
   .timeline-item.right {
-    margin-top: 0; /* remove offset on mobile */
+    margin-top: 0;
   }
-  .timeline-item.left .timeline-icon,
-  .timeline-item.right .timeline-icon {
-    left: 0;
-    right: auto;
-    transform: translateX(0);
+  .timeline-icon {
+    left: 20px;
+    transform: none;
   }
   .timeline-item.left .timeline-content,
   .timeline-item.right .timeline-content {
