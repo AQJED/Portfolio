@@ -1,3 +1,4 @@
+/* script.js */
 (() => {
   'use strict';
 
@@ -248,7 +249,7 @@
     });
   };
 
-  // Render Projects Grid
+  // Render Projects Grid with "Tech Stack" label
   const renderProjects = lang => {
     const grid = document.getElementById('projects-grid');
     grid.innerHTML = "";
@@ -261,7 +262,7 @@
         <h3>${project.title}</h3>
         <p><em>${project.subtitle}</em></p>
         <p>${project.description}</p>
-        <p><strong>Technologies:</strong> ${project.technologies}</p>
+        <p><strong>Tech Stack:</strong> ${project.technologies}</p>
       `;
       if (!projectsExpanded && index >= initialVisibleCount) {
         card.classList.add("hidden");
