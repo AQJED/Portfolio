@@ -461,6 +461,12 @@
     });
   };
 
+  // Render Experience Section
+  const renderExperience = lang => {
+    const expContainer = document.getElementById('experience-details');
+    expContainer.innerHTML = translations[lang].experience.details;
+  };
+
   // Initialize Scroll Reveal via Intersection Observer
   const initScrollReveal = () => {
     const revealElements = document.querySelectorAll('.reveal');
@@ -558,6 +564,7 @@
     renderEducationList(currentLang);
     renderProjects(currentLang);
     renderCourses(currentLang);
+    renderExperience(currentLang);
     document.getElementById("toggle-lang").innerHTML = currentLang === 'en' ? "العربية" : "English";
   };
 
@@ -579,6 +586,7 @@
       renderEducationList(currentLang);
       renderProjects(currentLang);
       renderCourses(currentLang);
+      renderExperience(currentLang);
       document.getElementById("toggle-lang").innerHTML = currentLang === 'en' ? "العربية" : "English";
     });
 
