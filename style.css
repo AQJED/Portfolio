@@ -31,7 +31,7 @@ body {
   --nav-bg: rgba(3,218,198,0.3);
   --cta-text: #222;
   /* Fixed, stable gradient for the bright hero */
-  --hero-bg: linear-gradient(45deg, #03dac6, #cf6679);
+  --hero-bg: url('microcontroller.jpg') no-repeat center center;
   --animation-duration: 1s;
   --animation-ease: ease-out;
   --glass-blur: 10px;
@@ -75,8 +75,10 @@ button:focus {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background: url('microcontroller.jpg') no-repeat center center/cover;
+  background: url('microcontroller.jpg') no-repeat center center;
+  background-size: cover;
 }
+
 
 
 .hero-overlay {
