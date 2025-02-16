@@ -64,6 +64,23 @@ button:focus {
   margin: 20px 0;
 }
 
+/* Bubble styles for About Me and Achievements sections */
+.bubble {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  margin-bottom: 20px;
+}
+
+.edu-bubble {
+  background: var(--card-bg);
+  padding: 15px;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  margin-bottom: 15px;
+}
+
 /* HERO SECTION */
 #hero {
   position: relative;
@@ -277,12 +294,6 @@ section.in-view {
 #education-list {
   font-size: 1rem;
   line-height: 1.5;
-}
-
-#education-list {
-  list-style: disc;
-  margin-left: 20px;
-  margin-top: 10px;
 }
 
 /* Projects Section */
