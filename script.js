@@ -1,564 +1,465 @@
-/* style.css */
-
-/* Reset & Global Styles */
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  line-height: 1.6;
-  background: var(--bg-color);
-  color: var(--text-color);
-  transition: background 0.3s, color 0.3s;
-}
-
-/* CSS Variables for Bright (Light) Theme */
-:root {
-  --bg-color: #f7f7f7;
-  --text-color: #222;
-  --primary-color: #03dac6;
-  --secondary-color: #cf6679;
-  --card-bg: rgba(255, 255, 255, 0.85);
-  --nav-bg: rgba(3,218,198,0.3);
-  --cta-text: #222;
-  --hero-bg: url('microcontroller.jpg') no-repeat center center;
-  --animation-duration: 1s;
-  --animation-ease: ease-out;
-  --glass-blur: 10px;
-}
-
-/* Dark Theme Overrides */
-[data-theme="dark"] {
-  --bg-color: #121212;
-  --text-color: #e0e0e0;
-  --card-bg: rgba(30, 30, 30, 0.9);
-  --nav-bg: rgba(31, 31, 31, 0.9);
-  --cta-text: #fff;
-  --hero-bg: linear-gradient(45deg, #181818, #282828);
-}
-
-/* Focus Styles */
-a:focus,
-button:focus {
-  outline: 3px solid var(--primary-color);
-  outline-offset: 2px;
-}
-
-/* Glassmorphism Utility Class */
-.glass {
-  background: var(--card-bg);
-  backdrop-filter: blur(var(--glass-blur));
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  margin: 20px 0;
-}
-
-/* Bubbles for About Me & Achievements */
-.bubble {
-  background: var(--card-bg);
-  padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  margin-bottom: 20px;
-}
-
-.edu-bubble {
-  background: var(--card-bg);
-  padding: 15px;
-  border-radius: 16px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  margin-bottom: 15px;
-}
-
-.achievements-container {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.achievement-bubble {
-  background: var(--card-bg);
-  padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  flex: 1;
-  min-width: 300px;
-  margin-bottom: 20px;
-}
-
-/* HERO SECTION */
-#hero {
-  position: relative;
-  min-height: 100vh;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background: var(--hero-bg);
-  background-size: cover;
-}
-
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  z-index: 1;
-}
-
-[data-theme="dark"] .hero-overlay {
-  background: rgba(0, 0, 0, 0.3);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  padding: 20px;
-}
-
-/* Hero text styles */
-[data-theme="light"] .hero-content h1 {
-  font-size: 4rem;
-  color: #fff;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-  margin-bottom: 10px;
-}
-
-[data-theme="dark"] .hero-content h1 {
-  font-size: 4rem;
-  color: #e0e0e0;
-  margin-bottom: 10px;
-}
-
-/* Hero Subtitle */
-.hero-subtitle {
-  font-size: 1.2rem;
-  color: #fff;
-  margin-bottom: 10px;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
-}
-
-[data-theme="light"] .hero-content p {
-  font-size: 1.5rem;
-  color: #f0f0f0;
-  margin-bottom: 30px;
-}
-
-[data-theme="dark"] .hero-content p {
-  font-size: 1.5rem;
-  color: #ccc;
-  margin-bottom: 30px;
-}
-
-.hero-buttons a {
-  display: inline-block;
-  padding: 14px 24px;
-  border-radius: 8px;
-  text-decoration: none;
-  margin: 0 10px;
-  background: var(--primary-color);
-  color: #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.hero-buttons a:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-}
-
-/* Particle Canvas (behind hero content) */
-#particle-canvas {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background: transparent;
-}
-
-/* Navigation */
-#navbar {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: var(--nav-bg);
-  padding: 10px 20px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#navbar ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-}
-
-#navbar ul li a {
-  text-decoration: none;
-  color: var(--text-color);
-  font-weight: 600;
-  transition: color 0.3s;
-}
-
-#navbar ul li a:hover {
-  color: var(--primary-color);
-}
-
-.toggle-controls {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-#theme-toggle-btn {
-  width: 40px;
-  height: 20px;
-  background: var(--secondary-color);
-  border: none;
-  border-radius: 10px;
-  position: relative;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-#theme-toggle-btn::after {
-  content: "";
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  background: var(--bg-color);
-  border-radius: 50%;
-  top: 1px;
-  left: 1px;
-  transition: transform 0.3s;
-}
-
-[data-theme="dark"] #theme-toggle-btn {
-  background: var(--primary-color);
-}
-
-[data-theme="dark"] #theme-toggle-btn::after {
-  transform: translateX(20px);
-}
-
-#toggle-lang {
-  padding: 12px 16px;
-  background: var(--primary-color);
-  color: var(--cta-text);
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-#toggle-lang:hover {
-  background: var(--secondary-color);
-}
-
-/* Main Content */
-main {
-  padding: 60px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Section Styles */
-section {
-  margin-bottom: 80px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s, transform 0.6s;
-}
-
-section.in-view {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.section-inner {
-  padding: 40px 30px;
-  border-radius: 16px;
-}
-
-/* About & Other Sections */
-.about-content {
-  display: grid;
-  gap: 30px;
-}
-
-.about-section h3 {
-  margin-bottom: 10px;
-  font-size: 1.5rem;
-  color: var(--primary-color);
-}
-
-.about-section p,
-#education-list {
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-/* Projects Section */
-.project-filters {
-  margin-bottom: 30px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-}
-
-.filter-btn {
-  padding: 12px 16px;
-  border: none;
-  background: var(--primary-color);
-  color: #000;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
-  font-size: 1.2rem;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInSlide var(--animation-duration) ease-out forwards;
-  animation-delay: 0.3s;
-}
-
-.filter-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-}
-
-/* Projects Grid */
-.projects-wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 20px;
-}
-
-.project-card {
-  background: var(--card-bg);
-  padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  transition: transform 0.3s, opacity 0.3s;
-}
-
-.project-card.hidden {
-  display: none;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-}
-
-.toggle-projects-btn {
-  display: block;
-  margin: 30px auto 0;
-  padding: 12px 20px;
-  background: var(--primary-color);
-  color: var(--cta-text);
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: transform 0.3s, background 0.3s;
-}
-
-.toggle-projects-btn:hover {
-  background: var(--secondary-color);
-  transform: scale(1.05);
-}
-
-/* Separator before Tech Stack */
-.tech-stack-separator {
-  border: none;
-  border-top: 1px solid var(--primary-color);
-  margin: 10px 0;
-}
-
-/* Courses Section */
-#courses-list {
-  list-style: disc;
-  margin-left: 20px;
-  margin-top: 10px;
-  font-size: 1rem;
-}
-
-/* Solid (dark) bullets for Training & Courses */
-#courses-list li::marker {
-  color: #000;
-}
-
-/* Experience Section Styles */
-.experience-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin-top: 20px;
-}
-
-.experience-item {
-  background: var(--card-bg);
-  padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
-
-.experience-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  padding-bottom: 10px;
-}
-
-.experience-header h3 {
-  font-size: 1.5rem;
-  color: var(--primary-color);
-}
-
-.experience-duration {
-  font-size: 0.9rem;
-  color: var(--text-color);
-}
-
-.experience-meta {
-  font-size: 0.9rem;
-  color: var(--text-color);
-  margin-bottom: 10px;
-}
-
-.experience-meta span {
-  margin-right: 10px;
-}
-
-.experience-details {
-  list-style: disc;
-  margin-left: 20px;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: var(--nav-bg);
-  border-top: 1px solid rgba(255,255,255,0.1);
-  margin-top: 60px;
-}
-
-.footer-links a {
-  margin: 0 15px;
-  text-decoration: none;
-  color: var(--primary-color);
-  font-weight: 600;
-  transition: color 0.3s;
-}
-
-.footer-links a:hover {
-  color: var(--secondary-color);
-}
-
-/* Keyframe Animations */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideIn {
-  from { transform: translateX(-50px); opacity: 0; }
-  to { transform: translateX(0); opacity: 1; }
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  #navbar {
-    flex-direction: column;
-  }
-  #toggle-lang {
-    margin-top: 10px;
-  }
-  .hero-content h1 {
-    font-size: 2.5rem;
-  }
-  .hero-content p {
-    font-size: 1.2rem;
-  }
-  .achievements-container {
-    flex-direction: column;
-  }
-}
-
-/* Animate hero content elements on load */
-.hero-content h1,
-.hero-content p,
-.hero-buttons a {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInSlide var(--animation-duration) ease-out forwards;
-}
-
-.hero-content h1 {
-  animation-delay: 0.5s;
-}
-
-.hero-content p {
-  animation-delay: 0.7s;
-}
-
-.hero-buttons a {
-  animation-delay: 0.9s;
-}
-
-@keyframes fadeInSlide {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Increase font sizes for Arabic (RTL) texts for better readability */
-body[dir="rtl"] {
-  font-size: 1.1rem;
-}
-
-body[dir="rtl"] .hero-content h1 {
-  font-size: 4.5rem;
-}
-
-body[dir="rtl"] .hero-content p {
-  font-size: 1.7rem;
-}
-
-body[dir="rtl"] h2 {
-  font-size: 2.5rem;
-}
-
-body[dir="rtl"] h3 {
-  font-size: 2rem;
-}
-
-body[dir="rtl"] p,
-body[dir="rtl"] li,
-body[dir="rtl"] a {
-  font-size: 1.2rem;
-}
+/* script.js */
+(() => {
+  'use strict';
+
+  // Translation Data for English only
+  const translations = {
+    en: {
+      nav: {
+        home: "Home",
+        about: "About Me",
+        projects: "Projects",
+        courses: "Training & Courses",
+        github: "GitHub Projects",
+        experience: "Experience",
+        contact: "Contact"
+      },
+      header: {
+        title: "ADEEB ALQAHTANI",
+        contact: "📍 Riyadh | 📧 Adeeb.alqahtani@gmail.com | 📞 966583161518"
+      },
+      hero: {
+        cta: "Discover More",
+        downloadCV: "Download CV"
+      },
+      about: {
+        title: "About Me",
+        summaryTitle: "Summary",
+        summary:
+          "Over a decade of experience in software integration, system architecture, and lifecycle management. Skilled in integrating hardware, software, and network components for military and defense systems. Expertise in troubleshooting, optimizing performance, and ensuring regulatory compliance. Passionate about leveraging technology for national projects.",
+        educationTitle: "Education & Academic Achievements",
+        educationText: "",
+        // All education items will appear in one bubble (joined together)
+        educationList: [
+          `<strong>B.S. in Computer Engineering</strong><br>
+           California State University, San Bernardino (2015 – 2018)<br>
+           <em>Focused on high-performance and embedded systems.</em>`,
+          `<strong>Deep Learning (AI) Nanodegree</strong><br>
+           MISK Foundation (2019 – 2020)<br>
+           <em>Hands-on experience in 6 artificial intelligence projects.</em>`,
+          `<strong>Associate Degree in Electrical & Electronics</strong><br>
+           Yanbu Industrial College (2004 – 2008)<br>
+           <em>Specialized in instrumentation and control systems.</em>`
+        ],
+        skillsTitle: "Skills",
+        skillsText:
+          "<strong>Leadership & Management:</strong> Strategic Thinking, Team Leadership, Problem-Solving, Time Management<br /><strong>Hardware & Embedded Systems:</strong> Circuit Design, Microcontrollers, FPGA Programming, Robotics, Instrumentation & Control Systems<br /><strong>Software & Programming:</strong> C/C++, Python, Matlab, Verilog",
+        keyAchievementsTitle: "Key Achievements",
+        keyAchievementsList: [
+          "Cost Savings of $95K<br>Designed software modifications for a 6-DOF motion system, reducing downtime and enhancing readiness.",
+          "Middleware Solutions<br>Developed real-time, multithreaded C++ middleware for CIGI protocol conversion, enabling seamless integration of distributed systems."
+        ],
+        workAwardsTitle: "Work Awards",
+        workAwardsList: [
+          "Employee of the Month –<br>Recognized multiple times for performance and dedication.",
+          "Appreciation Letters<br>Handling a 6-DOF electrical motion system failure (2022), Software modification for 6-DOF motion system (2022), Teaching Basic Electronics Course (2021), Teaching Basic C++ Programming Course (2019)."
+        ]
+      },
+      projects: {
+        title: "Projects",
+        filters: {
+          all: "All",
+          personal: "Personal Projects",
+          university: "Academic Projects",
+          military: "Professional Projects"
+        },
+        showMore: "Show More",
+        showLess: "Show Less",
+        projectCards: [
+          {
+            title: "CIGI to CIGI Middleware for Cougar Helicopter Visual IG",
+            subtitle: "Professional Project",
+            description: "Developed a multithreaded C++ middleware for real-time CIGI-to-CIGI protocol conversion, enabling efficient data transmission between host computers and image generators.",
+            technologies: "C++, Multithreading, CIGI Protocol",
+            category: "military"
+          },
+          {
+            title: "DIS-CIGI Middleware for Cougar Helicopter CGF",
+            subtitle: "Professional Project",
+            description: "Built a multithreaded C++ middleware for real-time DIS-to-CIGI conversion, integrating Computer Generated Forces (CGF) with the Image Generator (IG).",
+            technologies: "C++, Multithreading, DIS, CIGI",
+            category: "military"
+          },
+          {
+            title: "Servo Drive Firmware Restoration for 6-DOF Motion System",
+            subtitle: "Professional Project",
+            description: "Developed a firmware update station to erase and reinstall firmware for a 6-DOF motion system, avoiding costly hardware replacement and saving $95,000.",
+            technologies: "C++, Firmware, Embedded Systems",
+            category: "military"
+          },
+          {
+            title: "Flight Controls Microcontroller Integration",
+            subtitle: "Professional Project",
+            description: "Integrated a microcontroller to drive simulator flight controls, ensuring responsiveness and regulatory compliance while authoring a comprehensive design and performance assessment report.",
+            technologies: "Microcontrollers, Embedded Systems, C/C++",
+            category: "military"
+          },
+          {
+            title: "5 DOF Robotic Arm Object Detection",
+            subtitle: "Personal Projects",
+            description: "A system to detect the position of an object and how it is oriented through geometry equations to drive a 5 DOF robotic arm. With only laser beams and photo resistors, the system analyzes the 2D shadow to determine the object's location and tilt, then computes the necessary joint and gripper rotation angles.",
+            technologies: "C++, Object-Oriented Programming (OOP), Electronics, Circuit design, Geometry, Linear Algebra",
+            category: "personal"
+          },
+          {
+            title: "Predicting Bike-Sharing Patterns: Neural Network Implementation",
+            subtitle: "Personal Projects",
+            description: "Developed and trained a neural network from scratch using only NumPy to predict daily bike rental ridership. Implemented forward and backward propagation, optimized model parameters, and evaluated performance using regression metrics. Utilized Pandas for data processing and Matplotlib for visualization.",
+            technologies: "Python, Neural Network, Deep learning fundamentals, Algorithm development, and Numerical Computing Skills",
+            category: "personal"
+          },
+          {
+            title: "Image Classification: Convolutional Neural Network",
+            subtitle: "Personal Projects",
+            description: "Designed and implemented a convolutional neural network (CNN) from scratch to classify dog breeds. Built and trained the model using deep learning techniques, optimized performance, and evaluated accuracy on image datasets.",
+            technologies: "Python, Deep Learning & CNNs, Image Processing, Neural Network Optimization, and Model Evaluation",
+            category: "personal"
+          },
+          {
+            title: "Facial Recognition Application for CSUSB Student Services",
+            subtitle: "Academic Projects",
+            description: "Implemented a face recognition program using Non-negative Matrix Factorization (NMF). The program evaluates a captured image and, ideally, identifies the person in the database. It is designed to support a card-free service at California State University, San Bernardino.",
+            technologies: "C++, Object-Oriented Programming (OOP), MATLAB, Facial Recognition, Linear Algebra",
+            category: "university"
+          },
+          {
+            title: "Energy-Efficient Street Light Control and Path Prediction Using Human Detection",
+            subtitle: "Academic Projects",
+            description: "A low-cost, energy-efficient, modular detection-based lighting system with basic path prediction functionality. The system uses an Arduino controller with various detection and environmental sensors.",
+            technologies: "C++, Object-Oriented Programming (OOP), Microcontrollers",
+            category: "university"
+          },
+          {
+            title: "Parking Lot Occupancy System: FPGA Implementation",
+            subtitle: "Academic Projects",
+            description: "Designed and implemented a Verilog-based algorithm to monitor parking lot occupancy, deployed on a Spartan FPGA. Utilized Xilinx tools for coding, simulation, and hardware testing to ensure real-time detection and efficient space management.",
+            technologies: "FPGA Development & Testing, Microcontrollers, Verilog, Digital Logic Design, Xilinx",
+            category: "university"
+          }
+        ]
+      },
+      github: {
+        title: "GitHub Projects",
+        description: "Explore my work on GitHub:",
+        linkText: "Visit my GitHub Profile"
+      },
+      experience: {
+        title: "Experience",
+        details: `<div class="experience-container">
+  <div class="experience-item">
+    <div class="experience-header">
+      <h3>Software Integration Engineer</h3>
+      <span class="experience-duration">Nov 2024 – Present</span>
+    </div>
+    <div class="experience-meta">
+      <span class="experience-company"><strong>Rheinmetall Arabia For Simulation and Training</strong></span>
+      <span class="experience-location">Riyadh</span>
+    </div>
+    <ul class="experience-details">
+      <li>Developed middleware solutions for real-time data integration between host systems and external modules.</li>
+      <li>Led the full SDLC for simulation and training systems, including design, integration, and deployment.</li>
+      <li>Conducted root cause analysis and troubleshooting for system reliability.</li>
+      <li>Designed system architectures for simulator upgrades.</li>
+      <li>Performed site surveys and recommended enhancements for simulator performance.</li>
+    </ul>
+  </div>
+  <div class="experience-item">
+    <div class="experience-header">
+      <h3>Flight Simulator Engineer</h3>
+      <span class="experience-duration">Jan 2019 – Oct 2024</span>
+    </div>
+    <div class="experience-meta">
+      <span class="experience-company"><strong>PSAA Engineering Department</strong></span>
+      <span class="experience-location">Jeddah</span>
+    </div>
+    <ul class="experience-details">
+      <li>Led qualification, testing, commissioning, and certification of full flight simulators.</li>
+      <li>Ensured compliance with FAA, EASA & GACA aviation standards.</li>
+      <li>Troubleshot complex technical issues, minimizing downtime.</li>
+      <li>Optimized system integration and performance for improved reliability.</li>
+    </ul>
+  </div>
+  <div class="experience-item">
+    <div class="experience-header">
+      <h3>Flight Simulator Maintenance Supervisor (D)</h3>
+      <span class="experience-duration">Jan 2024 – June 2024</span>
+    </div>
+    <div class="experience-meta">
+      <span class="experience-company"><strong>PSAA Technical Services Department</strong></span>
+      <span class="experience-location">Jeddah</span>
+    </div>
+    <ul class="experience-details">
+      <li>Managed a team of technicians, optimizing scheduling and training readiness.</li>
+      <li>Ensured compliance with regulatory and safety standards.</li>
+      <li>Delivered strategic reports and operational analyses.</li>
+    </ul>
+  </div>
+  <div class="experience-item">
+    <div class="experience-header">
+      <h3>Full Flight Simulator Technician</h3>
+      <span class="experience-duration">Apr 2010 – Dec 2013</span>
+    </div>
+    <div class="experience-meta">
+      <span class="experience-company"><strong>PSAA Technical Services Department</strong></span>
+      <span class="experience-location">Jeddah</span>
+    </div>
+    <ul class="experience-details">
+      <li>Maintained and optimized flight simulators for realistic pilot training.</li>
+      <li>Configured single-board computers and upgraded I/O units.</li>
+      <li>Installed, calibrated, and aligned instrument panels, visual systems, and motion platforms.</li>
+      <li>Improved uptime and customized systems for specific training needs.</li>
+    </ul>
+  </div>
+</div>`
+      },
+      courses: {
+        title: "Training & Courses",
+        events: [
+          "1000+ hours of technical training from Canadian Aviation Electronics, L3Harris, and Collins Aerospace.",
+          "PMP Course",
+          "Advanced Electronics",
+          "Interface Systems",
+          "Electromechanical Motion & Controls",
+          "Computer Networks",
+          "Python for Data Science & AI"
+        ]
+      },
+      footer: {
+        text: "&copy; 2025 Adeeb Alqahtani. All rights reserved.",
+        linkedin: "LinkedIn",
+        github: "GitHub"
+      }
+    }
+  };
+
+  // Force language to English
+  const currentLang = "en";
+  const initialVisibleCount = 6;
+  let projectsExpanded = false;
+
+  // Helper function to retrieve nested translation values
+  const getNestedTranslation = (obj, key) =>
+    key.split('.').reduce((o, i) => (o ? o[i] : null), obj);
+
+  // Update page translations and document attributes
+  const translatePage = lang => {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const translation = getNestedTranslation(translations[lang], key);
+      if (translation) el.innerHTML = translation;
+    });
+    document.documentElement.lang = lang;
+    document.body.setAttribute("dir", "ltr");
+  };
+
+  // Render Education List in a single bubble (join all education items with breaks)
+  const renderEducationList = lang => {
+    const container = document.getElementById('education-list');
+    container.innerHTML = translations[lang].about.educationList.join("<br><br>");
+  };
+
+  // Render Key Achievements List
+  const renderKeyAchievements = lang => {
+    const ul = document.getElementById('key-achievements-list');
+    ul.innerHTML = "";
+    translations[lang].about.keyAchievementsList.forEach(item => {
+      const li = document.createElement('li');
+      li.innerHTML = item;
+      ul.appendChild(li);
+    });
+  };
+
+  // Render Work Awards List
+  const renderWorkAwards = lang => {
+    const ul = document.getElementById('work-awards-list');
+    ul.innerHTML = "";
+    translations[lang].about.workAwardsList.forEach(item => {
+      const li = document.createElement('li');
+      li.innerHTML = item;
+      ul.appendChild(li);
+    });
+  };
+
+  // Render Projects Grid with "Tech Stack" label and separator
+  const renderProjects = lang => {
+    const grid = document.getElementById('projects-grid');
+    grid.innerHTML = "";
+    const projects = translations[lang].projects.projectCards;
+    projects.forEach((project, index) => {
+      const card = document.createElement('div');
+      card.className = 'project-card';
+      card.setAttribute('data-category', project.category);
+      card.innerHTML = `
+        <h3>${project.title}</h3>
+        <p><em>${project.subtitle}</em></p>
+        <p>${project.description}</p>
+        <hr class="tech-stack-separator">
+        <p><strong>Tech Stack:</strong> ${project.technologies}</p>
+      `;
+      if (!projectsExpanded && index >= initialVisibleCount) {
+        card.classList.add("hidden");
+      }
+      grid.appendChild(card);
+    });
+    const toggleBtn = document.getElementById('toggle-projects');
+    if (projects.length <= initialVisibleCount) {
+      toggleBtn.style.display = 'none';
+    } else {
+      toggleBtn.style.display = 'block';
+      toggleBtn.innerHTML = projectsExpanded 
+        ? getNestedTranslation(translations[currentLang], 'projects.showLess')
+        : getNestedTranslation(translations[currentLang], 'projects.showMore');
+    }
+  };
+
+  // Render Courses List
+  const renderCourses = lang => {
+    const ul = document.getElementById('courses-list');
+    ul.innerHTML = "";
+    translations[lang].courses.events.forEach(course => {
+      const li = document.createElement('li');
+      li.innerHTML = course;
+      ul.appendChild(li);
+    });
+  };
+
+  // Render Experience Section
+  const renderExperience = lang => {
+    const expContainer = document.getElementById('experience-details');
+    expContainer.innerHTML = translations[lang].experience.details;
+  };
+
+  // Initialize Scroll Reveal using Intersection Observer
+  const initScrollReveal = () => {
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+        }
+      });
+    }, { threshold: 0.2 });
+    revealElements.forEach(el => observer.observe(el));
+  };
+
+  // Theme Toggle Function
+  const toggleTheme = () => {
+    const currentTheme = document.documentElement.getAttribute("data-theme");
+    const newTheme = currentTheme === "light" ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
+  };
+
+  const initTheme = () => {
+    const savedTheme = localStorage.getItem("theme") || "light";
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  };
+
+  // Particle Animation for Hero Section
+  const initParticles = () => {
+    const canvas = document.getElementById('particle-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let particlesArray = [];
+    const numberOfParticles = 150;
+    const heroSection = document.getElementById('hero');
+
+    const resizeCanvas = () => {
+      canvas.width = heroSection.offsetWidth;
+      canvas.height = heroSection.offsetHeight;
+    };
+
+    resizeCanvas();
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(resizeCanvas, 200);
+    });
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.radius = Math.random() * 2 + 1;
+        this.vx = (Math.random() - 0.5) * 0.3;
+        this.vy = (Math.random() - 0.5) * 0.3;
+      }
+      draw() {
+        const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+        const alpha = 0.4 + Math.random() * 0.2;
+        ctx.fillStyle = isDark
+          ? `rgba(100,100,100,${alpha})`
+          : `rgba(3,218,198,${alpha})`;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      update() {
+        if (this.x + this.radius > canvas.width || this.x - this.radius < 0) this.vx = -this.vx;
+        if (this.y + this.radius > canvas.height || this.y - this.radius < 0) this.vy = -this.vy;
+        this.x += this.vx;
+        this.y += this.vy;
+        this.draw();
+      }
+    }
+
+    const initParticlesArray = () => {
+      particlesArray = [];
+      for (let i = 0; i < numberOfParticles; i++) {
+        particlesArray.push(new Particle());
+      }
+    };
+
+    const animateParticles = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particlesArray.forEach(particle => particle.update());
+      requestAnimationFrame(animateParticles);
+    };
+
+    initParticlesArray();
+    animateParticles();
+  };
+
+  // Initialize Language & Render All Content
+  const initLanguage = () => {
+    translatePage(currentLang);
+    renderEducationList(currentLang);
+    renderProjects(currentLang);
+    renderCourses(currentLang);
+    renderExperience(currentLang);
+    renderKeyAchievements(currentLang);
+    renderWorkAwards(currentLang);
+  };
+
+  document.addEventListener("DOMContentLoaded", () => {
+    initTheme();
+    initLanguage();
+    initParticles();
+    initScrollReveal();
+
+    document.getElementById("theme-toggle-btn").addEventListener("click", toggleTheme);
+
+    document.querySelectorAll('.filter-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.getAttribute('data-filter');
+        document.querySelectorAll('.project-card').forEach(card => {
+          card.style.display = (filter === 'all' || card.getAttribute('data-category') === filter) ? "block" : "none";
+        });
+      });
+    });
+
+    document.getElementById('toggle-projects').addEventListener('click', () => {
+      projectsExpanded = !projectsExpanded;
+      renderProjects(currentLang);
+    });
+
+    document.querySelectorAll('nav ul li a').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        targetSection.scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  });
+})();
