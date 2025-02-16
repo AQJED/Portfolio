@@ -1,8 +1,7 @@
-/* script.js */
 (() => {
   'use strict';
 
-  // Translation Data for English and Arabic
+  // Translation Data for English only
   const translations = {
     en: {
       nav: {
@@ -83,7 +82,7 @@
           {
             title: "5 DOF Robotic Arm Object Detection",
             subtitle: "Personal Projects",
-            description: "A system to detect the position of an object and how it is oriented through geometry equations to drive a 5 DOF robotic arm. With only laser beams and photo resistors, the system is able to analyze the 2D shadow created by the object that falls in the detection zone of the laser beams, then detect where the object is located and how it is tilted. The system then computes the necessary rotation angles for the joints and the gripper, making it a highly efficient system.",
+            description: "A system to detect the position of an object and how it is oriented through geometry equations to drive a 5 DOF robotic arm. With only laser beams and photo resistors, the system analyzes the 2D shadow to determine the object's location and tilt, then computes the necessary joint and gripper rotation angles.",
             technologies: "C++, Object-Oriented Programming (OOP), Electronics, Circuit design, Geometry, Linear Algebra",
             category: "personal"
           },
@@ -97,32 +96,31 @@
           {
             title: "Image Classification: Convolutional Neural Network",
             subtitle: "Personal Projects",
-            description: "Designed and implemented a convolutional neural network (CNN) from scratch to classify dog breeds. Built and trained the model using deep learning techniques, optimized performance, and evaluated accuracy on image datasets. ",
+            description: "Designed and implemented a convolutional neural network (CNN) from scratch to classify dog breeds. Built and trained the model using deep learning techniques, optimized performance, and evaluated accuracy on image datasets.",
             technologies: "Python, Deep Learning & CNNs, Image Processing, Neural Network Optimization, and Model Evaluation",
             category: "personal"
           },
           {
-            title: "Facial Recognition application for CSUSB Student Services",
+            title: "Facial Recognition Application for CSUSB Student Services",
             subtitle: "Academic Projects",
-            description: "Using Non-negative Matrix Factorization (NMF), implemented a face recognition program. A picture of a person that is taken will be evaluated and, ideally, correctly identify that same person that is in the database. This program will implement a “Card Free Service” at California State University, San Bernardino, where students would not be required to carry and show a student identification card anymore.",
+            description: "Implemented a face recognition program using Non-negative Matrix Factorization (NMF). The program evaluates a captured image and, ideally, identifies the person in the database. It is designed to support a card-free service at California State University, San Bernardino.",
             technologies: "C++, Object-Oriented Programming (OOP), MATLAB, Facial Recognition, Linear Algebra",
             category: "university"
           },
           {
             title: "Energy-Efficient Street Light Control and Path Prediction Using Human Detection",
             subtitle: "Academic Projects",
-            description: "This project is a low-cost, energy-efficient, and highly modular detection-based light system with basic path prediction functionality. The system uses an Arduino controller, any combination of a variety of different detection sensors, and environmental sensors to perform its functions. ",
-            technologies: "C++, Object-Oriented Programming (OOP), Microcontrollers ",
+            description: "A low-cost, energy-efficient, modular detection-based lighting system with basic path prediction functionality. The system uses an Arduino controller with various detection and environmental sensors.",
+            technologies: "C++, Object-Oriented Programming (OOP), Microcontrollers",
             category: "university"
-           },
+          },
           {
             title: "Parking Lot Occupancy System: FPGA Implementation",
             subtitle: "Academic Projects",
-            description: "Designed and implemented a Verilog-based algorithm to monitor parking lot occupancy, deploying it on a Spartan FPGA. Used Xilinx tools for coding, simulation, and hardware testing, ensuring real-time detection and efficient space management. ",
-            technologies: "FPGA Development & Testing, Microcontrollers, Hardware Description Language (Verilog), Digital Logic Design, Xilinx ",
+            description: "Designed and implemented a Verilog-based algorithm to monitor parking lot occupancy, deployed on a Spartan FPGA. Utilized Xilinx tools for coding, simulation, and hardware testing to ensure real-time detection and efficient space management.",
+            technologies: "FPGA Development & Testing, Microcontrollers, Verilog, Digital Logic Design, Xilinx",
             category: "university"
           }
-          
         ]
       },
       github: {
@@ -216,180 +214,11 @@
         linkedin: "LinkedIn",
         github: "GitHub"
       }
-    },
-    ar: {
-      nav: {
-        home: "الرئيسية",
-        about: "من أنا",
-        projects: "المشاريع",
-        courses: "الدورات والتدريبات",
-        github: "مشاريع GitHub",
-        experience: "الخبرات",
-        contact: "تواصل"
-      },
-      header: {
-        title: "أديب القحطاني",
-        contact: "📍 الرياض | 📧 Adeeb.alqahtani@gmail.com | 📞 966583161518"
-      },
-      hero: {
-        cta: "استكشف المزيد",
-        downloadCV: "تحميل السيرة الذاتية"
-      },
-      about: {
-        title: "من أنا",
-        summaryTitle: "الملخص",
-        summary:
-          "أكثر من عقد من الخبرة في تكامل البرمجيات، وهندسة الأنظمة، وإدارة دورة الحياة. ماهر في تكامل المكونات المادية والبرمجية وشبكات الاتصال للأنظمة العسكرية والدفاعية. يمتلك خبرة في تحليل المشكلات وتحسين الأداء وضمان الامتثال للمعايير التنظيمية. شغوف باستخدام التكنولوجيا في المشاريع الوطنية.",
-        educationTitle: "التعليم والإنجازات الأكاديمية",
-        educationText: "<strong>الشهادات:</strong>",
-        educationList: [
-          "بكالوريوس في هندسة الحاسوب – جامعة ولاية كاليفورنيا، سان برناردينو (2015 – 2018). مع التركيز على الأنظمة عالية الأداء والمضمنة.",
-          "شهادة نانوية في التعلم العميق (الذكاء الاصطناعي) – MISK (2019 – 2020). خبرة عملية في 6 مشاريع ذكاء اصطناعي.",
-          "دبلوم في الإلكترونيات والكهرباء – كلية الصناعات في ينبع (2004 – 2008). متخصص في نظم التحكم والأجهزة."
-        ],
-        skillsTitle: "المهارات",
-        skillsText:
-          "<strong>الإدارة والقيادة:</strong> التفكير الاستراتيجي، قيادة الفريق، حل المشكلات، إدارة الوقت<br /><strong>المهارات المادية والأنظمة المضمنة:</strong> تصميم الدوائر، المتحكمات الدقيقة، برمجة FPGA، الروبوتات، نظم التحكم والأجهزة<br /><strong>البرمجيات والبرمجة:</strong> C/C++, Python, Matlab, Verilog",
-        interestsTitle: "الإنجازات والجوائز",
-        interestsText:
-          "<strong>الإنجازات الرئيسية:</strong><ul><li>توفير تكلفة بقيمة 95 ألف دولار – تصميم تعديلات برمجية لنظام حركة 6-DOF، مما قلل من وقت التوقف وحسن الجاهزية.</li><li>حلول الوسيط – تطوير وسائط برمجية متعددة الخيوط بلغة C++ لتحويل بروتوكول CIGI في الوقت الفعلي، مما مكّن من نقل البيانات بكفاءة.</li></ul><strong>جوائز العمل:</strong><ul><li>موظف الشهر – تكريم متكرر للأداء والالتزام.</li><li>خطابات تقدير: التعامل مع عطل نظام الحركة الكهربائية 6-DOF (2022)، تعديل برمجي لنظام الحركة 6-DOF (2022)، تدريس دورة الإلكترونيات الأساسية (2021)، تدريس دورة برمجة C++ الأساسية (2019)</li></ul>"
-      },
-      projects: {
-        title: "المشاريع",
-        filters: {
-          all: "الكل",
-          personal: "مشاريع شخصية",
-          university: "مشاريع أكاديمية",
-          military: "مشاريع احترافية"
-        },
-        showMore: "عرض المزيد",
-        showLess: "عرض أقل",
-        projectCards: [
-          {
-            title: "وسيط تحويل CIGI إلى CIGI لهليكوبتر كوجر للنظام البصري",
-            subtitle: "مشروع احترافي",
-            description: "تطوير وسائط برمجية متعددة الخيوط بلغة C++ لتحويل بروتوكول CIGI في الوقت الفعلي، مما مكّن من نقل البيانات بكفاءة بين الحواسيب والمولدات البصرية.",
-            technologies: "C++، تعدد الخيوط، بروتوكول CIGI",
-            category: "military"
-          },
-          {
-            title: "وسيط DIS-CIGI لهليكوبتر كوجر لنظام CGF",
-            subtitle: "مشروع احترافي",
-            description: "بناء وسائط برمجية متعددة الخيوط بلغة C++ لتحويل بروتوكول DIS إلى CIGI في الوقت الفعلي، مع تكامل القوى المولدة حاسوبياً مع المولد البصري.",
-            technologies: "C++، تعدد الخيوط، DIS، CIGI",
-            category: "military"
-          },
-          {
-            title: "استعادة البرنامج الثابت لمحرك السيرفو لنظام الحركة 6-DOF",
-            subtitle: "مشروع احترافي",
-            description: "تطوير محطة تحديث للبرنامج الثابت لمسح وإعادة تثبيت البرنامج لنظام الحركة 6-DOF، مما حال دون استبدال الأجهزة المكلفة ووفر 95,000 دولار.",
-            technologies: "C++، البرنامج الثابت، الأنظمة المضمنة",
-            category: "military"
-          },
-          {
-            title: "تكامل المتحكم الدقيق لنظام التحكم في الطيران",
-            subtitle: "مشروع احترافي",
-            description: "دمج متحكم دقيق لتشغيل نظم التحكم في محاكيات الطيران، مع ضمان الاستجابة والامتثال للمعايير التنظيمية، بالإضافة إلى إعداد تقرير شامل للتصميم والأداء.",
-            technologies: "المتحكمات الدقيقة، الأنظمة المضمنة، C/C++",
-            category: "military"
-          }
-        ]
-      },
-      github: {
-        title: "مشاريع GitHub",
-        description: "استعرض أعمالي على GitHub:",
-        linkText: "زيارة ملفي على GitHub"
-      },
-      experience: {
-        title: "الخبرات",
-        details: `<div class="experience-container">
-  <div class="experience-item">
-    <div class="experience-header">
-      <h3>مهندس تكامل برمجيات</h3>
-      <span class="experience-duration">نوفمبر 2024 – الحاضر</span>
-    </div>
-    <div class="experience-meta">
-      <span class="experience-company"><strong>Rheinmetall Arabia For Simulation and Training</strong></span>
-      <span class="experience-location">الرياض</span>
-    </div>
-    <ul class="experience-details">
-      <li>تطوير حلول وسيط للبيانات في الوقت الفعلي بين الأنظمة المضيفة والوحدات الخارجية.</li>
-      <li>قيادة دورة حياة تطوير الأنظمة لمحاكيات التدريب، بما في ذلك التصميم والتكامل والنشر.</li>
-      <li>إجراء تحليل جذور المشكلات وحلها لضمان موثوقية النظام.</li>
-      <li>تصميم هياكل الأنظمة لترقيات المحاكيات.</li>
-      <li>تنفيذ مسوحات ميدانية وتقديم توصيات لتحسين أداء المحاكيات.</li>
-    </ul>
-  </div>
-  <div class="experience-item">
-    <div class="experience-header">
-      <h3>مهندس محاكيات الطيران</h3>
-      <span class="experience-duration">يناير 2019 – أكتوبر 2024</span>
-    </div>
-    <div class="experience-meta">
-      <span class="experience-company"><strong>قسم الهندسة في PSAA</strong></span>
-      <span class="experience-location">جدة</span>
-    </div>
-    <ul class="experience-details">
-      <li>قيادة عمليات التأهيل والاختبار والتشغيل والشهادة لمحاكيات الطيران الكاملة.</li>
-      <li>ضمان الامتثال لمعايير FAA وEASA وGACA.</li>
-      <li>حل المشكلات التقنية المعقدة لتقليل وقت التوقف عن العمل.</li>
-      <li>تحسين تكامل الأنظمة وأداءها لتحقيق موثوقية أعلى.</li>
-    </ul>
-  </div>
-  <div class="experience-item">
-    <div class="experience-header">
-      <h3>مشرف صيانة محاكيات الطيران (د)</h3>
-      <span class="experience-duration">يناير 2024 – يونيو 2024</span>
-    </div>
-    <div class="experience-meta">
-      <span class="experience-company"><strong>قسم الخدمات الفنية في PSAA</strong></span>
-      <span class="experience-location">جدة</span>
-    </div>
-    <ul class="experience-details">
-      <li>إدارة فريق من الفنيين وتحسين جداول العمل واستعداد التدريب.</li>
-      <li>ضمان الامتثال للمعايير التنظيمية ومعايير السلامة.</li>
-      <li>تقديم تقارير استراتيجية وتحليلات تشغيلية.</li>
-    </ul>
-  </div>
-  <div class="experience-item">
-    <div class="experience-header">
-      <h3>فني محاكيات الطيران</h3>
-      <span class="experience-duration">أبريل 2010 – ديسمبر 2013</span>
-    </div>
-    <div class="experience-meta">
-      <span class="experience-company"><strong>قسم الخدمات الفنية في PSAA</strong></span>
-      <span class="experience-location">جدة</span>
-    </div>
-    <ul class="experience-details">
-      <li>صيانة وتحسين محاكيات الطيران لتوفير تدريب واقعي للطيارين.</li>
-      <li>تهيئة الحواسيب المدمجة وترقية وحدات الإدخال/الإخراج.</li>
-      <li>تركيب، معايرة وتعديل لوحات العدادات، الأنظمة البصرية ومنصات الحركة.</li>
-      <li>تحسين وقت التشغيل وتخصيص الأنظمة لتلبية احتياجات التدريب الخاصة.</li>
-    </ul>
-  </div>
-</div>`
-      },
-      courses: {
-        title: "الدورات والتدريبات",
-        events: [
-          "أكثر من 1000 ساعة تدريب فني من Canadian Aviation Electronics, L3Harris, وCollins Aerospace.",
-          "دورة PMP",
-          "الإلكترونيات المتقدمة",
-          "أنظمة الواجهات",
-          "الحركة الكهروميكانيكية والتحكم",
-          "شبكات الحاسوب",
-          "بايثون لعلوم البيانات والذكاء الاصطناعي"
-        ]
-      },
-      footer: {
-        text: "&copy; 2025 أديب القحطاني. جميع الحقوق محفوظة.",
-        linkedin: "LinkedIn",
-        github: "GitHub"
-      }
     }
   };
 
-  let currentLang = localStorage.getItem("language") || "en";
+  // Since we now only use English, force currentLang to "en"
+  const currentLang = "en";
   const initialVisibleCount = 6;
   let projectsExpanded = false;
 
@@ -405,7 +234,7 @@
       if (translation) el.innerHTML = translation;
     });
     document.documentElement.lang = lang;
-    document.body.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
+    document.body.setAttribute("dir", "ltr");
   };
 
   // Render Education List
@@ -565,7 +394,6 @@
     renderProjects(currentLang);
     renderCourses(currentLang);
     renderExperience(currentLang);
-    document.getElementById("toggle-lang").innerHTML = currentLang === 'en' ? "العربية" : "English";
   };
 
   // DOMContentLoaded – Initialize everything
@@ -577,18 +405,6 @@
 
     // Theme Toggle Button Event Listener
     document.getElementById("theme-toggle-btn").addEventListener("click", toggleTheme);
-
-    // Language Toggle Button
-    document.getElementById("toggle-lang").addEventListener('click', () => {
-      currentLang = currentLang === 'en' ? 'ar' : 'en';
-      localStorage.setItem("language", currentLang);
-      translatePage(currentLang);
-      renderEducationList(currentLang);
-      renderProjects(currentLang);
-      renderCourses(currentLang);
-      renderExperience(currentLang);
-      document.getElementById("toggle-lang").innerHTML = currentLang === 'en' ? "العربية" : "English";
-    });
 
     // Project Filtering
     document.querySelectorAll('.filter-btn').forEach(button => {
