@@ -24,12 +24,12 @@
       },
       about: {
         title: "About Me",
-        summaryTitle: "Summary",
+        biographyTitle: "Biography",
+        // New biography text
         summary:
-          "Over a decade of experience in software integration, system architecture, and lifecycle management. Skilled in integrating hardware, software, and network components for military and defense systems. Expertise in troubleshooting, optimizing performance, and ensuring regulatory compliance. Passionate about leveraging technology for national projects.",
+          "Dynamic Software Integration Engineer with expertise in real-time simulation and middleware development. Currently leading middleware solutions at Rheinmetall Arabia, enabling seamless host-to-visual system communication in high-fidelity flight simulators. With over a decade of experience, I have engineered mission-critical systems, conducted site surveys, and optimized simulator performance to meet defense and aviation standards. Holding a B.S. in Computer Engineering, I specialize in integrating complex hardware and software systems to enhance training realism and operational efficiency.",
         educationTitle: "Education & Academic Achievements",
         educationText: "",
-        // All education items will appear in one bubble (joined together)
         educationList: [
           `<strong>B.S. in Computer Engineering</strong><br>
            California State University, San Bernardino (2015 – 2018)<br>
@@ -41,9 +41,9 @@
            Yanbu Industrial College (2004 – 2008)<br>
            <em>Specialized in instrumentation and control systems.</em>`
         ],
+        // We no longer render skills here
         skillsTitle: "Skills",
-        skillsText:
-          "<strong>Leadership & Management:</strong> Strategic Thinking, Team Leadership, Problem-Solving, Time Management<br /><strong>Hardware & Embedded Systems:</strong> Circuit Design, Microcontrollers, FPGA Programming, Robotics, Instrumentation & Control Systems<br /><strong>Software & Programming:</strong> C/C++, Python, Matlab, Verilog",
+        skillsText: "",
         keyAchievementsTitle: "Key Achievements",
         keyAchievementsList: [
           "Cost Savings of $95K<br>Designed software modifications for a 6-DOF motion system, reducing downtime and enhancing readiness.",
@@ -54,6 +54,37 @@
           "Employee of the Month –<br>Recognized multiple times for performance and dedication.",
           "Appreciation Letters<br>Handling a 6-DOF electrical motion system failure (2022), Software modification for 6-DOF motion system (2022), Teaching Basic Electronics Course (2021), Teaching Basic C++ Programming Course (2019)."
         ]
+      },
+      skills: {
+        title: "Skills",
+        leadership: {
+          title: "Leadership & Management",
+          items: [
+            "Strategic Thinking",
+            "Team Leadership",
+            "Problem-Solving",
+            "Time Management"
+          ]
+        },
+        hardware: {
+          title: "Hardware & Embedded Systems",
+          items: [
+            "Circuit Design",
+            "Microcontrollers",
+            "FPGA Programming",
+            "Robotics",
+            "Instrumentation & Control Systems"
+          ]
+        },
+        software: {
+          title: "Software & Programming",
+          items: [
+            "C/C++",
+            "Python",
+            "Matlab",
+            "Verilog"
+          ]
+        }
       },
       projects: {
         title: "Projects",
@@ -280,6 +311,33 @@
     });
   };
 
+  // Render Skills Section
+  const renderSkills = lang => {
+    const containerLeadership = document.getElementById('leadership-list');
+    containerLeadership.innerHTML = "";
+    translations[lang].skills.leadership.items.forEach(item => {
+      const li = document.createElement('li');
+      li.innerHTML = item;
+      containerLeadership.appendChild(li);
+    });
+
+    const containerHardware = document.getElementById('hardware-list');
+    containerHardware.innerHTML = "";
+    translations[lang].skills.hardware.items.forEach(item => {
+      const li = document.createElement('li');
+      li.innerHTML = item;
+      containerHardware.appendChild(li);
+    });
+
+    const containerSoftware = document.getElementById('software-list');
+    containerSoftware.innerHTML = "";
+    translations[lang].skills.software.items.forEach(item => {
+      const li = document.createElement('li');
+      li.innerHTML = item;
+      containerSoftware.appendChild(li);
+    });
+  };
+
   // Render Projects Grid with "Tech Stack" label and separator
   const renderProjects = lang => {
     const grid = document.getElementById('projects-grid');
@@ -424,11 +482,42 @@
   const initLanguage = () => {
     translatePage(currentLang);
     renderEducationList(currentLang);
+    renderSkills(currentLang);
     renderProjects(currentLang);
     renderCourses(currentLang);
     renderExperience(currentLang);
     renderKeyAchievements(currentLang);
     renderWorkAwards(currentLang);
+  };
+
+  // Render Skills Section
+  const renderSkills = lang => {
+    // Leadership & Management
+    const containerLeadership = document.getElementById('leadership-list');
+    containerLeadership.innerHTML = "";
+    translations[lang].skills.leadership.items.forEach(item => {
+      const li = document.createElement('li');
+      li.innerHTML = item;
+      containerLeadership.appendChild(li);
+    });
+
+    // Hardware & Embedded Systems
+    const containerHardware = document.getElementById('hardware-list');
+    containerHardware.innerHTML = "";
+    translations[lang].skills.hardware.items.forEach(item => {
+      const li = document.createElement('li');
+      li.innerHTML = item;
+      containerHardware.appendChild(li);
+    });
+
+    // Software & Programming
+    const containerSoftware = document.getElementById('software-list');
+    containerSoftware.innerHTML = "";
+    translations[lang].skills.software.items.forEach(item => {
+      const li = document.createElement('li');
+      li.innerHTML = item;
+      containerSoftware.appendChild(li);
+    });
   };
 
   document.addEventListener("DOMContentLoaded", () => {
