@@ -28,8 +28,7 @@
         summary:
           "Over a decade of experience in software integration, system architecture, and lifecycle management. Skilled in integrating hardware, software, and network components for military and defense systems. Expertise in troubleshooting, optimizing performance, and ensuring regulatory compliance. Passionate about leveraging technology for national projects.",
         educationTitle: "Education & Academic Achievements",
-        educationText: "", // Removed "Degrees:" label
-        // Each education item is now an HTML string with the required formatting.
+        educationText: "",
         educationList: [
           `<strong>B.S. in Computer Engineering</strong><br>
            California State University, San Bernardino (2015 – 2018)<br>
@@ -44,9 +43,16 @@
         skillsTitle: "Skills",
         skillsText:
           "<strong>Leadership & Management:</strong> Strategic Thinking, Team Leadership, Problem-Solving, Time Management<br /><strong>Hardware & Embedded Systems:</strong> Circuit Design, Microcontrollers, FPGA Programming, Robotics, Instrumentation & Control Systems<br /><strong>Software & Programming:</strong> C/C++, Python, Matlab, Verilog",
-        interestsTitle: "Key Achievements & Awards",
-        interestsText:
-          "<strong>Key Achievements:</strong><ul><li>Cost Savings of $95K – Designed software modifications for a 6-DOF motion system, reducing downtime and enhancing readiness.</li><li>Middleware Solutions – Developed real-time, multithreaded C++ middleware for CIGI protocol conversion, enabling seamless integration of distributed systems.</li></ul><strong>Work Awards:</strong><ul><li>Employee of the Month – Recognized multiple times for performance and dedication.</li><li>Appreciation Letters: Handling a 6-DOF electrical motion system failure (2022), Software modification for 6-DOF motion system (2022), Teaching Basic Electronics Course (2021), Teaching Basic C++ Programming Course (2019)</li></ul>"
+        keyAchievementsTitle: "Key Achievements",
+        keyAchievementsList: [
+          "Cost Savings of $95K – Designed software modifications for a 6-DOF motion system, reducing downtime and enhancing readiness.",
+          "Middleware Solutions – Developed real-time, multithreaded C++ middleware for CIGI protocol conversion, enabling seamless integration of distributed systems."
+        ],
+        workAwardsTitle: "Work Awards",
+        workAwardsList: [
+          "Employee of the Month – Recognized multiple times for performance and dedication.",
+          "Appreciation Letters: Handling a 6-DOF electrical motion system failure (2022), Software modification for 6-DOF motion system (2022), Teaching Basic Electronics Course (2021), Teaching Basic C++ Programming Course (2019)"
+        ]
       },
       projects: {
         title: "Projects",
@@ -225,16 +231,16 @@
     }
   };
 
-  // Since we now only use English, force currentLang to "en"
+  // Force English
   const currentLang = "en";
   const initialVisibleCount = 6;
   let projectsExpanded = false;
 
-  // Helper: Retrieve nested translation by key
+  // Helper function to retrieve nested translation values
   const getNestedTranslation = (obj, key) =>
     key.split('.').reduce((o, i) => (o ? o[i] : null), obj);
 
-  // Update page translations and document language/direction
+  // Update page translations and document attributes
   const translatePage = lang => {
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
@@ -245,7 +251,7 @@
     document.body.setAttribute("dir", "ltr");
   };
 
-  // Render Education List: Create a div with class "edu-bubble" for each education item
+  // Render Education List: Each education item in its own bubble
   const renderEducationList = lang => {
     const container = document.getElementById('education-list');
     container.innerHTML = "";
@@ -254,6 +260,28 @@
       div.className = "edu-bubble";
       div.innerHTML = item;
       container.appendChild(div);
+    });
+  };
+
+  // Render Key Achievements List: Each as a list item in the corresponding bubble
+  const renderKeyAchievements = lang => {
+    const ul = document.getElementById('key-achievements-list');
+    ul.innerHTML = "";
+    translations[lang].about.keyAchievementsList.forEach(item => {
+      const li = document.createElement('li');
+      li.innerHTML = item;
+      ul.appendChild(li);
+    });
+  };
+
+  // Render Work Awards List: Each as a list item in the corresponding bubble
+  const renderWorkAwards = lang => {
+    const ul = document.getElementById('work-awards-list');
+    ul.innerHTML = "";
+    translations[lang].about.workAwardsList.forEach(item => {
+      const li = document.createElement('li');
+      li.innerHTML = item;
+      ul.appendChild(li);
     });
   };
 
@@ -306,7 +334,7 @@
     expContainer.innerHTML = translations[lang].experience.details;
   };
 
-  // Initialize Scroll Reveal via Intersection Observer
+  // Initialize Scroll Reveal using Intersection Observer
   const initScrollReveal = () => {
     const revealElements = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver(entries => {
@@ -319,7 +347,7 @@
     revealElements.forEach(el => observer.observe(el));
   };
 
-  // Theme Toggle Function – switches between light and dark themes
+  // Theme Toggle Function
   const toggleTheme = () => {
     const currentTheme = document.documentElement.getAttribute("data-theme");
     const newTheme = currentTheme === "light" ? "dark" : "light";
@@ -332,7 +360,7 @@
     document.documentElement.setAttribute("data-theme", savedTheme);
   };
 
-  // Initialize Particle Animation for the hero section
+  // Particle Animation for Hero Section
   const initParticles = () => {
     const canvas = document.getElementById('particle-canvas');
     if (!canvas) return;
@@ -397,13 +425,36 @@
     animateParticles();
   };
 
-  // Initialize Language & Render Content
+  // Initialize Language & Render All Content
   const initLanguage = () => {
     translatePage(currentLang);
     renderEducationList(currentLang);
     renderProjects(currentLang);
     renderCourses(currentLang);
     renderExperience(currentLang);
+    renderKeyAchievements(currentLang);
+    renderWorkAwards(currentLang);
+  };
+
+  // New functions to render achievements
+  const renderKeyAchievements = lang => {
+    const ul = document.getElementById('key-achievements-list');
+    ul.innerHTML = "";
+    translations[lang].about.keyAchievementsList.forEach(item => {
+      const li = document.createElement('li');
+      li.innerHTML = item;
+      ul.appendChild(li);
+    });
+  };
+
+  const renderWorkAwards = lang => {
+    const ul = document.getElementById('work-awards-list');
+    ul.innerHTML = "";
+    translations[lang].about.workAwardsList.forEach(item => {
+      const li = document.createElement('li');
+      li.innerHTML = item;
+      ul.appendChild(li);
+    });
   };
 
   document.addEventListener("DOMContentLoaded", () => {
