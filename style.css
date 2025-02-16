@@ -388,6 +388,12 @@ section.in-view {
   padding-bottom: 10px;
 }
 
+/* Job titles in the Experience section will now match the color from About Me */
+.experience-header h3 {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
 .experience-duration {
   font-size: 0.9rem;
   color: var(--text-color);
