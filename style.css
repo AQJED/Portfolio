@@ -285,7 +285,7 @@ section.in-view {
   margin-top: 10px;
 }
 
-/* Timeline Section (Left-Right, with vertical offset and center vertical line) */
+/* Timeline Section (Left-Right, vertical center line, alternating with vertical offset) */
 .timeline-section {
   position: relative;
 }
@@ -313,7 +313,7 @@ section.in-view {
   width: 50%;
   padding: 20px;
   box-sizing: border-box;
-  margin-bottom: 80px;
+  margin-bottom: 80px; /* vertical spacing between items */
 }
 
 .timeline-item.left {
@@ -324,10 +324,10 @@ section.in-view {
 .timeline-item.right {
   float: right;
   text-align: left;
-  margin-top: 60px;
+  margin-top: 60px; /* vertical offset for staggered effect */
 }
 
-/* Overlap adjustment if needed */
+/* Optional overlap adjustment */
 .overlap {
   margin-top: -30px;
 }
@@ -345,10 +345,10 @@ section.in-view {
   z-index: 1;
   color: #000;
   background: var(--primary-color);
-  line-height: 40px;
+  line-height: 40px; /* default line-height */
 }
 
-/* Bubble sizes based on duration */
+/* Bubble sizes for timeline-icon remain constant (all year bubbles are uniform) */
 .timeline-icon.small {
   width: 35px;
   height: 35px;
@@ -370,7 +370,7 @@ section.in-view {
   font-size: 0.9rem;
 }
 
-/* Timeline content block with slightly smaller text */
+/* Timeline content block (job/education bubble) with size variations */
 .timeline-content {
   position: relative;
   display: inline-block;
@@ -379,12 +379,27 @@ section.in-view {
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 16px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-  padding: 20px;
   margin-top: 20px;
   font-size: 0.95rem;
 }
 
-/* Adjust spacing so content doesn't overlap the vertical line */
+/* Size modifiers for timeline-content */
+.timeline-content.small {
+  padding: 15px;
+  font-size: 0.9rem;
+}
+
+.timeline-content.medium {
+  padding: 20px;
+  font-size: 0.95rem;
+}
+
+.timeline-content.big {
+  padding: 25px;
+  font-size: 1rem;
+}
+
+/* Adjust spacing so content doesn't overlap the center line */
 .timeline-item.left .timeline-content {
   margin-right: 40px;
 }
@@ -393,7 +408,7 @@ section.in-view {
   margin-left: 40px;
 }
 
-/* Timeline content headings and dates with smaller fonts */
+/* Timeline content headings and dates */
 .timeline-content h3 {
   margin-top: 0;
   margin-bottom: 5px;
@@ -408,7 +423,7 @@ section.in-view {
   margin-bottom: 5px;
 }
 
-/* Clear floats */
+/* Clear floats at the end */
 .timeline-container::after {
   content: "";
   display: table;
@@ -596,7 +611,7 @@ footer {
   .hero-content p {
     font-size: 1.2rem;
   }
-  /* Timeline on mobile stacks items vertically */
+  /* Timeline on mobile: stack items vertically */
   .timeline-container::before {
     left: 20px;
   }
