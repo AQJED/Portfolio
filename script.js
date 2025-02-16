@@ -29,6 +29,7 @@
           "Over a decade of experience in software integration, system architecture, and lifecycle management. Skilled in integrating hardware, software, and network components for military and defense systems. Expertise in troubleshooting, optimizing performance, and ensuring regulatory compliance. Passionate about leveraging technology for national projects.",
         educationTitle: "Education & Academic Achievements",
         educationText: "",
+        // Each education milestone formatted as an HTML string
         educationList: [
           `<strong>B.S. in Computer Engineering</strong><br>
            California State University, San Bernardino (2015 – 2018)<br>
@@ -231,7 +232,7 @@
     }
   };
 
-  // Force English
+  // Force language to English
   const currentLang = "en";
   const initialVisibleCount = 6;
   let projectsExpanded = false;
@@ -251,19 +252,13 @@
     document.body.setAttribute("dir", "ltr");
   };
 
-  // Render Education List: Each education item in its own bubble
+  // Render Education List in a single bubble (join all education items)
   const renderEducationList = lang => {
     const container = document.getElementById('education-list');
-    container.innerHTML = "";
-    translations[lang].about.educationList.forEach(item => {
-      const div = document.createElement('div');
-      div.className = "edu-bubble";
-      div.innerHTML = item;
-      container.appendChild(div);
-    });
+    container.innerHTML = translations[lang].about.educationList.join("<br><br>");
   };
 
-  // Render Key Achievements List: Each as a list item in the corresponding bubble
+  // Render Key Achievements List
   const renderKeyAchievements = lang => {
     const ul = document.getElementById('key-achievements-list');
     ul.innerHTML = "";
@@ -274,7 +269,7 @@
     });
   };
 
-  // Render Work Awards List: Each as a list item in the corresponding bubble
+  // Render Work Awards List
   const renderWorkAwards = lang => {
     const ul = document.getElementById('work-awards-list');
     ul.innerHTML = "";
@@ -360,7 +355,7 @@
     document.documentElement.setAttribute("data-theme", savedTheme);
   };
 
-  // Particle Animation for Hero Section
+  // Initialize Particle Animation for Hero Section
   const initParticles = () => {
     const canvas = document.getElementById('particle-canvas');
     if (!canvas) return;
@@ -434,27 +429,6 @@
     renderExperience(currentLang);
     renderKeyAchievements(currentLang);
     renderWorkAwards(currentLang);
-  };
-
-  // New functions to render achievements
-  const renderKeyAchievements = lang => {
-    const ul = document.getElementById('key-achievements-list');
-    ul.innerHTML = "";
-    translations[lang].about.keyAchievementsList.forEach(item => {
-      const li = document.createElement('li');
-      li.innerHTML = item;
-      ul.appendChild(li);
-    });
-  };
-
-  const renderWorkAwards = lang => {
-    const ul = document.getElementById('work-awards-list');
-    ul.innerHTML = "";
-    translations[lang].about.workAwardsList.forEach(item => {
-      const li = document.createElement('li');
-      li.innerHTML = item;
-      ul.appendChild(li);
-    });
   };
 
   document.addEventListener("DOMContentLoaded", () => {
