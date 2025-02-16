@@ -30,6 +30,7 @@ body {
   --card-bg: rgba(255, 255, 255, 0.85);
   --nav-bg: rgba(3,218,198,0.3);
   --cta-text: #222;
+  /* Fixed, stable gradient for the bright hero */
   --hero-bg: url('microcontroller.jpg') no-repeat center center;
   --animation-duration: 1s;
   --animation-ease: ease-out;
@@ -285,12 +286,12 @@ section.in-view {
   margin-top: 10px;
 }
 
-/* Left-Right Timeline with vertical offset */
+/* Timeline Section (Left-Right, with vertical offset) */
 .timeline-section {
   position: relative;
 }
 
-/* The container has a vertical line in the center */
+/* Vertical center line */
 .timeline-container {
   position: relative;
   width: 100%;
@@ -308,7 +309,7 @@ section.in-view {
   z-index: 0;
 }
 
-/* Each timeline item: 50% width, float left or right, plus vertical offset */
+/* Each item: 50% width, float left or right, spaced vertically */
 .timeline-item {
   position: relative;
   width: 50%;
@@ -317,7 +318,7 @@ section.in-view {
   margin-bottom: 80px; /* vertical spacing between items */
 }
 
-/* Left items are on the left half, right items on the right half */
+/* Left items float left, right items float right */
 .timeline-item.left {
   float: left;
   text-align: right;
@@ -326,36 +327,61 @@ section.in-view {
 .timeline-item.right {
   float: right;
   text-align: left;
-  margin-top: 60px; /* offset to avoid parallel alignment with left item */
+  margin-top: 60px; /* offset so it doesn't line up with left item */
 }
 
-/* The circle icon near the center line */
+/* Overlap Supervisor with FSE using negative margin if desired */
+.overlap {
+  margin-top: -30px; /* Overlap with previous item */
+}
+
+/* The bubble icon with year text */
 .timeline-icon {
   position: absolute;
   top: 20px;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  background: var(--primary-color);
-  color: #000;
   border-radius: 50%;
   text-align: center;
   font-weight: bold;
-  transform: translateX(-50%);
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   z-index: 1;
+  line-height: 40px; /* default line-height for bubble */
+  color: #000;
+  background: var(--primary-color);
 }
 
-/* For left items, icon is on the right side near center line. For right items, on the left side. */
+/* For left items, bubble is on the right side near center line; for right items, bubble is on the left side near center line */
 .timeline-item.left .timeline-icon {
   right: -20px;
 }
 
 .timeline-item.right .timeline-icon {
   left: 50%;
+  transform: translateX(-50%);
 }
 
-/* The content block with smaller font */
+/* Adjust bubble size based on time spent */
+.timeline-icon.small {
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  font-size: 0.8rem;
+}
+
+.timeline-icon.medium {
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  font-size: 0.85rem;
+}
+
+.timeline-icon.big {
+  width: 55px;
+  height: 55px;
+  line-height: 55px;
+  font-size: 0.9rem;
+}
+
+/* The content block with smaller font overall */
 .timeline-content {
   position: relative;
   display: inline-block;
@@ -369,7 +395,7 @@ section.in-view {
   font-size: 0.95rem; /* smaller text overall */
 }
 
-/* Adjust spacing so content doesn't overlap the line */
+/* Adjust spacing so content doesn't overlap the center line */
 .timeline-item.left .timeline-content {
   margin-right: 40px;
 }
@@ -378,7 +404,7 @@ section.in-view {
   margin-left: 40px;
 }
 
-/* Title and date are even smaller */
+/* Title smaller, date even smaller */
 .timeline-content h3 {
   margin-top: 0;
   margin-bottom: 5px;
@@ -398,33 +424,6 @@ section.in-view {
   content: "";
   display: table;
   clear: both;
-}
-
-/* Responsive layout for Timeline */
-@media (max-width: 768px) {
-  .timeline-container::before {
-    left: 20px;
-  }
-  .timeline-item {
-    width: 100%;
-    float: none;
-    text-align: left;
-    margin-bottom: 40px;
-    padding-left: 60px;
-  }
-  .timeline-item.right {
-    margin-top: 0; /* remove extra offset on mobile */
-  }
-  .timeline-item.left .timeline-icon,
-  .timeline-item.right .timeline-icon {
-    left: 0;
-    right: auto;
-    transform: translateX(0);
-  }
-  .timeline-item.left .timeline-content,
-  .timeline-item.right .timeline-content {
-    margin: 10px 0 0 40px;
-  }
 }
 
 /* Projects Section */
@@ -608,6 +607,30 @@ footer {
   }
   .hero-content p {
     font-size: 1.2rem;
+  }
+  /* Timeline on mobile stacks all items with no left/right offset */
+  .timeline-container::before {
+    left: 20px;
+  }
+  .timeline-item {
+    width: 100%;
+    float: none;
+    text-align: left;
+    margin-bottom: 40px;
+    padding-left: 60px;
+  }
+  .timeline-item.right {
+    margin-top: 0; /* remove offset on mobile */
+  }
+  .timeline-item.left .timeline-icon,
+  .timeline-item.right .timeline-icon {
+    left: 0;
+    right: auto;
+    transform: translateX(0);
+  }
+  .timeline-item.left .timeline-content,
+  .timeline-item.right .timeline-content {
+    margin: 10px 0 0 40px;
   }
 }
 
