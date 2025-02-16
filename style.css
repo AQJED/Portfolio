@@ -64,7 +64,7 @@ button:focus {
   margin: 20px 0;
 }
 
-/* Bubbles for About Me & Achievements */
+/* Bubbles for About Me, Skills & Achievements */
 .bubble {
   background: var(--card-bg);
   padding: 20px;
@@ -81,6 +81,7 @@ button:focus {
   margin-bottom: 15px;
 }
 
+/* Achievements Container */
 .achievements-container {
   display: flex;
   gap: 20px;
@@ -313,6 +314,14 @@ section.in-view {
   line-height: 1.5;
 }
 
+/* Skills Section */
+.skills-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 /* Courses Section */
 #courses-list {
   list-style: disc;
@@ -423,7 +432,7 @@ footer {
   .hero-content p {
     font-size: 1.2rem;
   }
-  .achievements-container {
+  .achievements-container, .skills-container {
     flex-direction: column;
   }
 }
