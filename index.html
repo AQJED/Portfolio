@@ -39,14 +39,13 @@
     <ul>
       <li><a href="#hero" data-i18n="nav.home">Home</a></li>
       <li><a href="#about" data-i18n="nav.about">About Me</a></li>
-      <li><a href="#achievements">Key Achievements & Awards</a></li>
+      <li><a href="#achievements">Key Achievements & Work Awards</a></li>
       <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
       <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
       <li><a href="#courses" data-i18n="nav.courses">Training & Courses</a></li>
       <li><a href="#github" data-i18n="nav.github">GitHub Projects</a></li>
     </ul>
     <div class="toggle-controls">
-      <!-- Only the theme toggle button remains -->
       <button id="theme-toggle-btn" aria-label="Toggle Theme"></button>
     </div>
   </nav>
@@ -69,7 +68,7 @@
           <div class="bubble" id="education-bubble">
             <h3 data-i18n="about.educationTitle">Education & Academic Achievements</h3>
             <div id="education-list">
-              <!-- Education bubbles will be rendered here by script.js -->
+              <!-- Education bubbles are rendered here by script.js -->
             </div>
           </div>
           <!-- Skills Bubble -->
@@ -81,12 +80,19 @@
       </div>
     </section>
 
-    <!-- Key Achievements & Awards Section -->
+    <!-- Key Achievements & Work Awards Section -->
     <section id="achievements" class="reveal">
       <div class="section-inner glass">
-        <h2>Key Achievements & Awards</h2>
-        <div class="bubble" id="achievements-bubble">
-          <p data-i18n="about.interestsText"></p>
+        <h2>Key Achievements & Work Awards</h2>
+        <div class="achievements-container">
+          <div class="achievement-bubble" id="key-achievements">
+            <h3 data-i18n="about.keyAchievementsTitle">Key Achievements</h3>
+            <ul id="key-achievements-list"></ul>
+          </div>
+          <div class="achievement-bubble" id="work-awards">
+            <h3 data-i18n="about.workAwardsTitle">Work Awards</h3>
+            <ul id="work-awards-list"></ul>
+          </div>
         </div>
       </div>
     </section>
