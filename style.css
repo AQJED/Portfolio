@@ -165,7 +165,7 @@ button:focus {
   z-index: 1000;
   background: var(--nav-bg);
   padding: 10px 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -288,6 +288,71 @@ section.in-view {
   margin-top: 10px;
 }
 
+/* Timeline Section */
+.timeline-section {
+  position: relative;
+}
+
+.timeline-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.timeline-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  position: relative;
+}
+
+/* The date bubble */
+.timeline-icon {
+  min-width: 100px;
+  max-width: 120px;
+  text-align: center;
+  background: var(--primary-color);
+  color: #000;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 50px;
+  margin-right: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.timeline-content {
+  background: var(--card-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  flex: 1;
+}
+
+.timeline-content h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+  font-size: 1.3rem;
+}
+
+/* Responsive layout for Timeline */
+@media (max-width: 768px) {
+  .timeline-item {
+    flex-direction: column;
+    align-items: center;
+  }
+  .timeline-icon {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .timeline-content {
+    width: 100%;
+  }
+}
+
 /* Projects Section */
 .project-filters {
   margin-bottom: 30px;
@@ -306,7 +371,6 @@ section.in-view {
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
   font-size: 1.2rem;
-  
   /* Animation properties */
   opacity: 0;
   transform: translateY(20px);
@@ -316,7 +380,7 @@ section.in-view {
 
 .filter-btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
 /* Projects Grid */
@@ -330,7 +394,7 @@ section.in-view {
   background: var(--card-bg);
   padding: 20px;
   border-radius: 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
   transition: transform 0.3s, opacity 0.3s;
 }
 
@@ -386,7 +450,7 @@ section.in-view {
   background: var(--card-bg);
   padding: 20px;
   border-radius: 16px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
 .experience-header {
@@ -431,7 +495,7 @@ footer {
   text-align: center;
   padding: 20px;
   background: var(--nav-bg);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255,255,255,0.1);
   margin-top: 60px;
 }
 
