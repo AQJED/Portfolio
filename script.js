@@ -29,7 +29,7 @@
           "Over a decade of experience in software integration, system architecture, and lifecycle management. Skilled in integrating hardware, software, and network components for military and defense systems. Expertise in troubleshooting, optimizing performance, and ensuring regulatory compliance. Passionate about leveraging technology for national projects.",
         educationTitle: "Education & Academic Achievements",
         educationText: "",
-        // Each education milestone formatted as an HTML string
+        // All education items will appear in one bubble (joined together)
         educationList: [
           `<strong>B.S. in Computer Engineering</strong><br>
            California State University, San Bernardino (2015 – 2018)<br>
@@ -46,13 +46,13 @@
           "<strong>Leadership & Management:</strong> Strategic Thinking, Team Leadership, Problem-Solving, Time Management<br /><strong>Hardware & Embedded Systems:</strong> Circuit Design, Microcontrollers, FPGA Programming, Robotics, Instrumentation & Control Systems<br /><strong>Software & Programming:</strong> C/C++, Python, Matlab, Verilog",
         keyAchievementsTitle: "Key Achievements",
         keyAchievementsList: [
-          "Cost Savings of $95K – Designed software modifications for a 6-DOF motion system, reducing downtime and enhancing readiness.",
-          "Middleware Solutions – Developed real-time, multithreaded C++ middleware for CIGI protocol conversion, enabling seamless integration of distributed systems."
+          "Cost Savings of $95K<br>Designed software modifications for a 6-DOF motion system, reducing downtime and enhancing readiness.",
+          "Middleware Solutions<br>Developed real-time, multithreaded C++ middleware for CIGI protocol conversion, enabling seamless integration of distributed systems."
         ],
         workAwardsTitle: "Work Awards",
         workAwardsList: [
-          "Employee of the Month – Recognized multiple times for performance and dedication.",
-          "Appreciation Letters: Handling a 6-DOF electrical motion system failure (2022), Software modification for 6-DOF motion system (2022), Teaching Basic Electronics Course (2021), Teaching Basic C++ Programming Course (2019)"
+          "Employee of the Month –<br>Recognized multiple times for performance and dedication.",
+          "Appreciation Letters<br>Handling a 6-DOF electrical motion system failure (2022), Software modification for 6-DOF motion system (2022), Teaching Basic Electronics Course (2021), Teaching Basic C++ Programming Course (2019)."
         ]
       },
       projects: {
@@ -252,7 +252,7 @@
     document.body.setAttribute("dir", "ltr");
   };
 
-  // Render Education List in a single bubble (join all education items)
+  // Render Education List in a single bubble (join all education items with breaks)
   const renderEducationList = lang => {
     const container = document.getElementById('education-list');
     container.innerHTML = translations[lang].about.educationList.join("<br><br>");
@@ -355,7 +355,7 @@
     document.documentElement.setAttribute("data-theme", savedTheme);
   };
 
-  // Initialize Particle Animation for Hero Section
+  // Particle Animation for Hero Section
   const initParticles = () => {
     const canvas = document.getElementById('particle-canvas');
     if (!canvas) return;
