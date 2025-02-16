@@ -79,7 +79,15 @@
             description: "Integrated a microcontroller to drive simulator flight controls, ensuring responsiveness and regulatory compliance while authoring a comprehensive design and performance assessment report.",
             technologies: "Microcontrollers, Embedded Systems, C/C++",
             category: "military"
+          },
+          {
+            title: "5 DOF Robotic Arm Object Detection",
+            subtitle: "Personal Project",
+            description: "A system to detect the position of an object and how it is oriented through geometry equations to drive a 5 DOF robotic arm. With only laser beams and photo resistors, the system is able to analyze the 2D shadow created by the object that falls in the detection zone of the laser beams, then detect where the object is located and how it is tilted. The system then computes the necessary rotation angles for the joints and the gripper, making it a highly efficient system.",
+            technologies: "C++, Object-Oriented Programming (OOP), Electronics, Circuit design, Geometry, Linear Algebra",
+            category: "personal"
           }
+          
         ]
       },
       github: {
