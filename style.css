@@ -82,7 +82,6 @@ button:focus {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  /* For light theme, a subtle overlay; in dark mode a slightly darker overlay */
   background: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   z-index: 1;
@@ -113,7 +112,7 @@ button:focus {
   margin-bottom: 10px;
 }
 
-/* New Hero Subtitle */
+/* Hero Subtitle */
 .hero-subtitle {
   font-size: 1.2rem;
   color: #fff;
@@ -288,87 +287,141 @@ section.in-view {
   margin-top: 10px;
 }
 
-/* Timeline Section */
+/* Timeline Section (Left-Right Layout) */
 .timeline-section {
   position: relative;
 }
 
 .timeline-container {
   position: relative;
-  padding-left: 40px;
-  margin-top: 40px;
+  width: 100%;
+  margin: 40px auto;
 }
 
 .timeline-container::before {
   content: "";
   position: absolute;
+  left: 50%;
   top: 0;
   bottom: 0;
-  left: 20px;
   width: 2px;
   background: var(--primary-color);
+  z-index: 0;
 }
 
+/* Each timeline item occupies half the width and alternates left/right */
 .timeline-item {
   position: relative;
-  margin-bottom: 40px;
-  display: flex;
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
+/* Place items on the left or right of the vertical line */
+.timeline-item.left {
+  float: left;
+  text-align: right;
+}
+
+.timeline-item.right {
+  float: right;
+  text-align: left;
+}
+
+/* The circle icon with year or date range */
 .timeline-icon {
   position: absolute;
-  left: -1px;
-  top: 0;
-  background: var(--primary-color);
-  color: #000;
-  font-weight: bold;
-  padding: 8px;
-  border-radius: 50%;
+  top: 20px;
   width: 40px;
   height: 40px;
+  line-height: 40px;
+  background: var(--primary-color);
+  color: #000;
+  border-radius: 50%;
   text-align: center;
-  line-height: 24px;
+  font-weight: bold;
+  transform: translateX(-50%);
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 1;
 }
 
+/* For left items, icon is near the center line on the right side; for right items, icon is near center line on the left side */
+.timeline-item.left .timeline-icon {
+  right: -20px;
+}
+
+.timeline-item.right .timeline-icon {
+  left: 50%;
+}
+
+/* The content block */
 .timeline-content {
+  position: relative;
+  display: inline-block;
   background: var(--card-bg);
   backdrop-filter: blur(var(--glass-blur));
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 16px;
-  padding: 20px;
-  margin-left: 60px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  padding: 20px;
+  margin-top: 20px;
+  /* smaller font for job positions and education */
+  font-size: 0.95rem;
 }
 
+/* Adjust spacing so content doesn't overlap the line */
+.timeline-item.left .timeline-content {
+  margin-right: 40px;
+}
+
+.timeline-item.right .timeline-content {
+  margin-left: 40px;
+}
+
+/* Timeline Title smaller than default headings */
 .timeline-content h3 {
   margin-top: 0;
   margin-bottom: 5px;
   color: var(--primary-color);
-  font-size: 1.3rem;
+  font-size: 1.1rem; /* smaller than normal */
 }
 
+/* Date is even smaller */
 .timeline-date {
   display: block;
-  font-size: 0.9rem;
-  margin-top: 5px;
+  font-size: 0.85rem;
   color: var(--text-color);
+  margin-bottom: 5px;
+}
+
+/* Clear floats for next row */
+.timeline-container::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 /* Responsive layout for Timeline */
 @media (max-width: 768px) {
+  .timeline-container::before {
+    left: 20px;
+  }
   .timeline-item {
-    flex-direction: column;
-    align-items: center;
-  }
-  .timeline-icon {
-    position: relative;
-    left: 0;
-    margin-bottom: 10px;
-  }
-  .timeline-content {
-    margin-left: 0;
     width: 100%;
+    padding-left: 60px;
+    padding-right: 20px;
+    float: none;
+    text-align: left;
+  }
+  .timeline-item.left .timeline-icon,
+  .timeline-item.right .timeline-icon {
+    left: 0;
+    right: auto;
+    transform: translateX(0);
+  }
+  .timeline-item.left .timeline-content,
+  .timeline-item.right .timeline-content {
+    margin: 10px 0 0 40px;
   }
 }
 
