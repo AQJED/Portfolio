@@ -89,10 +89,38 @@
             category: "personal"
           },
           {
+            title: "Predicting Bike-Sharing Patterns: Neural Network Implementation",
+            subtitle: "Personal Projects",
+            description: "Developed and trained a neural network from scratch using only NumPy to predict daily bike rental ridership. Implemented forward and backward propagation, optimized model parameters, and evaluated performance using regression metrics. Utilized Pandas for data processing and Matplotlib for visualization.",
+            technologies: "Python, Neural Network, Deep learning fundamentals, Algorithm development, and Numerical Computing Skills",
+            category: "personal"
+          },
+          {
+            title: "Image Classification: Convolutional Neural Network",
+            subtitle: "Personal Projects",
+            description: "Designed and implemented a convolutional neural network (CNN) from scratch to classify dog breeds. Built and trained the model using deep learning techniques, optimized performance, and evaluated accuracy on image datasets. ",
+            technologies: "Python, Deep Learning & CNNs, Image Processing, Neural Network Optimization, and Model Evaluation",
+            category: "personal"
+          },
+          {
             title: "Facial Recognition application for CSUSB Student Services",
             subtitle: "Academic Projects",
             description: "Using Non-negative Matrix Factorization (NMF), implemented a face recognition program. A picture of a person that is taken will be evaluated and, ideally, correctly identify that same person that is in the database. This program will implement a “Card Free Service” at California State University, San Bernardino, where students would not be required to carry and show a student identification card anymore.",
             technologies: "C++, Object-Oriented Programming (OOP), MATLAB, Facial Recognition, Linear Algebra",
+            category: "university"
+          },
+          {
+            title: "Energy-Efficient Street Light Control and Path Prediction Using Human Detection",
+            subtitle: "Academic Projects",
+            description: "This project is a low-cost, energy-efficient, and highly modular detection-based light system with basic path prediction functionality. The system uses an Arduino controller, any combination of a variety of different detection sensors, and environmental sensors to perform its functions. ",
+            technologies: "C++, Object-Oriented Programming (OOP), Microcontrollers ",
+            category: "university"
+           },
+          {
+            title: "Parking Lot Occupancy System: FPGA Implementation",
+            subtitle: "Academic Projects",
+            description: "Designed and implemented a Verilog-based algorithm to monitor parking lot occupancy, deploying it on a Spartan FPGA. Used Xilinx tools for coding, simulation, and hardware testing, ensuring real-time detection and efficient space management. ",
+            technologies: "FPGA Development & Testing, Microcontrollers, Hardware Description Language (Verilog), Digital Logic Design, Xilinx ",
             category: "university"
           }
           
