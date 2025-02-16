@@ -64,7 +64,7 @@ button:focus {
   margin: 20px 0;
 }
 
-/* Bubble styles for About Me and Achievements sections */
+/* Bubbles for About Me & Achievements */
 .bubble {
   background: var(--card-bg);
   padding: 20px;
@@ -79,6 +79,24 @@ button:focus {
   border-radius: 16px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.15);
   margin-bottom: 15px;
+}
+
+/* Achievements Container */
+.achievements-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.achievement-bubble {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  flex: 1;
+  min-width: 300px;
+  margin-bottom: 20px;
 }
 
 /* HERO SECTION */
@@ -476,6 +494,9 @@ footer {
   }
   .hero-content p {
     font-size: 1.2rem;
+  }
+  .achievements-container {
+    flex-direction: column;
   }
 }
 
