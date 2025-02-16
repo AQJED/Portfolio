@@ -87,6 +87,13 @@
             description: "A system to detect the position of an object and how it is oriented through geometry equations to drive a 5 DOF robotic arm. With only laser beams and photo resistors, the system is able to analyze the 2D shadow created by the object that falls in the detection zone of the laser beams, then detect where the object is located and how it is tilted. The system then computes the necessary rotation angles for the joints and the gripper, making it a highly efficient system.",
             technologies: "C++, Object-Oriented Programming (OOP), Electronics, Circuit design, Geometry, Linear Algebra",
             category: "personal"
+          },
+          {
+            title: "Facial Recognition application for CSUSB Student Services",
+            subtitle: "Academic Projects",
+            description: "Using Non-negative Matrix Factorization (NMF), implemented a face recognition program. A picture of a person that is taken will be evaluated and, ideally, correctly identify that same person that is in the database. This program will implement a “Card Free Service” at California State University, San Bernardino, where students would not be required to carry and show a student identification card anymore.",
+            technologies: "C++, Object-Oriented Programming (OOP), MATLAB, Facial Recognition, Linear Algebra",
+            category: "university"
           }
           
         ]
