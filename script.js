@@ -1,4 +1,3 @@
-
 /* script.js */
 (() => {
   'use strict';
@@ -133,51 +132,72 @@
       },
       experience: {
         title: "Experience",
-        details: `<div class="experience-item">
-  <h3>Software Integration Engineer</h3>
-  <p><strong>Rheinmetall Arabia For Simulation and Training</strong> | Nov 2024 – Present | Riyadh</p>
-  <ul>
-    <li>Developed middleware solutions for real-time data integration between host systems and external modules.</li>
-    <li>Led the full SDLC for simulation and training systems, including design, integration, and deployment.</li>
-    <li>Conducted root cause analysis and troubleshooting for system reliability.</li>
-    <li>Designed system architectures for simulator upgrades.</li>
-    <li>Performed site surveys and recommended enhancements for simulator performance.</li>
-  </ul>
-</div>
-<hr/>
-<div class="experience-item">
-  <h3>Flight Simulator Engineer</h3>
-  <p><strong>PSAA Engineering Department</strong> | Jan 2019 – Oct 2024 | Jeddah</p>
-  <ul>
-    <li>Led qualification, testing, commissioning, and certification of Full Flight Simulators.</li>
-    <li>Ensured compliance with FAA, EASA & GACA aviation standards.</li>
-    <li>Troubleshot complex technical issues, minimizing downtime.</li>
-    <li>Optimized system integration and performance for improved reliability.</li>
-  </ul>
-</div>
-<hr/>
-<div class="experience-item">
-  <h3>Flight Simulator Maintenance Supervisor (D)</h3>
-  <p><strong>PSAA Technical Services Department</strong> | Jan 2024 – June 2024 | Jeddah</p>
-  <ul>
-    <li>Managed a team of technicians, optimizing scheduling and training readiness.</li>
-    <li>Ensured compliance with regulatory and safety standards.</li>
-    <li>Delivered strategic reports and operational analyses.</li>
-  </ul>
-</div>
-<hr/>
-<div class="experience-item">
-  <h3>Full Flight Simulator Technician</h3>
-  <p><strong>PSAA Technical Services Department</strong> | Apr 2010 – Dec 2013 | Jeddah</p>
-  <ul>
-    <li>Maintained and optimized flight simulators for realistic pilot training.</li>
-    <li>Configured single-board computers and upgraded I/O units.</li>
-    <li>Installed, calibrated, and aligned instrument panels, visual systems, and motion platforms.</li>
-    <li>Improved uptime and customized systems for specific training needs.</li>
-  </ul>
-</div>`,
-        period: "",
-        description: ""
+        details: `<div class="experience-container">
+  <div class="experience-item">
+    <div class="experience-header">
+      <h3>Software Integration Engineer</h3>
+      <span class="experience-duration">Nov 2024 – Present</span>
+    </div>
+    <div class="experience-meta">
+      <span class="experience-company"><strong>Rheinmetall Arabia For Simulation and Training</strong></span>
+      <span class="experience-location">Riyadh</span>
+    </div>
+    <ul class="experience-details">
+      <li>Developed middleware solutions for real-time data integration between host systems and external modules.</li>
+      <li>Led the full SDLC for simulation and training systems, including design, integration, and deployment.</li>
+      <li>Conducted root cause analysis and troubleshooting for system reliability.</li>
+      <li>Designed system architectures for simulator upgrades.</li>
+      <li>Performed site surveys and recommended enhancements for simulator performance.</li>
+    </ul>
+  </div>
+  <div class="experience-item">
+    <div class="experience-header">
+      <h3>Flight Simulator Engineer</h3>
+      <span class="experience-duration">Jan 2019 – Oct 2024</span>
+    </div>
+    <div class="experience-meta">
+      <span class="experience-company"><strong>PSAA Engineering Department</strong></span>
+      <span class="experience-location">Jeddah</span>
+    </div>
+    <ul class="experience-details">
+      <li>Led qualification, testing, commissioning, and certification of Full Flight Simulators.</li>
+      <li>Ensured compliance with FAA, EASA & GACA aviation standards.</li>
+      <li>Troubleshot complex technical issues, minimizing downtime.</li>
+      <li>Optimized system integration and performance for improved reliability.</li>
+    </ul>
+  </div>
+  <div class="experience-item">
+    <div class="experience-header">
+      <h3>Flight Simulator Maintenance Supervisor (D)</h3>
+      <span class="experience-duration">Jan 2024 – June 2024</span>
+    </div>
+    <div class="experience-meta">
+      <span class="experience-company"><strong>PSAA Technical Services Department</strong></span>
+      <span class="experience-location">Jeddah</span>
+    </div>
+    <ul class="experience-details">
+      <li>Managed a team of technicians, optimizing scheduling and training readiness.</li>
+      <li>Ensured compliance with regulatory and safety standards.</li>
+      <li>Delivered strategic reports and operational analyses.</li>
+    </ul>
+  </div>
+  <div class="experience-item">
+    <div class="experience-header">
+      <h3>Full Flight Simulator Technician</h3>
+      <span class="experience-duration">Apr 2010 – Dec 2013</span>
+    </div>
+    <div class="experience-meta">
+      <span class="experience-company"><strong>PSAA Technical Services Department</strong></span>
+      <span class="experience-location">Jeddah</span>
+    </div>
+    <ul class="experience-details">
+      <li>Maintained and optimized flight simulators for realistic pilot training.</li>
+      <li>Configured single-board computers and upgraded I/O units.</li>
+      <li>Installed, calibrated, and aligned instrument panels, visual systems, and motion platforms.</li>
+      <li>Improved uptime and customized systems for specific training needs.</li>
+    </ul>
+  </div>
+</div>`
       },
       courses: {
         title: "Training & Courses",
@@ -282,51 +302,72 @@
       },
       experience: {
         title: "الخبرات",
-        details: `<div class="experience-item">
-  <h3>مهندس تكامل برمجيات</h3>
-  <p><strong>Rheinmetall Arabia For Simulation and Training</strong> | نوفمبر 2024 – الحاضر | الرياض</p>
-  <ul>
-    <li>تطوير حلول وسيط للبيانات في الوقت الفعلي بين الأنظمة المضيفة والوحدات الخارجية.</li>
-    <li>قيادة دورة حياة تطوير الأنظمة لمحاكيات التدريب، بما في ذلك التصميم والتكامل والنشر.</li>
-    <li>إجراء تحليل جذور المشكلات وحلها لضمان موثوقية النظام.</li>
-    <li>تصميم هياكل الأنظمة لترقيات المحاكيات.</li>
-    <li>تنفيذ مسوحات ميدانية وتقديم توصيات لتحسين أداء المحاكيات.</li>
-  </ul>
-</div>
-<hr/>
-<div class="experience-item">
-  <h3>مهندس محاكيات الطيران</h3>
-  <p><strong>قسم الهندسة في PSAA</strong> | يناير 2019 – أكتوبر 2024 | جدة</p>
-  <ul>
-    <li>قيادة عمليات التأهيل والاختبار والتشغيل والشهادة لمحاكيات الطيران الكاملة.</li>
-    <li>ضمان الامتثال لمعايير FAA وEASA وGACA.</li>
-    <li>حل المشكلات التقنية المعقدة لتقليل وقت التوقف عن العمل.</li>
-    <li>تحسين تكامل الأنظمة وأداءها لتحقيق موثوقية أعلى.</li>
-  </ul>
-</div>
-<hr/>
-<div class="experience-item">
-  <h3>مشرف صيانة محاكيات الطيران (د)</h3>
-  <p><strong>قسم الخدمات الفنية في PSAA</strong> | يناير 2024 – يونيو 2024 | جدة</p>
-  <ul>
-    <li>إدارة فريق من الفنيين وتحسين جداول العمل واستعداد التدريب.</li>
-    <li>ضمان الامتثال للمعايير التنظيمية ومعايير السلامة.</li>
-    <li>تقديم تقارير استراتيجية وتحليلات تشغيلية.</li>
-  </ul>
-</div>
-<hr/>
-<div class="experience-item">
-  <h3>فني محاكيات الطيران</h3>
-  <p><strong>قسم الخدمات الفنية في PSAA</strong> | أبريل 2010 – ديسمبر 2013 | جدة</p>
-  <ul>
-    <li>صيانة وتحسين محاكيات الطيران لتوفير تدريب واقعي للطيارين.</li>
-    <li>تهيئة الحواسيب المدمجة وترقية وحدات الإدخال/الإخراج.</li>
-    <li>تركيب، معايرة وتعديل لوحات العدادات، الأنظمة البصرية ومنصات الحركة.</li>
-    <li>تحسين وقت التشغيل وتخصيص الأنظمة لتلبية احتياجات التدريب الخاصة.</li>
-  </ul>
-</div>`,
-        period: "",
-        description: ""
+        details: `<div class="experience-container">
+  <div class="experience-item">
+    <div class="experience-header">
+      <h3>مهندس تكامل برمجيات</h3>
+      <span class="experience-duration">نوفمبر 2024 – الحاضر</span>
+    </div>
+    <div class="experience-meta">
+      <span class="experience-company"><strong>Rheinmetall Arabia For Simulation and Training</strong></span>
+      <span class="experience-location">الرياض</span>
+    </div>
+    <ul class="experience-details">
+      <li>تطوير حلول وسيط للبيانات في الوقت الفعلي بين الأنظمة المضيفة والوحدات الخارجية.</li>
+      <li>قيادة دورة حياة تطوير الأنظمة لمحاكيات التدريب، بما في ذلك التصميم والتكامل والنشر.</li>
+      <li>إجراء تحليل جذور المشكلات وحلها لضمان موثوقية النظام.</li>
+      <li>تصميم هياكل الأنظمة لترقيات المحاكيات.</li>
+      <li>تنفيذ مسوحات ميدانية وتقديم توصيات لتحسين أداء المحاكيات.</li>
+    </ul>
+  </div>
+  <div class="experience-item">
+    <div class="experience-header">
+      <h3>مهندس محاكيات الطيران</h3>
+      <span class="experience-duration">يناير 2019 – أكتوبر 2024</span>
+    </div>
+    <div class="experience-meta">
+      <span class="experience-company"><strong>قسم الهندسة في PSAA</strong></span>
+      <span class="experience-location">جدة</span>
+    </div>
+    <ul class="experience-details">
+      <li>قيادة عمليات التأهيل والاختبار والتشغيل والشهادة لمحاكيات الطيران الكاملة.</li>
+      <li>ضمان الامتثال لمعايير FAA وEASA وGACA.</li>
+      <li>حل المشكلات التقنية المعقدة لتقليل وقت التوقف عن العمل.</li>
+      <li>تحسين تكامل الأنظمة وأداءها لتحقيق موثوقية أعلى.</li>
+    </ul>
+  </div>
+  <div class="experience-item">
+    <div class="experience-header">
+      <h3>مشرف صيانة محاكيات الطيران (د)</h3>
+      <span class="experience-duration">يناير 2024 – يونيو 2024</span>
+    </div>
+    <div class="experience-meta">
+      <span class="experience-company"><strong>قسم الخدمات الفنية في PSAA</strong></span>
+      <span class="experience-location">جدة</span>
+    </div>
+    <ul class="experience-details">
+      <li>إدارة فريق من الفنيين وتحسين جداول العمل واستعداد التدريب.</li>
+      <li>ضمان الامتثال للمعايير التنظيمية ومعايير السلامة.</li>
+      <li>تقديم تقارير استراتيجية وتحليلات تشغيلية.</li>
+    </ul>
+  </div>
+  <div class="experience-item">
+    <div class="experience-header">
+      <h3>فني محاكيات الطيران</h3>
+      <span class="experience-duration">أبريل 2010 – ديسمبر 2013</span>
+    </div>
+    <div class="experience-meta">
+      <span class="experience-company"><strong>قسم الخدمات الفنية في PSAA</strong></span>
+      <span class="experience-location">جدة</span>
+    </div>
+    <ul class="experience-details">
+      <li>صيانة وتحسين محاكيات الطيران لتوفير تدريب واقعي للطيارين.</li>
+      <li>تهيئة الحواسيب المدمجة وترقية وحدات الإدخال/الإخراج.</li>
+      <li>تركيب، معايرة وتعديل لوحات العدادات، الأنظمة البصرية ومنصات الحركة.</li>
+      <li>تحسين وقت التشغيل وتخصيص الأنظمة لتلبية احتياجات التدريب الخاصة.</li>
+    </ul>
+  </div>
+</div>`
       },
       courses: {
         title: "الدورات والتدريبات",
