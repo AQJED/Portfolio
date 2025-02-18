@@ -1,156 +1,414 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
-<head>
-  <meta charset="UTF-8">
-  <meta name="description" content="Adeeb Alqahtani – Modern CV with a responsive welcome page that adapts between bright and dark themes.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="header.title">ADEEB ALQAHTANI - CV</title>
-  <!-- Favicon & Manifest -->
-  <link rel="icon" href="favicon.ico">
-  <link rel="manifest" href="manifest.json">
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="ADEEB ALQAHTANI - CV">
-  <meta property="og:description" content="Modern CV with a responsive welcome page that adapts between bright and dark themes.">
-  <meta property="og:type" content="website">
-</head>
-<body>
-  <!-- Hero Section -->
-  <header id="hero" class="reveal">
-    <canvas id="particle-canvas"></canvas>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <h1 data-i18n="header.title">ADEEB ALQAHTANI</h1>
-      <p class="hero-subtitle">
-        Software Integration Engineer | Flight Simulator Engineer | B.S. Computer Engineering & Embedded Systems | Deep Learning Nanodegree
-      </p>
-      <p data-i18n="header.contact">📍 Riyadh | 📧 Adeeb.alqahtani@gmail.com | 📞 966583161518</p>
-      <div class="hero-buttons">
-        <a href="#about" class="btn hero-cta" data-i18n="hero.cta">Discover More</a>
-        <a href="Adeeb-Alqahtani.pdf" class="btn download-cv" download="AdeebAlqahtani--CV.pdf" data-i18n="hero.downloadCV">Download CV</a>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Adeeb Alqahtani</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Pasindu Dilmin Personal Web" name="keywords">
+    <meta content="Pasindu Dilmin Personal Web" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Libraries -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+
+  <body data-spy="scroll" data-target=".navbar" data-offset="51">
+    <!-- Nav Bar Start -->
+    <div class="navbar navbar-expand-lg bg-light navbar-light">
+      <div class="container-fluid">
+        <a href="index.html" class="navbar-brand">Adeeb</a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+          <div class="navbar-nav ml-auto">
+            <a href="#home" class="nav-item nav-link active">Home</a>
+            <a href="#about" class="nav-item nav-link">About</a>
+            <!-- Service link removed -->
+            <a href="#experience" class="nav-item nav-link">Experience</a>
+            <a href="#portfolio" class="nav-item nav-link">Portfolio</a>
+            <!-- Contact link removed -->
+            <a href="#review" class="nav-item nav-link">Review</a>
+          </div>
+        </div>
       </div>
     </div>
-  </header>
+    <!-- Nav Bar End -->
 
-  <!-- Navigation -->
-  <nav id="navbar" class="reveal" role="navigation" aria-label="Main Navigation">
-    <ul>
-      <li><a href="#hero" data-i18n="nav.home">Home</a></li>
-      <li><a href="#about" data-i18n="nav.about">About Me</a></li>
-      <li><a href="#achievements">Key Achievements & Work Awards</a></li>
-      <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
-      <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
-      <li><a href="#courses" data-i18n="nav.courses">Training & Courses</a></li>
-      <li><a href="#github" data-i18n="nav.github">GitHub Projects</a></li>
-    </ul>
-    <div class="toggle-controls">
-      <button id="theme-toggle-btn" aria-label="Toggle Theme"></button>
-    </div>
-  </nav>
-
-  <!-- Main Content -->
-  <main>
-    <!-- About Me Section -->
-    <section id="about" class="reveal">
-      <div class="section-inner glass">
-        <h2 data-i18n="about.title">About Me</h2>
-        <div class="about-content">
-          <!-- Summary Bubble -->
-          <div class="bubble" id="summary-bubble">
-            <h3 data-i18n="about.summaryTitle">Summary</h3>
-            <p data-i18n="about.summary">
-              Over a decade of experience in software integration, system architecture, and lifecycle management. Skilled in integrating hardware, software, and network components for military and defense systems. Expertise in troubleshooting, optimizing performance, and ensuring regulatory compliance. Passionate about leveraging technology for national projects.
-            </p>
-          </div>
-          <!-- Education Bubble -->
-          <div class="bubble" id="education-bubble">
-            <h3 data-i18n="about.educationTitle">Education & Academic Achievements</h3>
-            <div id="education-list">
-              <!-- Education bubbles are rendered here by script.js -->
+    <!-- Hero Start -->
+    <div class="hero" id="home">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <!-- Removed Hero Image Column -->
+          <div class="col-sm-12">
+            <div class="hero-content">
+              <div class="hero-text">
+                <p>I'm</p>
+                <h1>Adeeb Alqahtani</h1>
+                <h2></h2>
+                <div class="typed-text">Software Integration Engineer, Embedded Systems Developer, Data Scientist</div>
+              </div>
+              <div class="hero-btn">
+                <a class="btn" href="https:https://www.fiverr.com/sellers/adeebqahtani" target="_blank">Hire Me</a>
+                <a class="btn" href="Adeeb-Alqahtani.pdf" download>My Resume</a>
+              </div>
             </div>
           </div>
-          <!-- Skills Bubble -->
-          <div class="bubble" id="skills-bubble">
-            <h3 data-i18n="about.skillsTitle">Skills</h3>
-            <p data-i18n="about.skillsText"></p>
-          </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Key Achievements & Work Awards Section -->
-    <section id="achievements" class="reveal">
-      <div class="section-inner glass">
-        <h2>Key Achievements & Work Awards</h2>
-        <div class="achievements-container">
-          <div class="achievement-bubble" id="key-achievements">
-            <h3 data-i18n="about.keyAchievementsTitle">Key Achievements</h3>
-            <ul id="key-achievements-list"></ul>
-          </div>
-          <div class="achievement-bubble" id="work-awards">
-            <h3 data-i18n="about.workAwardsTitle">Work Awards</h3>
-            <ul id="work-awards-list"></ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="reveal">
-      <div class="section-inner glass">
-        <h2 data-i18n="experience.title">Experience</h2>
-        <div id="experience-details">
-          <!-- Experience details will be dynamically inserted by script.js -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="reveal">
-      <div class="section-inner glass">
-        <h2 data-i18n="projects.title">Projects</h2>
-        <div class="project-filters">
-          <button class="filter-btn" data-filter="all" data-i18n="projects.filters.all">All</button>
-          <button class="filter-btn" data-filter="personal" data-i18n="projects.filters.personal">Personal Projects</button>
-          <button class="filter-btn" data-filter="university" data-i18n="projects.filters.university">Academic Projects</button>
-          <button class="filter-btn" data-filter="military" data-i18n="projects.filters.military">Professional Projects</button>
-        </div>
-        <div id="projects-grid" class="projects-wrapper"></div>
-        <button id="toggle-projects" class="toggle-projects-btn" data-i18n="projects.showMore">Show More</button>
-      </div>
-    </section>
-
-    <!-- Courses & Events Section -->
-    <section id="courses" class="reveal">
-      <div class="section-inner glass">
-        <h2 data-i18n="courses.title">Training & Courses</h2>
-        <ul id="courses-list"></ul>
-      </div>
-    </section>
-
-    <!-- GitHub Projects Section -->
-    <section id="github" class="reveal">
-      <div class="section-inner glass">
-        <h2 data-i18n="github.title">GitHub Projects</h2>
-        <p data-i18n="github.description">Explore my work on GitHub:</p>
-        <a href="https://github.com/AQJED" target="_blank" rel="noopener noreferrer" data-i18n="github.linkText">Visit my GitHub Profile</a>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="reveal">
-    <div class="section-inner glass">
-      <p data-i18n="footer.text">&copy; 2025 Adeeb Alqahtani. All rights reserved.</p>
-      <div class="footer-links">
-        <a href="https://www.linkedin.com/in/adalqahtani/" target="_blank" rel="noopener noreferrer" data-i18n="footer.linkedin">LinkedIn</a>
-        <a href="https://github.com/AQJED" target="_blank" rel="noopener noreferrer" data-i18n="footer.github">GitHub</a>
       </div>
     </div>
-  </footer>
+    <!-- Hero End -->
 
-  <script src="script.js"></script>
-</body>
+    <!-- About Start -->
+    <div class="about wow fadeInUp" data-wow-delay="0.1s" id="about">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="about-img">
+              <img src="img/about.jpg" alt="Image">
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="about-content">
+              <div class="section-header text-left">
+                <p>About Me</p>
+                <h2>10+ Years Experience</h2>
+              </div>
+              <div class="about-text">
+                <p>
+                  I'm a Software Integration Engineer with a passion for software development, embedded systems, and AI. I hold a B.S. in Computer Engineering, specializing in high-performance and embedded systems, and a Deep Learning (AI) Nanodegree from MISK Foundation.
+                  <br><br>
+                  With over a decade in the industry, I’ve worked across various roles, from simulator technician to engineer and supervisor, gaining expertise in middleware development, real-time data integration, and system optimization. I focus on middleware solutions that connect host computers and image generators in military-grade flight simulators.
+                  <br><br>
+                  Beyond simulation, my background in embedded systems extends to microcontroller programming, circuit design, and firmware development, skills I developed both in academia and during hands-on projects. I’ve integrated hardware and software components in critical systems, improving performance and reliability.
+                  <br><br>
+                  My software skills include C/C++, Python, Matlab, Verilog, and LabVIEW, allowing me to work across embedded systems, simulation software, and AI applications. Whether it's developing real-time interfaces, optimizing embedded solutions, or implementing AI-driven automation, I thrive on solving complex technical challenges and pushing technology forward.
+                </p>
+              </div>
+              <!-- Skills block removed -->
+              <a class="btn" href="https://www.linkedin.com/in/adalqahtani/" target="_blank">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- About End -->
+
+    <!-- Experience Start -->
+    <div class="experience" id="experience">
+      <div class="container">
+        <header class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+          <p>My Resume</p>
+          <h2>Professional & Academic Career</h2>
+        </header>
+        <div class="timeline">
+          <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
+            <div class="timeline-text">
+              <div class="timeline-date">2024 - Now</div>
+              <h2>Software Integration Engineer</h2>
+              <h4>Rheinmetall Arabia, Riyadh, Saudi Arabia</h4>
+              <p>
+                Flight Simulator Engineer | Skills: Middleware Development · Real-Time Data Processing · System Integration · Troubleshooting · Flight Simulation Software · Avionics Systems · CIGI Protocol · DIS Protocol · Embedded Systems · Software Optimization
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
+            <div class="timeline-text">
+              <div class="timeline-date">2024 - 2024</div>
+              <h2>Flight Simulator Maintenance Supervisor(D)</h2>
+              <h4>Saudia Academy, Jeddah, Saudi Arabia</h4>
+              <p>
+                I worked as a Maintenance Supervisor - Technical Service Department.
+                |
+                Skills: Team Leadership · Operations Management · Scheduling & Training Readiness · System Performance Optimization · Regulatory Compliance
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
+            <div class="timeline-text">
+              <div class="timeline-date">2019 - 2024</div>
+              <h2>Flight Simulator Engineer</h2>
+              <h4>Saudia Academy, Jeddah, Saudi Arabia</h4>
+              <p>
+                I worked as a Flight Simulator Engineer.
+                |
+                Skills: System Integration · Real-Time Data Processing · Hardware & Software Upgrades · Simulator Certification · FAA/EASA/GACA Compliance
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
+            <div class="timeline-text">
+              <div class="timeline-date">2019-2019</div>
+              <h2>Deep Learning (AI) Nanodegree</h2>
+              <h4>MISK Foundation</h4>
+              <p>
+                Intensive bootcamp with hands-on experience in 6 artificial intelligence projects.
+                |
+                Skills: Neural Networks · Deep Learning · Computer Vision · Natural Language Processing · Model Training & Optimization
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
+            <div class="timeline-text">
+              <div class="timeline-date">2015 - 2018</div>
+              <h2>B.S. in Computer Engineering</h2>
+              <h4>California State University, San Bernardino</h4>
+              <p>
+                Focused in high performance and embedded systems.
+                |
+                Skills: Embedded Systems · Microcontrollers · Digital Circuit Design · FPGA Programming · Software Development · C/C++ · Verilog
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
+            <div class="timeline-text">
+              <div class="timeline-date">2010 - 2013</div>
+              <h2>Full Flight Simulator Technician</h2>
+              <h4>Saudia Academy, Jeddah, Saudi Arabia</h4>
+              <p>
+                I worked as maintenance technician.
+                |
+                Skills: Flight Simulator Maintenance · Hardware Troubleshooting · System Calibration · Avionics Systems · Instrumentation & Control · Motion & Visual Systems
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item left wow slideInLeft" data-wow-delay="0.1s">
+            <div class="timeline-text">
+              <div class="timeline-date">2009 - 2010</div>
+              <h2>Simulator Maintenance & English Program</h2>
+              <h4>CAE, Montreal, Canada</h4>
+              <p>
+                One Year Intensive Program.
+                |
+                Skills: Instrumentation & Control Systems · Circuit Design · Electrical Troubleshooting · PLC Programming · Industrial Automation
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item right wow slideInRight" data-wow-delay="0.1s">
+            <div class="timeline-text">
+              <div class="timeline-date">2004 - 2008</div>
+              <h2>Associate Degree in Electrical and Electronics</h2>
+              <h4>Yanbu Industrial College</h4>
+              <p>
+                Majored in instrumentation and control system.
+                |
+                Skills: Flight Simulator Maintenance · Hardware Troubleshooting · System Calibration · Avionics Systems · Instrumentation & Control · Motion & Visual Systems
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Experience End -->
+
+    <!-- Portfolio Start -->
+    <div class="portfolio" id="portfolio">
+      <div class="container">
+        <div class="section-header text-center wow zoomIn" data-wow-delay="0.1s">
+          <p>My Portfolio</p>
+          <h2>Projects</h2>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <ul id="portfolio-filter">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-1">Professional</li>
+              <li data-filter=".filter-2">Personal</li>
+              <li data-filter=".filter-3">Academic</li>
+            </ul>
+          </div>
+        </div>
+        <div class="row portfolio-container">
+          <!-- Portfolio Item 1 -->
+          <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-1 wow fadeInUp" data-wow-delay="0.0s">
+            <div class="portfolio-wrap">
+              <div class="portfolio-img">
+                <img src="img/portfolio-1.jpg" alt="Image">
+              </div>
+              <div class="portfolio-text">
+                <h3>CGF to IG Middleware</h3>
+                <a class="btn" href="https://github.com/AQJED/DIS---CIGI-Middleware" target="_blank">+</a>
+              </div>
+            </div>
+          </div>
+          <!-- Portfolio Item 2 -->
+          <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-2 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="portfolio-wrap">
+              <div class="portfolio-img">
+                <img src="img/portfolio-2.jpg" alt="Image">
+              </div>
+              <div class="portfolio-text">
+                <h3>5 DOF Robotic Arm Object Detection (Embedded System)</h3>
+                <a class="btn" href="https://github.com/AQJED/5-DOF-Robotic-Arm-Object-Detection" target="_blank">+</a>
+              </div>
+            </div>
+          </div>
+          <!-- Portfolio Item 3 -->
+          <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-3 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="portfolio-wrap">
+              <div class="portfolio-img">
+                <img src="img/portfolio-3.jpg" alt="Image">
+              </div>
+              <div class="portfolio-text">
+                <h3>Facial Recognition App</h3>
+                <a class="btn" href="https://github.com/AQJED" target="_blank">+</a>
+              </div>
+            </div>
+          </div>
+          <!-- Portfolio Item 4 -->
+          <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-1 wow fadeInUp" data-wow-delay="0.6s">
+            <div class="portfolio-wrap">
+              <div class="portfolio-img">
+                <img src="img/portfolio-4.jpg" alt="Image">
+              </div>
+              <div class="portfolio-text">
+                <h3>Host to IG Middleware</h3>
+                <a class="btn" href="https://github.com/AQJED/Host-to-IG-Middleware" target="_blank">+</a>
+              </div>
+            </div>
+          </div>
+          <!-- Portfolio Item 5 -->
+          <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-2 wow fadeInUp" data-wow-delay="0.8s">
+            <div class="portfolio-wrap">
+              <div class="portfolio-img">
+                <img src="img/portfolio-5.jpg" alt="Image">
+              </div>
+              <div class="portfolio-text">
+                <h3>Parking Occupancy(FPGA)</h3>
+                <a class="btn" href="https://github.com/AQJED/Parking-lot-occupancy" target="_blank">+</a>
+              </div>
+            </div>
+          </div>
+          <!-- Portfolio Item 6 -->
+          <div class="col-lg-4 col-md-6 col-sm-12 portfolio-item filter-3 wow fadeInUp" data-wow-delay="1s">
+            <div class="portfolio-wrap">
+              <div class="portfolio-img">
+                <img src="img/portfolio-6.jpg" alt="Image">
+              </div>
+              <div class="portfolio-text" style="text-align: center;">
+                <h3 style="font-size: 16px;">Light Control and Path Prediction(Embedded System)</h3>
+                <a class="btn" href="https://github.com/AQJED" target="_blank">+</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Portfolio End -->
+
+    <!-- Testimonial Start -->
+    <div class="testimonial wow fadeInUp" data-wow-delay="0.1s" id="review">
+      <div class="container">
+        <div class="testimonial-icon">
+          <i class="fa fa-quote-left"></i>
+        </div>
+        <div class="owl-carousel testimonials-carousel">
+          <div class="testimonial-item">
+            <div class="testimonial-img">
+              <img src="img/testimonial-1.jpg" alt="Image">
+            </div>
+            <div class="testimonial-text">
+              <p>
+                Ali Review ..
+              </p>
+              <h3>Ali Yamani</h3>
+              <h4>Attraction Technical Manager | Riyadh</h4>
+            </div>
+          </div>
+          <div class="testimonial-item">
+            <div class="testimonial-img">
+              <img src="img/testimonial-2.jpg" alt="Image">
+            </div>
+            <div class="testimonial-text">
+              <p>
+                Khalid review..
+              </p>
+              <h3>Khalid Alotaibi</h3>
+              <h4>Flight Simulator Engineering Section Manager | Jeddah</h4>
+            </div>
+          </div>
+          <div class="testimonial-item">
+            <div class="testimonial-img">
+              <img src="img/testimonial-3.jpg" alt="Image">
+            </div>
+            <div class="testimonial-text">
+              <p>
+                Review3...
+              </p>
+              <h3>Soon</h3>
+              <h4>Software Engineer | Riyadh</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Testimonial End -->
+
+    <!-- Contact Section removed -->
+
+    <!-- Footer Start -->
+    <div class="footer wow fadeIn" data-wow-delay="0.3s">
+      <div class="container-fluid">
+        <div class="container">
+          <div class="footer-info">
+            <h2>Adeeb Alqahtani</h2>
+            <h3>Riyadh, Saudi Arabia</h3>
+            <div class="footer-menu">
+              <p>Adeeb.Alqahtani@gmail.com</p>
+            </div>
+            <div class="footer-social">
+              <a href="https://github.com/AQJED" target="_blank"><i class="fab fa-github"></i></a>
+              <a href="https://www.facebook.com/pazindushane/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+              <a href="https://www.youtube.com/channel/UCzgCZuLvlHMXET3cLI4SJSw" target="_blank"><i class="fab fa-youtube"></i></a>
+              <a href="https://www.instagram.com/pazindu_shane__/" target="_blank"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.linkedin.com/in/adalqahtani/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="container copyright">
+          <!-- Copyright information -->
+        </div>
+      </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to top button -->
+    <a href="#" class="btn back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+    <!-- Pre Loader -->
+    <div id="loader" class="show">
+      <div class="loader"></div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/typed/typed.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+  </body>
 </html>
