@@ -137,58 +137,60 @@ a:focus {
     position: relative;
     transition: .5s;
     z-index: 999;
+    background: rgba(44,68,111, .95);
 }
 
-.navbar.nav-sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
-}
+    .navbar.nav-sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+        background: rgba(44,68,111, .95);
+    }
 
-.navbar .navbar-brand {
-    margin: 0;
-    font-size: 45px;
-    line-height: 0px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    transition: .5s;
-}
+    .navbar .navbar-brand {
+        margin: 0;
+        font-size: 45px;
+        line-height: 0px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        transition: .5s;
+        color: #FAF9F6;
+    }
 
-.navbar .navbar-brand img {
-    max-width: 100%;
-    max-height: 40px;
-}
+        .navbar .navbar-brand img {
+            max-width: 100%;
+            max-height: 40px;
+        }
 
-.navbar .dropdown-menu {
-    margin-top: 0;
-    border: 0;
-    border-radius: 0;
-    background: #f8f9fa;
-}
+    .navbar .dropdown-menu {
+        margin-top: 0;
+        border: 0;
+        border-radius: 0;
+        background: #f8f9fa;
+    }
 
 @media (min-width: 992px) {
     .navbar {
         position: absolute;
         width: 100%;
-        padding: 30px 60px;
-        background: transparent !important;
-        border-bottom: 1px dashed rgba(256, 256, 256, .2);
+        padding: 20px 60px;
+        background: rgba(44,68,111, .95) !important;
         z-index: 9;
     }
-    
-    .navbar.nav-sticky {
-        padding: 10px 60px;
-        background: #FAF9F6 !important;
-    }
-    
-    .navbar .navbar-brand {
-        color: #FAF9F6;
-    }
-    
-    .navbar.nav-sticky .navbar-brand {
-        color: #2C446F;
-    }
+
+        .navbar.nav-sticky {
+            padding: 10px 60px;
+            background: rgba(44,68,111, .95) !important;
+        }
+
+        .navbar .navbar-brand {
+            color: #FAF9F6;
+        }
+
+        .navbar.nav-sticky .navbar-brand {
+            color: #FAF9F6;
+        }
 
     .navbar-light .navbar-nav .nav-link,
     .navbar-light .navbar-nav .nav-link:focus {
@@ -197,45 +199,53 @@ a:focus {
         font-size: 15px;
         font-weight: 500;
     }
-    
+
     .navbar-light.nav-sticky .navbar-nav .nav-link,
     .navbar-light.nav-sticky .navbar-nav .nav-link:focus {
-        color: #414141;
+        color: #FAF9F6;
     }
 
     .navbar-light .navbar-nav .nav-link:hover,
     .navbar-light .navbar-nav .nav-link.active {
-        color: #111111;
+        color: #BFBFBF;
     }
-    
+
     .navbar-light.nav-sticky .navbar-nav .nav-link:hover,
     .navbar-light.nav-sticky .navbar-nav .nav-link.active {
-        color: #2C446F;
+        color: #BFBFBF;
     }
 }
 
-@media (max-width: 991.98px) {   
+@media (max-width: 991.98px) {
     .navbar {
         padding: 15px;
-        background: #FAF9F6 !important;
+        background: rgba(44,68,111, .95) !important;
     }
-    
-    .navbar .navbar-brand {
-        color: #2C446F;
-    }
-    
-    .navbar .navbar-nav {
-        margin-top: 15px;
-    }
-    
-    .navbar a.nav-link {
-        padding: 5px;
-    }
-    
-    .navbar .dropdown-menu {
-        box-shadow: none;
-    }
+
+        .navbar .navbar-brand {
+            color: #FAF9F6;
+        }
+
+        .navbar .navbar-nav {
+            margin-top: 15px;
+        }
+
+        .navbar a.nav-link {
+            padding: 5px;
+            color: #FAF9F6;
+        }
+
+            .navbar a.nav-link:hover,
+            .navbar a.nav-link.active {
+                color: #BFBFBF;
+            }
+
+        .navbar .dropdown-menu {
+            box-shadow: none;
+        }
 }
+
+
 
 
 /*******************************/
@@ -325,9 +335,7 @@ a:focus {
     border-color: #FAF9F6;
 }
 
-.hero .hero-btn .btn:first-child {
-    margin-right: 10px;
-}
+
 
 @media (max-width: 991.98px) {
     .hero {
@@ -1522,4 +1530,154 @@ a:focus {
         line-height: 16px;
         padding: 0 5px;
     }
+}
+/* RTL styling for the typed container in the hero section */
+#hero_typed.rtl {
+    direction: rtl;
+    text-align: right;
+}
+
+    /* Adjust the position of the typed cursor for RTL */
+    #hero_typed.rtl .typed-cursor {
+        right: 0;
+        left: auto;
+    }
+    
+    
+ 
+
+/*       FORCED FONT STYLING      */
+
+navbar {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+    
+/*   Navigation bar    */
+:lang(en) #nav_home,
+:lang(en) #nav_about,
+:lang(en) #nav_experience,
+:lang(en) #nav_portfolio,
+:lang(en) #nav_skills,
+:lang(en) #nav_endorsements,
+:lang(en) #about_text {
+    font-size: 28px; /* Adjust English font size */
+    font-weight: 700; /* Bold for a solid look */
+    font-family: 'Harmattan', sans-serif; /* Choose a font that looks good in English */
+}
+
+
+/*   Job discreption    */
+:lang(en) #exp_item1_desc,
+:lang(en) #exp_item2_desc,
+:lang(en) #exp_item3_desc,
+:lang(en) #exp_item4_desc,
+:lang(en) #exp_item5_desc,
+:lang(en) #exp_item6_desc,
+:lang(en) #exp_item7_desc,
+:lang(en) #exp_item8_desc {
+    font-size: 18px; /* Adjust English font size */
+    font-weight: 700; /* Bold for a solid look */
+    font-family: 'Harmattan', sans-serif; /* Choose a font that looks good in English */
+}
+
+/*   Job Title    */
+:lang(en) #exp_item1_title,
+:lang(en) #exp_item2_title,
+:lang(en) #exp_item3_title,
+:lang(en) #exp_item4_title,
+:lang(en) #exp_item5_title,
+:lang(en) #exp_item6_title,
+:lang(en) #exp_item7_title,
+:lang(en) #exp_item8_title {
+    font-size: 24px; /* Adjust English font size */
+    font-weight: 700; /* Bold for a solid look */
+    font-family: 'Harmattan', sans-serif; /* Choose a font that looks good in English */
+}
+
+ /*    Sub Headers    */
+ :lang(en) #about_subtitle,
+ :lang(en) #hero_typed,
+ :lang(en) #skills_subheader,
+ :lang(en) #portfolio_subheader,
+ :lang(en) #exp_subheader {
+    font-size: 32px; 
+    font-weight: 700; 
+    font-family: 'Harmattan', sans-serif; /* Choose a font that looks good in English */
+}
+
+
+ /*     I'm Adeeb Alqahtani    */
+:lang(en) #hero_prefix,
+:lang(en) #hero_title,
+:lang(en) #hero_subtitle {
+    font-size: 48px; 
+    font-weight: 700; 
+    font-family: 'Harmattan', sans-serif; /* Choose a font that looks good in English */
+}
+
+/*   Headers About me , Skills, Portfolio  */
+:lang(en) #exp_header,
+:lang(en) #about_title,
+:lang(en) #portfolio_header,
+:lang(en) #skills_header {
+    font-size: 18px; /* Adjust English font size */
+    font-weight: 700; /* Bold for a solid look */
+    font-family: 'Harmattan', sans-serif; /* Choose a font that looks good in English */
+}
+
+
+/*   Project Title     */
+:lang(en) #portfolio_item1,
+:lang(en) #portfolio_item2,
+:lang(en) #portfolio_item3,
+:lang(en) #portfolio_item4,
+:lang(en) #portfolio_item5,
+:lang(en) #portfolio_item6{
+	font-size: 24px; 
+    font-weight: 700; 
+    font-family: 'Harmattan', sans-serif; /* Choose a font that looks good in English */
+}
+
+/*   Company and school  */
+:lang(en) #exp_item1_company,
+:lang(en) #exp_item2_company,
+:lang(en) #exp_item3_company,
+:lang(en) #exp_item4_company,
+:lang(en) #exp_item5_company,
+:lang(en) #exp_item6_company,
+:lang(en) #exp_item7_company,
+:lang(en) #exp_item8_company{
+    font-size: 16px; 
+    font-weight: 700; 
+    font-family: 'Harmattan', sans-serif; /* Choose a font that looks good in English */
+}
+
+/*    Endorsments   */
+:lang(en) #testimonial1_text,
+:lang(en) #testimonial1_name,
+:lang(en) #testimonial1_title,
+:lang(en) #testimonial2_text,
+:lang(en) #testimonial2_name,
+:lang(en) #testimonial2_title {
+    font-weight: 700;
+    font-family: 'Harmattan', sans-serif; /* Choose a font that looks good in English */
+}
+
+
+/*        Buttons      */
+
+
+
+
+
+
+/*    Footer   */
+:lang(en) #footer_name,
+:lang(en) #footer_location {
+    font-size: 32px;
+    font-weight: 700;
+    font-family: 'Harmattan', sans-serif; /* Choose a font that looks good in English */
 }
