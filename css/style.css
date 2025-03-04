@@ -1,17 +1,17 @@
-/*******************************/
-/********* General CSS *********/
-/*******************************/
+/******************************/
+/********* General CSS ********/
+/******************************/
 body {
     color: #797979;
     background: #FAF9F6;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Harmattan', sans-serif;
 }
 
 h1,
-h2, 
-h3, 
+h2,
+h3,
 h4,
-h5, 
+h5,
 h6 {
     color: #414141;
 }
@@ -49,8 +49,6 @@ a:focus {
     border-radius: 0;
     box-shadow: inset 0 0 0 50px #2C446F;
     transition: ease-out 0.3s;
-    -webkit-transition: ease-out 0.3s;
-    -moz-transition: ease-out 0.3s;
 }
 
 .btn:hover {
@@ -72,15 +70,11 @@ a:focus {
     background: #FAF9F6;
     opacity: 0;
     visibility: hidden;
-    -webkit-transition: opacity .3s ease-out, visibility 0s linear .3s;
-    -o-transition: opacity .3s ease-out, visibility 0s linear .3s;
     transition: opacity .3s ease-out, visibility 0s linear .3s;
     z-index: 999;
 }
 
 #loader.show {
-    -webkit-transition: opacity .6s ease-out, visibility 0s linear 0s;
-    -o-transition: opacity .6s ease-out, visibility 0s linear 0s;
     transition: opacity .6s ease-out, visibility 0s linear 0s;
     visibility: visible;
     opacity: 1;
@@ -93,13 +87,7 @@ a:focus {
     border: 5px solid #dddddd;
     border-top: 5px solid #2C446F;
     border-radius: 50%;
-    -webkit-animation: spin 2s linear infinite;
     animation: spin 2s linear infinite;
-}
-
-@-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
 }
 
 @keyframes spin {
@@ -129,7 +117,6 @@ a:focus {
     color: #414141;
 }
 
-
 /**********************************/
 /*********** Nav Bar CSS **********/
 /**********************************/
@@ -140,35 +127,35 @@ a:focus {
     background: rgba(44,68,111, .95);
 }
 
-    .navbar.nav-sticky {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
-        background: rgba(44,68,111, .95);
-    }
+.navbar.nav-sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+    background: rgba(44,68,111, .95);
+}
 
-    .navbar .navbar-brand {
-        margin: 0;
-        font-size: 45px;
-        line-height: 0px;
-        font-weight: 700;
-        letter-spacing: 2px;
-        transition: .5s;
-        color: #FAF9F6;
-    }
+.navbar .navbar-brand {
+    margin: 0;
+    font-size: 45px;
+    line-height: 0px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: .5s;
+    color: #FAF9F6;
+}
 
-        .navbar .navbar-brand img {
-            max-width: 100%;
-            max-height: 40px;
-        }
+.navbar .navbar-brand img {
+    max-width: 100%;
+    max-height: 40px;
+}
 
-    .navbar .dropdown-menu {
-        margin-top: 0;
-        border: 0;
-        border-radius: 0;
-        background: #f8f9fa;
-    }
+.navbar .dropdown-menu {
+    margin-top: 0;
+    border: 0;
+    border-radius: 0;
+    background: #f8f9fa;
+}
 
 @media (min-width: 992px) {
     .navbar {
@@ -178,20 +165,16 @@ a:focus {
         background: rgba(44,68,111, .95) !important;
         z-index: 9;
     }
-
-        .navbar.nav-sticky {
-            padding: 10px 60px;
-            background: rgba(44,68,111, .95) !important;
-        }
-
-        .navbar .navbar-brand {
-            color: #FAF9F6;
-        }
-
-        .navbar.nav-sticky .navbar-brand {
-            color: #FAF9F6;
-        }
-
+    .navbar.nav-sticky {
+        padding: 10px 60px;
+        background: rgba(44,68,111, .95) !important;
+    }
+    .navbar .navbar-brand {
+        color: #FAF9F6;
+    }
+    .navbar.nav-sticky .navbar-brand {
+        color: #FAF9F6;
+    }
     .navbar-light .navbar-nav .nav-link,
     .navbar-light .navbar-nav .nav-link:focus {
         padding: 10px 10px 8px 10px;
@@ -199,17 +182,14 @@ a:focus {
         font-size: 15px;
         font-weight: 500;
     }
-
     .navbar-light.nav-sticky .navbar-nav .nav-link,
     .navbar-light.nav-sticky .navbar-nav .nav-link:focus {
         color: #FAF9F6;
     }
-
     .navbar-light .navbar-nav .nav-link:hover,
     .navbar-light .navbar-nav .nav-link.active {
         color: #BFBFBF;
     }
-
     .navbar-light.nav-sticky .navbar-nav .nav-link:hover,
     .navbar-light.nav-sticky .navbar-nav .nav-link.active {
         color: #BFBFBF;
@@ -221,36 +201,28 @@ a:focus {
         padding: 15px;
         background: rgba(44,68,111, .95) !important;
     }
-
-        .navbar .navbar-brand {
-            color: #FAF9F6;
-        }
-
-        .navbar .navbar-nav {
-            margin-top: 15px;
-        }
-
-        .navbar a.nav-link {
-            padding: 5px;
-            color: #FAF9F6;
-        }
-
-            .navbar a.nav-link:hover,
-            .navbar a.nav-link.active {
-                color: #BFBFBF;
-            }
-
-        .navbar .dropdown-menu {
-            box-shadow: none;
-        }
+    .navbar .navbar-brand {
+        color: #FAF9F6;
+    }
+    .navbar .navbar-nav {
+        margin-top: 15px;
+    }
+    .navbar a.nav-link {
+        padding: 5px;
+        color: #FAF9F6;
+    }
+    .navbar a.nav-link:hover,
+    .navbar a.nav-link.active {
+        color: #BFBFBF;
+    }
+    .navbar .dropdown-menu {
+        box-shadow: none;
+    }
 }
 
-
-
-
-/*******************************/
-/********** Hero CSS ***********/
-/*******************************/
+/******************************/
+/********** Hero CSS **********/
+/******************************/
 .hero {
     position: relative;
     width: 100%;
@@ -335,30 +307,23 @@ a:focus {
     border-color: #FAF9F6;
 }
 
-
-
 @media (max-width: 991.98px) {
     .hero {
         padding-top: 60px;
     }
-    
     .hero .hero-content {
         padding: 0 15px;
     }
-    
     .hero .hero-text p {
         font-size: 20px;
     }
-    
     .hero .hero-text h1 {
         font-size: 45px;
     }
-    
     .hero .hero-text h2 {
         font-size: 25px;
         height: 25px;
     }
-    
     .hero .hero-btn .btn {
         padding: 12px 30px;
         letter-spacing: 1px;
@@ -370,27 +335,22 @@ a:focus {
         padding-top: 60px;
         padding-bottom: 60px;
     }
-    
     .hero,
     .hero .hero-text,
     .hero .hero-btn {
         width: 100%;
         text-align: center;
     }
-    
     .hero .hero-text p {
         font-size: 18px;
     }
-    
     .hero .hero-text h1 {
         font-size: 35px;
     }
-    
     .hero .hero-text h2 {
         font-size: 22px;
         height: 22px;
     }
-    
     .hero .hero-btn .btn {
         padding: 10px 15px;
         letter-spacing: 1px;
@@ -401,26 +361,22 @@ a:focus {
     .hero .hero-text p {
         font-size: 16px;
     }
-    
     .hero .hero-text h1 {
         font-size: 30px;
     }
-    
     .hero .hero-text h2 {
         font-size: 18px;
         height: 18px;
     }
-    
     .hero .hero-btn .btn {
         padding: 8px 10px;
         letter-spacing: 0;
     }
 }
 
-
-/*******************************/
+/******************************/
 /******* Section Header ********/
-/*******************************/
+/******************************/
 .section-header {
     position: relative;
     margin-bottom: 45px;
@@ -474,10 +430,9 @@ a:focus {
     }
 }
 
-
-/*******************************/
+/******************************/
 /********** About CSS **********/
-/*******************************/
+/******************************/
 .about {
     position: relative;
     width: 100%;
@@ -522,10 +477,9 @@ a:focus {
     }
 }
 
-
-/*******************************/
+/******************************/
 /******* Experience CSS ********/
-/*******************************/
+/******************************/
 .experience {
     position: relative;
     padding: 45px 0 15px 0;
@@ -582,20 +536,20 @@ a:focus {
 }
 
 .experience .timeline .timeline-item::before {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 0;
-  top: 46px;
-  right: 10px;
-  z-index: 1;
-  border: 10px solid;
-  border-color: transparent transparent transparent #dddddd;
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 46px;
+    right: 10px;
+    z-index: 1;
+    border: 10px solid;
+    border-color: transparent transparent transparent #dddddd;
 }
 
 .experience .timeline .timeline-item.right::before {
-  left: 10px;
-  border-color: transparent #dddddd transparent transparent;
+    left: 10px;
+    border-color: transparent #dddddd transparent transparent;
 }
 
 .experience .timeline .timeline-date {
@@ -655,32 +609,26 @@ a:focus {
     .experience .timeline::after {
         left: 8px;
     }
-
     .experience .timeline .timeline-item {
         width: 100%;
         padding-left: 38px;
     }
-    
     .experience .timeline .timeline-item.left {
         padding-right: 0;
     }
-    
     .experience .timeline .timeline-item.right {
         left: 0%;
         padding-left: 38px;
     }
-
-    .experience .timeline .timeline-item.left::after, 
+    .experience .timeline .timeline-item.left::after,
     .experience .timeline .timeline-item.right::after {
         left: 0;
     }
-    
     .experience .timeline .timeline-item.left::before,
     .experience .timeline .timeline-item.right::before {
         left: 18px;
         border-color: transparent #dddddd transparent transparent;
     }
-    
     .experience .timeline .timeline-item.left .timeline-date,
     .experience .timeline .timeline-item.right .timeline-date {
         position: relative;
@@ -690,7 +638,6 @@ a:focus {
         text-align: left;
         margin-bottom: 10px;
     }
-    
     .experience .timeline .timeline-item.left .timeline-text,
     .experience .timeline .timeline-item.right .timeline-text {
         border-right: none;
@@ -698,111 +645,105 @@ a:focus {
     }
 }
 
-
-/*******************************/
-/******** Portfolio CSS ********/
-/*******************************/
-.portfolio {
-    position: relative;
-    padding: 45px 0 15px 0;
+/******************************/
+/******** Portfolio Cards ******/
+/******************************/
+.projects-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
 }
 
-.portfolio #portfolio-filter {
-    padding: 0;
-    margin: -15px 0 25px 0;
-    list-style: none;
-    font-size: 0;
-    text-align: center;
+.project-card {
+  background: var(--card-bg, rgba(255, 255, 255, 0.1));
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transition: transform 0.3s, opacity 0.3s;
 }
 
-.portfolio #portfolio-filter li {
-    cursor: pointer;
-    display: inline-block;
-    margin: 5px;
-    padding: 6px 12px;
-    font-size: 14px;
-    font-weight: 600;
-    color: #FAF9F6;
-    background: #2C446F;
-    border: 2px solid transparent;
-    border-radius: 0;
-    box-shadow: inset 0 0 0 50px #2C446F;
-    transition: ease-out 0.3s;
-    -webkit-transition: ease-out 0.3s;
-    -moz-transition: ease-out 0.3s;
+.project-card:hover {
+  transform: translateY(-5px);
 }
 
-.portfolio #portfolio-filter li:hover,
-.portfolio #portfolio-filter li.filter-active {
-    color: #2C446F;
-    background: transparent;
-    box-shadow: inset 0 0 0 0 #2C446F;
-    border-color: #2C446F;
+.project-card h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.5rem;
 }
 
-.portfolio .portfolio-item {
-    position: relative;
+/* The project title hyperlink */
+.project-card h3 a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-.portfolio .portfolio-wrap {
-    position: relative;
-    width: 100%;
+.project-card h3 a:hover {
+  color: #ccc;
 }
 
-.portfolio .portfolio-img {
-    position: relative;
-    overflow: hidden;
+/* New: project description text set to black */
+.proj-desc {
+  color: black;
+  margin-bottom: 10px;
+  line-height: 1.4;
 }
 
-.portfolio .portfolio-img img {
-    position: relative;
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover;
-    transform: scale(1.1);
-    transition: .5s;
+/* Optional: subtitle styling */
+.proj-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: #ddd;
 }
 
-.portfolio .portfolio-item:hover img {
-    margin-left: 15px;
+.project-card .tech-stack {
+  font-style: italic;
+  color: #ccc;
 }
 
-.portfolio .portfolio-text {
-    position: relative;
-    height: 60px;
-    width: calc(100% - 30px);
-    margin: -30px 15px 30px 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #FAF9F6;
-    box-shadow: 0 0 15px rgba(0, 0, 0, .12);
+/* Toggle button */
+.toggle-projects-btn {
+  display: block;
+  margin: 30px auto 0;
+  padding: 12px 20px;
+  background: var(--primary-color, #222);
+  color: var(--cta-text, #fff);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
 }
 
-.portfolio .portfolio-text h3 {
-    width: 100%;
-    margin: 0;
-    text-align: center;
-    white-space: normal;
-    overflow: visible;
+.toggle-projects-btn:hover {
+  background: var(--secondary-color, #444);
+  transform: scale(1.05);
 }
 
-.portfolio .portfolio-text h3 a {
-    color: inherit;
-    text-decoration: none;
+/* Filter Buttons */
+.project-filters .filter-btn {
+  border: none;
+  background: #2C446F;
+  color: #FAF9F6;
+  padding: 6px 12px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: color 0.3s, background 0.3s;
 }
 
-.portfolio .portfolio-text h3.long-name {
-    font-size: 14px;
+.project-filters .filter-btn.active,
+.project-filters .filter-btn:hover {
+  background: transparent;
+  color: #2C446F;
+  border: 2px solid #2C446F;
 }
 
-
-/*******************************/
+/******************************/
 /********** Skills CSS *********/
-/*******************************/
+/******************************/
 .skills-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     justify-content: center;
     padding: 20px;
@@ -814,20 +755,18 @@ a:focus {
     align-items: center;
     justify-content: center;
     background: #FAF9F6;
-    /* Removed border and box-shadow */
     width: 120px;
     height: 120px;
     transition: transform 0.3s;
     margin: 0 auto;
 }
 
-
 .skill-card:hover {
     transform: scale(1.05);
 }
 
 .skill-card i {
-    font-size: 40px; /* Reduced from 50px */
+    font-size: 40px;
     color: #2C446F;
 }
 
@@ -851,309 +790,9 @@ a:focus {
     }
 }
 
-
-
-/*******************************/
-/********* Banner CSS **********/
-/*******************************/
-.banner {
-    position: relative;
-    width: 100%;
-    margin: 45px 0;
-    padding: 90px 0;
-    background: #2C446F;
-}
-
-.banner .container {
-    max-width: 750px;
-    text-align: center;
-}
-
-.banner .section-header {
-    margin-bottom: 20px;
-}
-
-.banner .section-header p {
-    color: #414141;
-    background: transparent;
-}
-
-.banner .section-header p::after {
-    display: none;
-}
-
-.banner .section-header h2 {
-    color: #FAF9F6;
-}
-
-.banner .section-header h2 span {
-    color: #414141;
-    font-size: 50px;
-}
-
-.banner .banner-text p {
-    font-size: 18px;
-    color: #FAF9F6;
-}
-
-.banner .banner-text .btn {
-    margin-top: 15px;
-    color: #2C446F;
-    background: #FAF9F6;
-    box-shadow: inset 0 0 0 50px #FAF9F6;
-}
-
-.banner .banner-text .btn:hover {
-    color: #FAF9F6;
-    background: transparent;
-    box-shadow: inset 0 0 0 0 #FAF9F6;
-    border-color: #FAF9F6;
-}
-
-
-/*******************************/
-/********* Pricing CSS *********/
-/*******************************/
-.price {
-    position: relative;
-    width: 100%;
-    padding: 45px 0 15px 0;
-}
-
-.price .row {
-    padding: 0 15px;
-}
-
-.price .col-md-4 {
-    padding: 0;
-}
-
-.price .price-item {
-    position: relative;
-    margin-bottom: 30px;
-    background: #FAF9F6;
-}
-
-.price .featured-item {
-    box-shadow: 0 0 30px rgba(0, 0, 0, .2);
-    z-index: 1;
-}
-
-.price .price-header,
-.price .price-body,
-.price .price-footer {
-    position: relative;
-    text-align: center;
-}
-
-.price .price-header {
-    padding: 45px 0 30px 0;
-    color: #414141;
-}
-
-.price .price-item.featured-item .price-header {
-    color: #2C446F;
-}
-
-.price .price-title h2 {
-    font-size: 25px;
-    font-weight: 400;
-    text-transform: uppercase;
-}
-
-.price .price-prices h2 {
-    font-size: 45px;
-    font-weight: 700;
-    margin-left: 10px;
-}
-
-.price .price-prices h2 small {
-    position: absolute;
-    font-size: 18px;
-    font-weight: 400;
-    margin-top: 9px;
-    margin-left: -12px;
-}
-
-.price .price-prices h2 span {
-    margin-left: 1px;
-    font-size: 18px;
-    font-weight: 400;
-}
-
-.price .price-item.featured-item h2 {
-    color: #2C446F;
-}
-
-.price .price-body {
-    padding: 0 0 20px 0;
-}
-
-.price .price-description ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.price .price-description ul li {
-    padding: 0 0 20px 0;
-}
-
-.price .price-item .price-action {
-    padding-bottom: 45px;
-}
-
-.price .price-item .price-action .btn {
-    color: #FAF9F6;
-    background: #414141;
-    box-shadow: inset 0 0 0 50px #414141;
-}
-
-.price .price-item .price-action .btn:hover {
-    color: #414141;
-    background: transparent;
-    box-shadow: inset 0 0 0 0 #414141;
-    border-color: #414141;
-}
-
-.price .price-item.featured-item .price-action .btn {
-    color: #FAF9F6;
-    background: #2C446F;
-    box-shadow: inset 0 0 0 50px #2C446F;
-}
-
-.price .price-item.featured-item .price-action .btn:hover {
-    color: #2C446F;
-    background: transparent;
-    box-shadow: inset 0 0 0 0 #2C446F;
-    border-color: #2C446F;
-}
-
-
-/*******************************/
-/*********** Team CSS **********/
-/*******************************/
-.team {
-    position: relative;
-    width: 100%;
-    padding: 45px 0 15px 0;
-}
-
-.team .team-item {
-    position: relative;
-    background: #FAF9F6;
-    margin-bottom: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    box-shadow: inset 0 0 0 0 transparent;
-    transition: ease-out 0.5s;
-}
-
-.team .team-img {
-    position: relative;
-    width: 50%;
-    overflow: hidden;
-}
-
-.team .team-img img {
-    position: relative;
-    width: 100%;
-    transition: .5s;
-}
-
-.team .team-text {
-    position: relative;
-    width: 50%;
-    padding: 0 30px;
-}
-
-.team .team-text h2 {
-    color: #2C446F;
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 5px;
-    transition: 1s;
-}
-
-.team .team-text h4 {
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 15px;
-    transition: 1s;
-}
-
-.team .team-text p {
-    margin-bottom: 20px;
-    transition: 1s;
-}
-
-.team .team-social {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.team .team-social a.btn {
-    width: 35px;
-    height: 35px;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    font-weight: normal;
-    margin-right: 5px;
-}
-
-.team .team-item:hover {
-    box-shadow: inset 800px 0 0 0 #2C446F;
-}
-
-.team .team-item:hover .team-img img {
-    transform: scale(1.2);
-}
-
-.team .team-item:hover .team-text h2,
-.team .team-item:hover .team-text h4,
-.team .team-item:hover .team-text p {
-    color: #FAF9F6;
-}
-
-.team .team-item:hover .team-social a.btn {
-    background: #FAF9F6;
-}
-
-.team .team-item:hover .team-social a.btn:hover {
-    border-color: #FAF9F6;
-}
-
-@media(max-width: 575.98px) {
-    .team .team-text {
-        padding: 0 15px;
-    }
-    
-    .team .team-text h2 {
-        font-size: 16px;
-        margin-bottom: 0;
-    }
-
-    .team .team-text h4 {
-        margin-bottom: 5px;
-    }
-
-    .team .team-text p {
-        font-size: 14px;
-        line-height: 18px;
-        margin-bottom: 10px;
-    }
-}
-
-
-/*******************************/
-/******* Testimonial CSS *******/
-/*******************************/
+/******************************/
+/******* Testimonial CSS ******/
+/******************************/
 .testimonial {
     position: relative;
     margin: 45px 0;
@@ -1241,174 +880,16 @@ a:focus {
 }
 
 
-/*******************************/
-/********* Contact CSS *********/
-/*******************************/
-.contact {
-    position: relative;
-    width: 100%;
-    margin: 45px 0;
-    background: #2C446F;
-}
-
-.contact .container-fluid {
-    background: url(../img/contact.jpg) left center no-repeat;
-    background-size: contain;
-}
-
-.contact .contact-form {
-    position: relative;
-    padding: 90px 0 90px 45px;
-    background: #2C446F;
-}
-
-.contact .contact-form input {
-    color: #FAF9F6;
-    padding: 15px 0;
-    background: none;
-    border-radius: 0;
-    border: none;
-    border-bottom: 1px solid rgba(256, 256, 256, .5);
-}
-
-.contact .contact-form textarea {
-    color: #FAF9F6;
-    height: 90px;
-    padding: 15px 0;
-    background: none;
-    border-radius: 0;
-    border: none;
-    border-bottom: 1px solid rgba(256, 256, 256, .5);
-}
-
-.contact .contact-form .form-control::placeholder {
-    color: #FAF9F6;
-    opacity: 1;
-}
-
-.contact .contact-form .form-control:-ms-input-placeholder,
-.contact .contact-form .form-control::-ms-input-placeholder {
-    color: #FAF9F6;
-}
-
-.contact .contact-form .btn {
-    margin-top: 35px;
-    color: #2C446F;
-    background: #FAF9F6;
-    box-shadow: inset 0 0 0 50px #FAF9F6;
-}
-
-.contact .contact-form .btn:hover {
-    color: #FAF9F6;
-    background: transparent;
-    box-shadow: inset 0 0 0 0 #FAF9F6;
-    border-color: #FAF9F6;
-}
-
-.contact .help-block ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    font-size: 14px;
-    font-style: italic;
-    color: #FAF9F6;
-}
-
-@media (max-width: 767.98px) {
-    .contact .container-fluid {
-        background: none;
-    }
-    
-    .contact .contact-form {
-        padding: 90px 0;
-    }
-}
-
-
-/*******************************/
-/*********** Blog CSS **********/
-/*******************************/
-.blog {
-    position: relative;
-    width: 100%;
-    padding: 45px 0 15px 0;
-}
-
-.blog .blog-item {
-    position: relative;
-    margin-bottom: 30px;
-}
-
-.blog .blog-img {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
-
-.blog .blog-img img {
-    width: 100%;
-    transition: .5s;
-}
-
-.blog .blog-item:hover img {
-    transform: scale(1.1);
-}
-
-.blog .blog-text {
-    position: relative;
-    padding: 30px;
-    border-right: 1px solid rgba(0, 0, 0, .07);
-    border-bottom: 1px solid rgba(0, 0, 0, .07);
-    border-left: 1px solid rgba(0, 0, 0, .07);
-}
-
-.blog .blog-text h2 {
-    font-size: 25px;
-    font-weight: 600;
-}
-
-.blog .blog-text p {
-    margin-bottom: 10px;
-}
-
-.blog .blog-item a.btn {
-    margin-top: 10px;
-    padding: 8px 15px;
-}
-
-.blog .blog-item a.btn i {
-    margin-left: 5px;
-}
-
-.blog .blog-meta {
-    position: relative;
-    display: flex;
-    margin-bottom: 15px;
-}
-
-.blog .blog-meta p {
-    margin: 0 10px 0 0;
-    font-size: 13px;
-}
-
-.blog .blog-meta i {
-    color: #414141;
-    margin-right: 5px;
-}
-
-.blog .blog-meta p:last-child {
-    margin: 0;
-}
-
-
-/*******************************/
+/******************************/
 /********* Footer CSS **********/
-/*******************************/
+/******************************/
 .footer {
     position: relative;
     margin-top: 45px;
+   
     background: #2C446F;
 }
+
 
 .footer .container-fluid {
     padding: 60px 0 0 0;
@@ -1455,6 +936,8 @@ a:focus {
 
 .footer .footer-social {
     position: relative;
+    display: flex;
+    justify-content: center;
     margin-top: 15px;
 }
 
@@ -1519,43 +1002,34 @@ a:focus {
         font-size: 20px;
         font-weight: 600;
     }
-
     .footer .footer-info h3 {
         margin-bottom: 20px;
         font-size: 16px;
     }
-
     .footer .footer-menu p {
         font-size: 16px;
         line-height: 16px;
         padding: 0 5px;
     }
 }
-/* RTL styling for the typed container in the hero section */
+
+/* RTL styling for hero section typed container */
 #hero_typed.rtl {
     direction: rtl;
     text-align: right;
 }
+#hero_typed.rtl .typed-cursor {
+    right: 0;
+    left: auto;
+}
 
-    /* Adjust the position of the typed cursor for RTL */
-    #hero_typed.rtl .typed-cursor {
-        right: 0;
-        left: auto;
-    }
-    
-    
- 
-
-/*       FORCED FONT STYLING      */
-
+/* FORCED FONT STYLING */
 navbar {
     padding-top: 20px;
     padding-bottom: 20px;
 }
 
-
-    
-/*   Navigation bar    */
+/* Navigation forced styling */
 :lang(en) #nav_home,
 :lang(en) #nav_about,
 :lang(en) #nav_experience,
@@ -1563,121 +1037,92 @@ navbar {
 :lang(en) #nav_skills,
 :lang(en) #nav_endorsements,
 :lang(en) #about_text {
-    font-size: 28px; /* Adjust English font size */
-    font-weight: 700; /* Bold for a solid look */
-    font-family: 'Harmattan', sans-serif; /* Choose a font that looks good in English */
-}
-
-
-/*   Job discreption    */
-:lang(en) #exp_item1_desc,
-:lang(en) #exp_item2_desc,
-:lang(en) #exp_item3_desc,
-:lang(en) #exp_item4_desc,
-:lang(en) #exp_item5_desc,
-:lang(en) #exp_item6_desc,
-:lang(en) #exp_item7_desc,
-:lang(en) #exp_item8_desc {
-    font-size: 18px; /* Adjust English font size */
-    font-weight: 700; /* Bold for a solid look */
-    font-family: 'Harmattan', sans-serif; /* Choose a font that looks good in English */
-}
-
-/*   Job Title    */
-:lang(en) #exp_item1_title,
-:lang(en) #exp_item2_title,
-:lang(en) #exp_item3_title,
-:lang(en) #exp_item4_title,
-:lang(en) #exp_item5_title,
-:lang(en) #exp_item6_title,
-:lang(en) #exp_item7_title,
-:lang(en) #exp_item8_title {
-    font-size: 24px; /* Adjust English font size */
-    font-weight: 700; /* Bold for a solid look */
-    font-family: 'Harmattan', sans-serif; /* Choose a font that looks good in English */
-}
-
- /*    Sub Headers    */
- :lang(en) #about_subtitle,
- :lang(en) #hero_typed,
- :lang(en) #skills_subheader,
- :lang(en) #portfolio_subheader,
- :lang(en) #exp_subheader {
-    font-size: 32px; 
-    font-weight: 700; 
-    font-family: 'Harmattan', sans-serif; /* Choose a font that looks good in English */
-}
-
-
- /*     I'm Adeeb Alqahtani    */
-:lang(en) #hero_prefix,
-:lang(en) #hero_title,
-:lang(en) #hero_subtitle {
-    font-size: 48px; 
-    font-weight: 700; 
-    font-family: 'Harmattan', sans-serif; /* Choose a font that looks good in English */
-}
-
-/*   Headers About me , Skills, Portfolio  */
-:lang(en) #exp_header,
-:lang(en) #about_title,
-:lang(en) #portfolio_header,
-:lang(en) #skills_header {
-    font-size: 18px; /* Adjust English font size */
-    font-weight: 700; /* Bold for a solid look */
-    font-family: 'Harmattan', sans-serif; /* Choose a font that looks good in English */
-}
-
-
-/*   Project Title     */
-:lang(en) #portfolio_item1,
-:lang(en) #portfolio_item2,
-:lang(en) #portfolio_item3,
-:lang(en) #portfolio_item4,
-:lang(en) #portfolio_item5,
-:lang(en) #portfolio_item6{
-	font-size: 24px; 
-    font-weight: 700; 
-    font-family: 'Harmattan', sans-serif; /* Choose a font that looks good in English */
-}
-
-/*   Company and school  */
-:lang(en) #exp_item1_company,
-:lang(en) #exp_item2_company,
-:lang(en) #exp_item3_company,
-:lang(en) #exp_item4_company,
-:lang(en) #exp_item5_company,
-:lang(en) #exp_item6_company,
-:lang(en) #exp_item7_company,
-:lang(en) #exp_item8_company{
-    font-size: 16px; 
-    font-weight: 700; 
-    font-family: 'Harmattan', sans-serif; /* Choose a font that looks good in English */
-}
-
-/*    Endorsments   */
-:lang(en) #testimonial1_text,
-:lang(en) #testimonial1_name,
-:lang(en) #testimonial1_title,
-:lang(en) #testimonial2_text,
-:lang(en) #testimonial2_name,
-:lang(en) #testimonial2_title {
+    font-size: 28px;
     font-weight: 700;
-    font-family: 'Harmattan', sans-serif; /* Choose a font that looks good in English */
+    font-family: 'Harmattan', sans-serif;
 }
 
+/******************************/
+/******** Portfolio Cards ******/
+/******************************/
+.projects-wrapper {
+  /* Use CSS Grid with auto-fitting columns */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
 
-/*        Buttons      */
+.project-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 6px;
+  color: #fff;
+  transition: background 0.3s ease;
+}
 
+.project-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
 
+.project-card h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.5rem;
+}
 
+/* New: project description text set to black */
+.proj-desc {
+  color: black;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
 
+.project-card p:not(.proj-desc) {
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
 
+.project-card .tech-stack {
+  font-style: italic;
+  color: #ccc;
+}
 
-/*    Footer   */
-:lang(en) #footer_name,
-:lang(en) #footer_location {
-    font-size: 32px;
-    font-weight: 700;
-    font-family: 'Harmattan', sans-serif; /* Choose a font that looks good in English */
+.project-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 14px;
+  background-color: #222;
+  border-radius: 4px;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.project-link:hover {
+  background-color: #444;
+}
+
+.toggle-projects-btn {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background-color: #222;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.testimonial {
+    margin-bottom: 0 !important;           /* Removes the white gap below testimonial */
+    border-bottom: 1px solid #FAF9F6;      /* Adds a horizontal divider line */
+    padding-bottom: 20px;                  /* Space between testimonial content and divider line */
+}
+.footer {
+    margin-top: 0 !important;    /* Removes the gap above footer */
+}
+
+.custom-padding {
+    /* Example: 30px top and bottom padding */
+    padding: 30px 0;
 }
