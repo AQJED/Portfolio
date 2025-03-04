@@ -697,10 +697,7 @@ a:focus {
   color: #ddd;
 }
 
-.project-card .tech-stack {
-  font-style: italic;
-  color: #ccc;
-}
+
 
 /* Toggle button */
 .toggle-projects-btn {
@@ -736,6 +733,16 @@ a:focus {
   background: transparent;
   color: #2C446F;
   border: 2px solid #2C446F;
+}
+.proj-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: black; /* Changed from previous color to black */
+}
+
+.project-card .tech-stack {
+    font-style: italic;
+    color: black !important; /* Changed from previous color to black */
 }
 
 /******************************/
