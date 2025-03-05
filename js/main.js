@@ -159,7 +159,7 @@
   "showLess": "Show Less",
   "projectCards": [
     {
-      "title": "CGF to IG Middleware",
+      "title": "CGF to IG Middleware: Low-Level C++ Programming",
       "subtitle": "Professional Application",
       "description": "A middleware application that facilitates communication between a CGF system and an Image Generator by converting DIS protocol packets into CIGI protocol packets.",
       "technologies": "C++, PCAPPLUSPLUS, Open DIS, CIGI, Boost, TCP, UDP, Git",
@@ -183,7 +183,7 @@
       "category": "academic"
     },
     {
-      "title": "Host to IG Middleware",
+      "title": "Host to IG Middleware: Low-Level C++ Programming",
       "subtitle": "Professional Application",
       "description": "Facilitates communication between a Host Computer and an Image Generator by converting CIGI 3.1 packets into CIGI 3.3 packets.",
       "technologies": "C++, CIGI, Boost, TCP, UDP, Git",
@@ -335,7 +335,7 @@
       "testimonial2_name": "Khalid Alotaibi",
       "testimonial2_title": "Flight Simulator Engineering Manager | Jeddah",
       "footer_name": "أديب القحطاني",
-      "footer_location": "Riyadh, Saudi Arabia",
+      "footer_location": "الرياض، المملكة العربية السعودية",
       "footer_email": "Adeeb.Alqahtani@gmail.com",
       "footer_github": "https://github.com/AQJED",
       "footer_linkedin": "https://www.linkedin.com/in/adalqahtani/"
@@ -412,12 +412,11 @@
 
     // Projects section update – use the new "projects" object
     $("#portfolio_header").text(translations[currentLang].projects.portfolioHeader);
-$("#portfolio_subheader").text(translations[currentLang].projects.portfolioSubheader);
-   $(".filter-btn[data-filter='all']").text(translations[currentLang].projects.filters.all);
-    
+	$("#portfolio_subheader").text(translations[currentLang].projects.portfolioSubheader);
+	$(".filter-btn[data-filter='all']").text(translations[currentLang].projects.filters.all);
     $(".filter-btn[data-filter='personal']").text(translations[currentLang].projects.filters.personal);
-$(".filter-btn[data-filter='professional']").text(translations[currentLang].projects.filters.professional);
-$(".filter-btn[data-filter='academic']").text(translations[currentLang].projects.filters.academic);
+	$(".filter-btn[data-filter='professional']").text(translations[currentLang].projects.filters.professional);
+	$(".filter-btn[data-filter='academic']").text(translations[currentLang].projects.filters.academic);
     $("#toggle-projects").text(translations[currentLang].projects.showMore);
     var projectsGrid = document.getElementById("projects-grid");
     projectsGrid.innerHTML = "";
@@ -443,6 +442,17 @@ $(".filter-btn[data-filter='academic']").text(translations[currentLang].projects
         "</p>";
       projectsGrid.appendChild(card);
     });
+	// Add or remove a class on the projects container for RTL styling
+if (currentLang === "ar") {
+  $(".project-filters").addClass("rtl-filters");
+  $("#projects-grid").addClass("rtl-projects");
+  $("#experience").addClass("rtl-experience");
+} else {
+  $(".project-filters").removeClass("rtl-filters");
+  $("#projects-grid").removeClass("rtl-projects");
+  $("#experience").removeClass("rtl-experience");
+}
+
 
     // Skills update
     $("#skills_header").text(translations[currentLang].skills_header);
