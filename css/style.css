@@ -651,7 +651,7 @@ a:focus {
 /******************************/
 /******** Portfolio Cards ******/
 /******************************/
-/* Projects Wrapper */
+
 /* Projects Wrapper */
 .projects-wrapper {
   display: grid;
@@ -665,6 +665,9 @@ a:focus {
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
+}
+.project-filters {
+  margin-bottom: 20px; /* or whatever spacing you prefer */
 }
 
 .project-filters .filter-btn {
