@@ -242,7 +242,7 @@
       "exp_subheader": "المسيرة المهنية والأكاديمية",
       "exp_item1_title": "مهندس تكامل برمجي",
       "exp_item1_company": "رينمتال العربية، الرياض، المملكة العربية السعودية",
-      "exp_item1_desc": "مهندس تكامل برمجي  | المهارات:  تطوير البرمجيات الوسيطة · معالجة بيانات المحاكيات · تكامل الأنظمة  ·الأنظمة المضمنة · تحسين البرمجيات",
+      "exp_item1_desc": "مهندس تكامل برمجيات  | المهارات:  تطوير البرمجيات الوسيطة · معالجة بيانات المحاكيات · تكامل الأنظمة  ·الأنظمة المضمنة · تحسين البرمجيات",
       "exp_item2_title": "مشرف صيانة محاكيات الطيران (م)",
       "exp_item2_company": "أكاديمية السعودية، جدة، المملكة العربية السعودية",
       "exp_item2_desc": "عملت كمشرف صيانة - قسم الخدمة الفنية | المهارات :  قيادة الفريق · إدارة العمليات · تحسين أداء الأنظمة ",
@@ -355,19 +355,24 @@
     $("#lang-toggle").text(translations[currentLang].btn_lang);
 
     // Navbar alignment & direction for Arabic
-    if (currentLang === "ar") {
-      $(".navbar-nav").removeClass("ml-auto").addClass("mr-auto");
-      $(".navbar, .navbar-nav, .navbar-brand, .hero, .hero-text").css({
-        "text-align": "right",
-        "direction": "rtl",
-      });
-    } else {
-      $(".navbar-nav").removeClass("mr-auto").addClass("ml-auto");
-      $(".navbar, .navbar-nav, .navbar-brand, .hero, .hero-text").css({
-        "text-align": "left",
-        "direction": "ltr",
-      });
-    }
+      if (currentLang === "ar") {
+          $(".navbar-nav").removeClass("ml-auto").addClass("mr-auto");
+          $(".navbar, .navbar-nav, .navbar-brand, .hero, .hero-text, .about-content").css({
+              "text-align": "right",
+              "direction": "rtl",
+          });
+          // Change about header alignment for Arabic
+          $(".about-content .section-header").removeClass("text-left").addClass("text-right");
+      } else {
+          $(".navbar-nav").removeClass("mr-auto").addClass("ml-auto");
+          $(".navbar, .navbar-nav, .navbar-brand, .hero, .hero-text, .about-content").css({
+              "text-align": "left",
+              "direction": "ltr",
+          });
+          // Restore about header alignment for English
+          $(".about-content .section-header").removeClass("text-right").addClass("text-left");
+      }
+
 
     // Hero update
     $("#hero_prefix").text(translations[currentLang].hero_prefix);
