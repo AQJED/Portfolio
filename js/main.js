@@ -319,7 +319,7 @@
   "technologies": "PettingZoo, PyFlyt, Stable-Baselines3 (PPO), PyTorch, Gymnasium",
   "link": "https://github.com/AQJED/Falcon-AI",
   "category": "professional"
-}
+},
 	  {
   "title": "مقيّم امتثال الأمن السيبراني المعتمد على LLM (AI)",
   "subtitle": "تطبيق احترافي",
@@ -327,7 +327,7 @@
   "technologies": "Ollama API (LLM), Python(Scripting/Automation), Pandas(Data Handling)",
   "link": "https://github.com/AQJED/LLM-Driven-Cybersecurity-Compliance-Evaluator",
   "category": "professional"
-}
+},
     {
       "title": "ذراع آلي (نظام مضمن)",
       "subtitle": "مشروع شخصي",
